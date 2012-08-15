@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-use href="hoa://Application/View/Blog/Comment.xyl"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p><a href="@i">☜ Back to list</a></p>
+
+    <yield bind="?article">
+      <h2 bind="?title" />
+      <p bind="?content" />
+    </yield>
+
+    <h2>Comments</h2>
+    <comment bind="?comments" />
+  </article>
+</overlay>
