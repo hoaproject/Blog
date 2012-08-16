@@ -23,8 +23,8 @@ Hoa\Database\Dal::initializeParameters(array(
 
 $dispatcher = new Hoa\Dispatcher\Basic();
 $router     = new Hoa\Router\Http();
-$router->get('i', '/', 'blog', 'index')
-       ->get('a', '/article-(?<id>\d+)\.html', 'blog', 'article');
+$router->get('posts', '/', 'posts', 'index')
+       ->get('post', '/posts/(?<id>\d+)', 'posts', 'show');
 
 try {
 

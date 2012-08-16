@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xyl-use href="hoa://Application/View/Blog/Comment.xyl"?>
+<?xyl-use href="hoa://Application/View/Posts/Comment.xyl"?>
 
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
   <article id="main">
-    <p><a href="@i">☜ Back to list</a></p>
+    <p><a href="@posts">☜ Back to list</a></p>
 
     <yield bind="?article">
       <h2 bind="?title" />

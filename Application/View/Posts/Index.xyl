@@ -5,7 +5,7 @@
     <p>Here is the list of all articles I have written:</p>
     <ul>
       <li bind="?articles">
-        <value bind="?posted" /> — <a href="@a:id=(?id)" bind="?title" />
+        <value bind="?posted" /> — <a href="@post:id=(?id)" bind="?title" />
       </li>
     </ul>
   </article>

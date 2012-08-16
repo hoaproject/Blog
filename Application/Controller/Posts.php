@@ -10,7 +10,7 @@ from('Application')
 
 namespace Application\Controller {
 
-class Blog extends \Hoa\Dispatcher\Kit {
+class Posts extends \Hoa\Dispatcher\Kit {
 
   public function IndexAction ( ) {
 
@@ -19,13 +19,13 @@ class Blog extends \Hoa\Dispatcher\Kit {
     $this->data->title    = 'All articles';
     $this->data->articles = $list;
 
-    $this->view->addOverlay('hoa://Application/View/Blog/Index.xyl');
+    $this->view->addOverlay('hoa://Application/View/Posts/Index.xyl');
     $this->view->render();
 
     return;
   }
 
-  public function ArticleAction ( $id ) {
+  public function ShowAction ( $id ) {
 
     $article              = new \Application\Model\Article();
     $article->id          = $id;
@@ -34,11 +34,12 @@ class Blog extends \Hoa\Dispatcher\Kit {
     $this->data->article  = $article;
     $this->data->comments = $article->comments;
 
-    $this->view->addOverlay('hoa://Application/View/Blog/Article.xyl');
+    $this->view->addOverlay('hoa://Application/View/Posts/Article.xyl');
     $this->view->render();
 
     return;
   }
+
 }
 
 }
