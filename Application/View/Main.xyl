@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <document xmlns="http://hoa-project.net/xyl/xylophone">
-  <title><value bind="?title" /> — Gordon's blog</title>
+  <title><value bind="?title" /> — Hoa blog</title>
 
   <header>
-    <h1>Gordon's blog</h1>
+    <h1>Hoa blog</h1>
   </header>
 
   <article id="main" />
 
   <footer>
-    <p>Author: Gordon Freeman © 1999-2001. This blog is powered by
-    <a href="http://hoa-project.net/">Hoa</a> and
+    <p>This blog is powered by <a href="http://hoa-project.net/">Hoa</a> and
     <a href="http://php.net/">PHP</a>.</p>
   </footer>
 </document>

@@ -2,7 +2,6 @@
 
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
   <article id="main">
-    <p>Here is the list of all articles I have written:</p>
     <ul>
       <li bind="?articles">
         <value bind="?posted" /> — <a href="@post:id=(?id)" bind="?title" />
