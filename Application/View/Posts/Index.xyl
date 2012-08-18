@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
-  <article id="main">
+  <div id="main">
     <ul>
       <li bind="?articles">
         <value bind="?posted" /> — <a href="@post:id=(?id)" bind="?title" />
       </li>
     </ul>
-  </article>
+  </div>
 </overlay>

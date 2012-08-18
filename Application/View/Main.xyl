@@ -7,7 +7,7 @@
     <h1>Hoa blog</h1>
   </header>
 
-  <article id="main" />
+  <div id="main" />
 
   <footer>
     <p>This blog is powered by <a href="http://hoa-project.net/">Hoa</a> and

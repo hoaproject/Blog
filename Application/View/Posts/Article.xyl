@@ -2,7 +2,7 @@
 <?xyl-use href="hoa://Application/View/Posts/Comment.xyl"?>
 
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
-  <article id="main">
+  <div id="main">
     <p><a href="@posts">☜ Back to list</a></p>
 
     <yield bind="?article">
@@ -12,5 +12,5 @@
 
     <h2>Comments</h2>
     <comment bind="?comments" />
-  </article>
+  </div>
 </overlay>
