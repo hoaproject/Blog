@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xyl-fragment href="Posts.frag.xyl" as="handle"?>
 
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
   <div id="main">
     <form action="@create_post" method="post">
-      <yield select="?f=handle#form" />
+      <yield select="?f:postsfrag#form" />
     </form>
   </div>
 </overlay>

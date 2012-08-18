@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xyl-fragment href="hoa://Application/View/Posts/Posts.frag.xyl" as="postsfrag"?>
 
 <document xmlns="http://hoa-project.net/xyl/xylophone">
   <title><value bind="?title" /> — Hoa blog</title>
