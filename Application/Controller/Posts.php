@@ -40,6 +40,24 @@ class Posts extends \Hoa\Dispatcher\Kit {
     return;
   }
 
+  public function NewAction ( ) {
+
+    $this->view->addOverlay('hoa://Application/View/Posts/New.xyl');
+    $this->view->render();
+
+    return;
+  }
+
+  public function EditAction ( $id ) {
+
+    $this->data->id = $id;
+
+    $this->view->addOverlay('hoa://Application/View/Posts/Edit.xyl');
+    $this->view->render();
+
+    return;
+  }
+
 }
 
 }

@@ -24,7 +24,11 @@ Hoa\Database\Dal::initializeParameters(array(
 $dispatcher = new Hoa\Dispatcher\Basic();
 $router     = new Hoa\Router\Http();
 $router->get('posts', '/', 'posts', 'index')
-       ->get('post', '/posts/(?<id>\d+)', 'posts', 'show');
+       ->get('post', '/posts/(?<id>\d+)', 'posts', 'show')
+       ->get('new_post', '/posts/new', 'posts', 'new')
+       ->post('create_post', '/posts/create', 'posts', 'create')
+       ->get('edit_post', '/posts/(?<id>\d+)/edit', 'posts', 'edit')
+       ->put('update_post', '/posts/(?<id>\d+)', 'posts', 'update');
 
 try {
 
