@@ -7,6 +7,9 @@ from('Hoa')
 -> import('Model.Exception')
 -> import('Database.Dal');
 
+from('Hoathis')
+-> import('Model.Exception.NotFound');
+
 }
 
 namespace Application\Model {
@@ -65,17 +68,24 @@ class Article extends \Hoa\Model {
                      )
                      ->execute($constraints)
                      ->fetchAll();
-        $this->map($data[0]);
-        $this->comments->map(
-            $this->getMappingLayer()
-                 ->prepare(
-                     'SELECT id, posted, author, content ' .
-                     'FROM   comment '.
-                     'WHERE  article = :article'
-                 )
-                 ->execute(array('article' => $constraints['id']))
-                 ->fetchAll()
-        );
+
+        if(!empty($data)) {
+            $this->map($data[0]);
+            $this->comments->map(
+                $this->getMappingLayer()
+                     ->prepare(
+                         'SELECT id, posted, author, content ' .
+                         'FROM   comment '.
+                         'WHERE  article = :article'
+                     )
+                     ->execute(array('article' => $constraints['id']))
+                     ->fetchAll()
+            );
+        }
+        else
+        {
+            throw new \Hoathis\Model\Exception\NotFound("Article not found");
+        }
 
         return;
     }
