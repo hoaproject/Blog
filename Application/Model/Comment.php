@@ -18,9 +18,9 @@ class Comment extends \Hoa\Model {
     protected $_id;
 
     /**
-     * @invariant article: relation('Application\Model\Article', 1);
+     * @invariant post: relation('Application\Model\Post', 1);
      */
-    protected $_article;
+    protected $_post;
 
     /**
      * @invariant author: regex('[\w\d\'\- ]+', boundinteger(1, 42));

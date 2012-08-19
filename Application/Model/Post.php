@@ -14,7 +14,7 @@ from('Hoathis')
 
 namespace Application\Model {
 
-class Article extends \Hoa\Model {
+class Post extends \Hoa\Model {
 
     /**
      * @invariant id: boundinteger(0);
@@ -63,7 +63,7 @@ class Article extends \Hoa\Model {
         $data = $this->getMappingLayer()
                      ->prepare(
                          'SELECT id, title, content ' .
-                         'FROM   article ' .
+                         'FROM   post ' .
                          'WHERE  id = :id'
                      )
                      ->execute($constraints)
@@ -76,15 +76,15 @@ class Article extends \Hoa\Model {
                      ->prepare(
                          'SELECT id, posted, author, content ' .
                          'FROM   comment '.
-                         'WHERE  article = :article'
+                         'WHERE  post = :post'
                      )
-                     ->execute(array('article' => $constraints['id']))
+                     ->execute(array('post' => $constraints['id']))
                      ->fetchAll()
             );
         }
         else
         {
-            throw new \Hoathis\Model\Exception\NotFound("Article not found");
+            throw new \Hoathis\Model\Exception\NotFound("Post not found");
         }
 
         return;
@@ -93,7 +93,7 @@ class Article extends \Hoa\Model {
     public function getShortList ( ) {
 
         return $this->getMappingLayer()->query(
-            'SELECT id, title, posted FROM article ORDER BY id DESC'
+            'SELECT id, title, posted FROM post ORDER BY id DESC'
         )->fetchAll();
     }
 }

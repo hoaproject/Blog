@@ -4,11 +4,11 @@
   <snippet id="form">
       <p>
         <label for="title">Title</label>
-        <input id="article[title]" name="article[title]" type="text" placeholder="Title" value="(?title)" required="true"/>
+        <input id="post[title]" name="post[title]" type="text" placeholder="Title" value="(?title)" required="true"/>
       </p>
       <p>
         <label for="content">Content</label>
-        <textarea id="article[content]" name="article[content]" type="text" placeholder="Content" required="true">
+        <textarea id="post[content]" name="post[content]" type="text" placeholder="Content" required="true">
           <value bind="?content" />
         </textarea>
       </p>

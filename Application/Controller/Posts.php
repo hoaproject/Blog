@@ -3,7 +3,7 @@
 namespace {
 
 from('Application')
--> import('Model.Article')
+-> import('Model.Post')
 -> import('Model.Comment');
 
 }
@@ -14,10 +14,10 @@ class Posts extends \Hoa\Dispatcher\Kit {
 
   public function IndexAction ( ) {
 
-    $article              = new \Application\Model\Article();
-    $list                 = $article->getShortList();
-    $this->data->title    = 'All articles';
-    $this->data->articles = $list;
+    $post                 = new \Application\Model\Post();
+    $list                 = $post->getShortList();
+    $this->data->title    = 'All posts';
+    $this->data->posts    = $list;
 
     $this->view->addOverlay('hoa://Application/View/Posts/Index.xyl');
     $this->view->render();
@@ -27,21 +27,21 @@ class Posts extends \Hoa\Dispatcher\Kit {
 
   public function ShowAction ( $_this, $id ) {
 
-    $article              = new \Application\Model\Article();
-    $article->id          = $id;
+    $post                 = new \Application\Model\Post();
+    $post->id             = $id;
 
     try {
-      $article->open();
+      $post->open();
     }
     catch (\Hoathis\Model\Exception\NotFound $e) {
       $_this->redirect('posts', ['controller' => 'posts', 'action' => 'index']);
     }
 
-    $this->data->title    = $article->title;
-    $this->data->article  = $article;
-    $this->data->comments = $article->comments;
+    $this->data->title    = $post->title;
+    $this->data->post     = $post;
+    $this->data->comments = $post->comments;
 
-    $this->view->addOverlay('hoa://Application/View/Posts/Article.xyl');
+    $this->view->addOverlay('hoa://Application/View/Posts/Show.xyl');
     $this->view->render();
 
     return;
@@ -49,9 +49,9 @@ class Posts extends \Hoa\Dispatcher\Kit {
 
   public function NewAction ( ) {
 
-    $article             = new \Application\Model\Article();
-    $this->data->title   = 'New article';
-    $this->data->article = $article;
+    $post                = new \Application\Model\Post();
+    $this->data->title   = 'New post';
+    $this->data->post    = $post;
 
     $this->view->addOverlay('hoa://Application/View/Posts/New.xyl');
     $this->view->render();
@@ -68,17 +68,17 @@ class Posts extends \Hoa\Dispatcher\Kit {
 
   public function EditAction ( $_this, $id ) {
 
-    $article             = new \Application\Model\Article();
-    $article->id         = $id;
+    $post                = new \Application\Model\Post();
+    $post->id            = $id;
     try {
-      $article->open();
+      $post->open();
     }
     catch (\Hoathis\Model\Exception\NotFound $e) {
       $_this->redirect('posts', ['controller' => 'posts', 'action' => 'index']);
     }
 
-    $this->data->title   = 'Edit post #'.$article->id;
-    $this->data->article = $article;
+    $this->data->title   = 'Edit post #'.$post->id;
+    $this->data->post    = $post;
 
     $this->view->addOverlay('hoa://Application/View/Posts/Edit.xyl');
     $this->view->render();

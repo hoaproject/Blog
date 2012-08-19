@@ -5,7 +5,7 @@
   <div id="main">
     <p><a href="@posts">☜ Back to list</a></p>
 
-    <yield bind="?article">
+    <yield bind="?post">
       <h2 bind="?title" />
       <p bind="?content" />
     </yield>
