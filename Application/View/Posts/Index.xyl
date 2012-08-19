@@ -4,7 +4,10 @@
   <div id="main">
     <ul>
       <li bind="?articles">
-        <value bind="?posted" /> — <a href="@post:id=(?id)" bind="?title" />
+        <time><value formatter="date"
+                     formatter-format="d/m/Y"
+                     formatter-timestamp="(?posted)" /></time> —
+        <a href="@post:id=(?id)" bind="?title" />
       </li>
     </ul>
   </div>
