@@ -25,11 +25,18 @@ class Posts extends \Hoa\Dispatcher\Kit {
     return;
   }
 
-  public function ShowAction ( $id ) {
+  public function ShowAction ( $_this, $id ) {
 
     $article              = new \Application\Model\Article();
     $article->id          = $id;
-    $article->open();
+
+    try {
+      $article->open();
+    }
+    catch (\Hoathis\Model\Exception\NotFound $e) {
+      $_this->redirect('posts', ['controller' => 'posts', 'action' => 'index']);
+    }
+
     $this->data->title    = $article->title;
     $this->data->article  = $article;
     $this->data->comments = $article->comments;
@@ -42,18 +49,46 @@ class Posts extends \Hoa\Dispatcher\Kit {
 
   public function NewAction ( ) {
 
+    $article             = new \Application\Model\Article();
+    $this->data->title   = 'New article';
+    $this->data->article = $article;
+
     $this->view->addOverlay('hoa://Application/View/Posts/New.xyl');
     $this->view->render();
 
     return;
   }
 
-  public function EditAction ( $id ) {
+  public function CreateAction ( ) {
 
-    $this->data->id = $id;
+    // Todo
+
+    return;
+  }
+
+  public function EditAction ( $_this, $id ) {
+
+    $article             = new \Application\Model\Article();
+    $article->id         = $id;
+    try {
+      $article->open();
+    }
+    catch (\Hoathis\Model\Exception\NotFound $e) {
+      $_this->redirect('posts', ['controller' => 'posts', 'action' => 'index']);
+    }
+
+    $this->data->title   = 'Edit post #'.$article->id;
+    $this->data->article = $article;
 
     $this->view->addOverlay('hoa://Application/View/Posts/Edit.xyl');
     $this->view->render();
+
+    return;
+  }
+
+  public function UpdateAction ( $id ) {
+
+    // Todo
 
     return;
   }

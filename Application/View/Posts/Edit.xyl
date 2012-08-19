@@ -2,8 +2,10 @@
 
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
   <div id="main">
-    <form action="@update_post:id=(?id)" method="put">
-      <yield select="?f:postsfrag#form" />
-    </form>
+    <yield bind="?article">
+      <form action="@update_post:id=(?id)" method="post">
+        <yield select="?f:postsfrag#form" />
+      </form>
+    </yield>
   </div>
 </overlay>
