@@ -28,10 +28,8 @@ class Posts extends \Hoa\Dispatcher\Kit {
   public function ShowAction ( $_this, $id ) {
 
     $post                 = new \Application\Model\Post();
-    $post->id             = $id;
-
     try {
-      $post->open();
+      $post->findById($id);
     }
     catch (\Hoathis\Model\Exception\NotFound $e) {
       $_this->redirect('posts', ['controller' => 'posts', 'action' => 'index']);
@@ -69,9 +67,8 @@ class Posts extends \Hoa\Dispatcher\Kit {
   public function EditAction ( $_this, $id ) {
 
     $post                = new \Application\Model\Post();
-    $post->id            = $id;
     try {
-      $post->open();
+      $post->findById($id);
     }
     catch (\Hoathis\Model\Exception\NotFound $e) {
       $_this->redirect('posts', ['controller' => 'posts', 'action' => 'index']);
@@ -86,13 +83,32 @@ class Posts extends \Hoa\Dispatcher\Kit {
     return;
   }
 
-  public function UpdateAction ( $id ) {
+  public function UpdateAction ( $_this, $id ) {
 
-    // Todo
+    $post                = new \Application\Model\Post();
+    try {
+      $post->findById($id);
+      $post->update($_POST["post"]);
+    }
+    catch (\Hoathis\Model\Exception\NotFound $e) {
+      $_this->redirect('posts', ['controller' => 'posts', 'action' => 'index']);
+    }
+    catch (\Hoathis\Model\Exception\ValidationFailed $e) {
+      $this->data->title   = 'Edit post #'.$post->id;
+      $this->data->post    = $post;
+
+      $this->view->addOverlay('hoa://Application/View/Posts/Edit.xyl');
+      $this->view->render();
+
+      return;
+    }
+
+    $_this->redirect('post', ['controller' => 'posts',
+                              'action'     => 'show',
+                              'id'         =>  $post->id]);
 
     return;
   }
-
 }
 
 }

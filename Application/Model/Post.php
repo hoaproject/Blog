@@ -8,7 +8,7 @@ from('Hoa')
 -> import('Database.Dal');
 
 from('Hoathis')
--> import('Model.Exception.NotFound');
+-> import('Model.Exception.*');
 
 }
 
@@ -53,12 +53,7 @@ class Post extends \Hoa\Model {
         return;
     }
 
-    public function open ( Array $constraints = array() ) {
-
-        $constraints = array_merge($this->getConstraints(), $constraints);
-
-        if(!array_key_exists('id', $constraints))
-            throw new \Hoa\Model\Exception('The constraint "id" is needed.', 0);
+    public function findById ( $id ) {
 
         $data = $this->getMappingLayer()
                      ->prepare(
@@ -66,7 +61,7 @@ class Post extends \Hoa\Model {
                          'FROM   post ' .
                          'WHERE  id = :id'
                      )
-                     ->execute($constraints)
+                     ->execute(['id' => $id])
                      ->fetchAll();
 
         if(!empty($data)) {
@@ -78,7 +73,7 @@ class Post extends \Hoa\Model {
                          'FROM   comment '.
                          'WHERE  post = :post'
                      )
-                     ->execute(array('post' => $constraints['id']))
+                     ->execute(['post' => $id])
                      ->fetchAll()
             );
         }
@@ -88,6 +83,28 @@ class Post extends \Hoa\Model {
         }
 
         return;
+    }
+
+    public function update ( Array $attributes = array() ) {
+
+        try {
+            $this->title   = trim(strip_tags($attributes["title"]));
+            $this->content = trim(strip_tags($attributes["content"]));
+        }
+        catch (\Hoa\Model\Exception $e) {
+            throw new \Hoathis\Model\Exception\ValidationFailed($e->getMessage());
+        }
+
+        return $this->getMappingLayer()
+                    ->prepare(
+                        'UPDATE post SET title = :title, content = :content ' .
+                        'WHERE  id = :id'
+                    )
+                    ->execute([
+                        'title'   => $this->title,
+                        'content' => $this->content,
+                        'id'      => $this->id
+                    ]);
     }
 
     public function getShortList ( ) {
