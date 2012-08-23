@@ -59,9 +59,26 @@ class Posts extends \Hoa\Dispatcher\Kit {
     return;
   }
 
-  public function CreateAction ( ) {
+  public function CreateAction ( $_this ) {
 
-    // Todo
+    $post                = new \Application\Model\Post();
+    try {
+      $post->create($_POST["post"]);
+    }
+    catch (\Hoathis\Model\Exception\ValidationFailed $e) {
+      $this->data->title = 'New post';
+      $this->data->post  = $post;
+
+      $this->view->addOverlay('hoa://Application/View/Posts/New.xyl');
+      $this->view->render();
+
+      return;
+    }
+
+    $_this->getKit('Redirector')
+          ->redirect('post', ['controller' => 'posts',
+                              'action'     => 'show',
+                              'id'         =>  $post->id]);
 
     return;
   }
@@ -113,6 +130,18 @@ class Posts extends \Hoa\Dispatcher\Kit {
           ->redirect('post', ['controller' => 'posts',
                               'action'     => 'show',
                               'id'         =>  $post->id]);
+
+    return;
+  }
+
+  public function DeleteAction ( $_this, $id ) {
+
+    $post = new \Application\Model\Post();
+    $post->delete($id);
+
+    $_this->getKit('Redirector')
+          ->redirect('posts', ['controller' => 'posts',
+                               'action'     => 'list']);
 
     return;
   }

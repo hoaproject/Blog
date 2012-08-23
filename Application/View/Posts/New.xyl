@@ -2,6 +2,7 @@
 
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
   <div id="main">
+    <yield select="?f:postsfrag#back_to_list" />
     <yield bind="?post">
       <form action="@create_post" method="post">
         <yield select="?f:postsfrag#form" />

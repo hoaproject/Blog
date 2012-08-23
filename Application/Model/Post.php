@@ -107,6 +107,41 @@ class Post extends \Hoa\Model {
                     ]);
     }
 
+    public function create ( Array $attributes = array() ) {
+
+        try {
+            $this->title   = trim(strip_tags($attributes["title"]));
+            $this->content = trim(strip_tags($attributes["content"]));
+            $this->posted  = strtotime(trim(strip_tags($attributes["posted"])));
+        }
+        catch (\Hoa\Model\Exception $e) {
+            throw new \Hoathis\Model\Exception\ValidationFailed($e->getMessage());
+        }
+
+        $this->getMappingLayer()
+             ->prepare(
+                'INSERT INTO post (title, content, posted) ' .
+                'VALUES (:title, :content, :posted)'
+             )
+             ->execute([
+                'title'   => $this->title,
+                'content' => $this->content,
+                'posted'  => $this->posted
+             ]);
+        $this->id = $this->getMappingLayer()->lastInsertId();
+    }
+
+    public function delete ( $id ) {
+
+      return $this->getMappingLayer()
+                  ->prepare(
+                    'DELETE FROM post WHERE id = :id'
+                  )
+                  ->execute([
+                    'id'  => $id,
+                  ]);
+    }
+
     public function getShortList ( ) {
 
         return $this->getMappingLayer()->query(

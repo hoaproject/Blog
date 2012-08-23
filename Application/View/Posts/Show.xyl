@@ -3,7 +3,7 @@
 
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
   <div id="main">
-    <p><a href="@posts">☜ Back to list</a></p>
+    <yield select="?f:postsfrag#back_to_list" />
 
     <yield bind="?post">
       <h2 bind="?title" />

@@ -2,6 +2,7 @@
 
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
   <div id="main">
+    <p><a href="@new_post">New post</a></p>
     <ul>
       <li bind="?posts">
         <time><value formatter="date"

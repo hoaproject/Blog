@@ -13,7 +13,14 @@
         </textarea>
       </p>
       <p>
+        <label for="posted">Date</label>
+        <input id="post[posted]" name="post[posted]" type="date" required="true" value="(?posted)" />
+      </p>
+      <p>
         <input type="submit" />
       </p>
+  </snippet>
+  <snippet id="back_to_list">
+    <p><a href="@posts">☜ Back to list</a></p>
   </snippet>
 </fragment>

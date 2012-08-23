@@ -3,6 +3,7 @@
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
   <div id="main">
     <yield bind="?post">
+      <p><a href="@post:id=(?id)">☜ Back to post</a></p>
       <form action="@update_post:id=(?id)" method="post">
         <yield select="?f:postsfrag#form" />
       </form>

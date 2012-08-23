@@ -24,12 +24,13 @@ Hoa\Database\Dal::initializeParameters(array(
 $dispatcher = new Hoa\Dispatcher\Basic();
 $dispatcher->setKitName('Hoathis\Kit\Aggregator');
 $router     = new Hoa\Router\Http();
-$router->get('posts', '/', 'posts', 'index')
-       ->get('post', '/posts/(?<id>\d+)', 'posts', 'show')
-       ->get('new_post', '/posts/new', 'posts', 'new')
-       ->post('create_post', '/posts/create', 'posts', 'create')
-       ->get('edit_post', '/posts/(?<id>\d+)/edit', 'posts', 'edit')
-       ->post('update_post', '/posts/(?<id>\d+)', 'posts', 'update');
+$router->get('posts',       '/',                        'posts', 'index')
+       ->get('post',        '/posts/(?<id>\d+)',        'posts', 'show')
+       ->get('new_post',    '/posts/new',               'posts', 'new')
+       ->post('create_post','/posts/create',            'posts', 'create')
+       ->get('edit_post',   '/posts/(?<id>\d+)/edit',   'posts', 'edit')
+       ->post('update_post','/posts/(?<id>\d+)',        'posts', 'update')
+       ->get('delete_post', '/posts/(?<id>\d+)/delete', 'posts', 'delete');
 
 try {
 
