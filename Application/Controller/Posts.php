@@ -32,7 +32,7 @@ class Posts extends \Hoa\Dispatcher\Kit {
       $post->findById($id);
     }
     catch (\Hoathis\Model\Exception\NotFound $e) {
-      $_this->getKit('Application\Kit\Redirect')
+      $_this->getKit('Redirector')
             ->redirect('posts', ['controller' => 'posts',
                                  'action'     => 'index']);
     }
@@ -73,7 +73,7 @@ class Posts extends \Hoa\Dispatcher\Kit {
       $post->findById($id);
     }
     catch (\Hoathis\Model\Exception\NotFound $e) {
-      $_this->getKit('\Application\Kit\Redirect')
+      $_this->getKit('Redirector')
             ->redirect('posts', ['controller' => 'posts',
                                  'action'     => 'index']);
     }
@@ -95,7 +95,7 @@ class Posts extends \Hoa\Dispatcher\Kit {
       $post->update($_POST["post"]);
     }
     catch (\Hoathis\Model\Exception\NotFound $e) {
-      $_this->getKit('\Application\Kit\Redirect')
+      $_this->getKit('Redirector')
             ->redirect('posts', ['controller' => 'posts',
                                  'action' => 'index']);
     }
@@ -109,7 +109,7 @@ class Posts extends \Hoa\Dispatcher\Kit {
       return;
     }
 
-    $_this->getKit('Application\Kit\Redirect')
+    $_this->getKit('Redirector')
           ->redirect('post', ['controller' => 'posts',
                               'action'     => 'show',
                               'id'         =>  $post->id]);

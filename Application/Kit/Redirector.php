@@ -9,7 +9,7 @@ from('Hoa')
 
 namespace Application\Kit {
 
-class Redirect extends \Hoa\Dispatcher\Kit {
+class Redirector extends \Hoa\Dispatcher\Kit {
 
   public function redirect ( $ruleId, Array $data, $secured = null,
                              $status = 302 ) {
