@@ -32,7 +32,9 @@ class Posts extends \Hoa\Dispatcher\Kit {
       $post->findById($id);
     }
     catch (\Hoathis\Model\Exception\NotFound $e) {
-      $_this->getKit('Redirect')->redirect('posts', ['controller' => 'posts', 'action' => 'index']);
+      $_this->getKit('Application\Kit\Redirect')
+            ->redirect('posts', ['controller' => 'posts',
+                                 'action'     => 'index']);
     }
 
     $this->data->title    = $post->title;
@@ -71,7 +73,9 @@ class Posts extends \Hoa\Dispatcher\Kit {
       $post->findById($id);
     }
     catch (\Hoathis\Model\Exception\NotFound $e) {
-      $_this->getKit('\Application\Kit\Redirect')->redirect('posts', ['controller' => 'posts', 'action' => 'index']);
+      $_this->getKit('\Application\Kit\Redirect')
+            ->redirect('posts', ['controller' => 'posts',
+                                 'action'     => 'index']);
     }
 
     $this->data->title   = 'Edit post #'.$post->id;
@@ -91,7 +95,9 @@ class Posts extends \Hoa\Dispatcher\Kit {
       $post->update($_POST["post"]);
     }
     catch (\Hoathis\Model\Exception\NotFound $e) {
-      $_this->getKit('\Application\Kit\Redirect')->redirect('posts', ['controller' => 'posts', 'action' => 'index']);
+      $_this->getKit('\Application\Kit\Redirect')
+            ->redirect('posts', ['controller' => 'posts',
+                                 'action' => 'index']);
     }
     catch (\Hoathis\Model\Exception\ValidationFailed $e) {
       $this->data->title   = 'Edit post #'.$post->id;
@@ -103,7 +109,8 @@ class Posts extends \Hoa\Dispatcher\Kit {
       return;
     }
 
-    $_this->redirect('post', ['controller' => 'posts',
+    $_this->getKit('Application\Kit\Redirect')
+          ->redirect('post', ['controller' => 'posts',
                               'action'     => 'show',
                               'id'         =>  $post->id]);
 
