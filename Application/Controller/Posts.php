@@ -27,15 +27,7 @@ class Posts extends \Hoa\Dispatcher\Kit {
 
   public function ShowAction ( $_this, $id ) {
 
-    $post                 = new \Application\Model\Post();
-    try {
-      $post->findById($id);
-    }
-    catch (\Hoathis\Model\Exception\NotFound $e) {
-      $_this->getKit('Redirector')
-            ->redirect('posts', ['controller' => 'posts',
-                                 'action'     => 'index']);
-    }
+    $post                 = $this->LoadPost($id);
 
     $this->data->title    = $post->title;
     $this->data->post     = $post;
@@ -85,18 +77,10 @@ class Posts extends \Hoa\Dispatcher\Kit {
 
   public function EditAction ( $_this, $id ) {
 
-    $post                = new \Application\Model\Post();
-    try {
-      $post->findById($id);
-    }
-    catch (\Hoathis\Model\Exception\NotFound $e) {
-      $_this->getKit('Redirector')
-            ->redirect('posts', ['controller' => 'posts',
-                                 'action'     => 'index']);
-    }
+    $post              = $this->LoadPost($id);
 
-    $this->data->title   = 'Edit post #'.$post->id;
-    $this->data->post    = $post;
+    $this->data->title = 'Edit post #'.$post->id;
+    $this->data->post  = $post;
 
     $this->view->addOverlay('hoa://Application/View/Posts/Edit.xyl');
     $this->view->render();
@@ -106,15 +90,9 @@ class Posts extends \Hoa\Dispatcher\Kit {
 
   public function UpdateAction ( $_this, $id ) {
 
-    $post                = new \Application\Model\Post();
+    $post = $this->LoadPost($id);
     try {
-      $post->findById($id);
       $post->update($_POST["post"]);
-    }
-    catch (\Hoathis\Model\Exception\NotFound $e) {
-      $_this->getKit('Redirector')
-            ->redirect('posts', ['controller' => 'posts',
-                                 'action' => 'index']);
     }
     catch (\Hoathis\Model\Exception\ValidationFailed $e) {
       $this->data->title   = 'Edit post #'.$post->id;
@@ -136,14 +114,29 @@ class Posts extends \Hoa\Dispatcher\Kit {
 
   public function DeleteAction ( $_this, $id ) {
 
-    $post = new \Application\Model\Post();
-    $post->delete($id);
+    $post = $this->LoadPost($id);
+    $post->delete();
 
     $_this->getKit('Redirector')
           ->redirect('posts', ['controller' => 'posts',
                                'action'     => 'list']);
 
     return;
+  }
+
+  private function LoadPost ( $id ) {
+
+    $post = new \Application\Model\Post();
+    try {
+      $post->findById($id);
+    }
+    catch (\Hoathis\Model\Exception\NotFound $e) {
+      $_this->getKit('Redirector')
+            ->redirect('posts', ['controller' => 'posts',
+                                 'action' => 'index']);
+    }
+
+    return $post;
   }
 }
 

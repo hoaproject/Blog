@@ -131,14 +131,14 @@ class Post extends \Hoa\Model {
         $this->id = $this->getMappingLayer()->lastInsertId();
     }
 
-    public function delete ( $id ) {
+    public function delete ( ) {
 
       return $this->getMappingLayer()
                   ->prepare(
                     'DELETE FROM post WHERE id = :id'
                   )
                   ->execute([
-                    'id'  => $id,
+                    'id'  => $this->id,
                   ]);
     }
 
