@@ -7,7 +7,7 @@ from('Hoa')
 
 }
 
-namespace Application\Kit {
+namespace Hoathis\Kit {
 
 class Redirector extends \Hoa\Dispatcher\Kit {
 

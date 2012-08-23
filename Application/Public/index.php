@@ -22,7 +22,7 @@ Hoa\Database\Dal::initializeParameters(array(
 ));
 
 $dispatcher = new Hoa\Dispatcher\Basic();
-$dispatcher->setKitName('Application\Kit\Aggregator');
+$dispatcher->setKitName('Hoathis\Kit\Aggregator');
 $router     = new Hoa\Router\Http();
 $router->get('posts', '/', 'posts', 'index')
        ->get('post', '/posts/(?<id>\d+)', 'posts', 'show')
