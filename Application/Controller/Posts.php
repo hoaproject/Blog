@@ -27,7 +27,7 @@ class Posts extends \Hoa\Dispatcher\Kit {
 
   public function ShowAction ( $_this, $id ) {
 
-    $post                 = $this->LoadPost($id);
+    $post                 = $this->LoadPost($_this, $id);
 
     $this->data->title    = $post->title;
     $this->data->post     = $post;
@@ -77,7 +77,7 @@ class Posts extends \Hoa\Dispatcher\Kit {
 
   public function EditAction ( $_this, $id ) {
 
-    $post              = $this->LoadPost($id);
+    $post              = $this->LoadPost($_this, $id);
 
     $this->data->title = 'Edit post #'.$post->id;
     $this->data->post  = $post;
@@ -114,7 +114,7 @@ class Posts extends \Hoa\Dispatcher\Kit {
 
   public function DeleteAction ( $_this, $id ) {
 
-    $post = $this->LoadPost($id);
+    $post = $this->LoadPost($_this, $id);
     $post->delete();
 
     $_this->getKit('Redirector')
@@ -124,16 +124,16 @@ class Posts extends \Hoa\Dispatcher\Kit {
     return;
   }
 
-  private function LoadPost ( $id ) {
+  private function LoadPost ( $kit, $id ) {
 
     $post = new \Application\Model\Post();
     try {
       $post->findById($id);
     }
     catch (\Hoathis\Model\Exception\NotFound $e) {
-      $_this->getKit('Redirector')
-            ->redirect('posts', ['controller' => 'posts',
-                                 'action' => 'index']);
+      $kit->getKit('Redirector')
+          ->redirect('posts', ['controller' => 'posts',
+                               'action' => 'index']);
     }
 
     return $post;
