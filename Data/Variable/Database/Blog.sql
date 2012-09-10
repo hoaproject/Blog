@@ -17,7 +17,7 @@ CREATE TABLE comment (
     posted  TIMESTAMP,
     content LONGVARCHAR,
 
-    PRIMARY KEY(id)
+    PRIMARY KEY(id),
     FOREIGN KEY(post) REFERENCES post(id)
 );
 
