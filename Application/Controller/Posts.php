@@ -90,7 +90,7 @@ class Posts extends \Hoa\Dispatcher\Kit {
 
   public function UpdateAction ( $_this, $id ) {
 
-    $post = $this->LoadPost($id);
+    $post = $this->LoadPost($_this, $id);
     try {
       $post->update($_POST["post"]);
     }
