@@ -12,10 +12,20 @@ namespace Application\Controller {
 
 class Posts extends \Hoa\Dispatcher\Kit {
 
-  public function IndexAction ( ) {
+  private $post_per_page = 4;
+
+  public function IndexAction ( $_this, $page ) {
 
     $post                 = new \Application\Model\Post();
-    $list                 = $post->getShortList();
+    try {
+      $list               = $post->getList($page,
+                                           $this->post_per_page);
+    }
+    catch (\Hoathis\Model\Exception\NotFound $e) {
+      $_this->getKit('Redirector')
+            ->redirect('posts', array('controller' => 'posts',
+                                      'action' => 'index'));
+    }
     $this->data->title    = 'All posts';
     $this->data->posts    = $list;
 
@@ -68,9 +78,9 @@ class Posts extends \Hoa\Dispatcher\Kit {
     }
 
     $_this->getKit('Redirector')
-          ->redirect('post', ['controller' => 'posts',
-                              'action'     => 'show',
-                              'id'         =>  $post->id]);
+          ->redirect('post', array('controller' => 'posts',
+                                   'action'     => 'show',
+                                   'id'         =>  $post->id));
 
     return;
   }
@@ -105,9 +115,9 @@ class Posts extends \Hoa\Dispatcher\Kit {
     }
 
     $_this->getKit('Redirector')
-          ->redirect('post', ['controller' => 'posts',
-                              'action'     => 'show',
-                              'id'         =>  $post->id]);
+          ->redirect('post', array('controller' => 'posts',
+                                   'action'     => 'show',
+                                   'id'         =>  $post->id));
 
     return;
   }
@@ -118,8 +128,8 @@ class Posts extends \Hoa\Dispatcher\Kit {
     $post->delete();
 
     $_this->getKit('Redirector')
-          ->redirect('posts', ['controller' => 'posts',
-                               'action'     => 'list']);
+          ->redirect('posts', array('controller' => 'posts',
+                                    'action'     => 'list'));
 
     return;
   }
@@ -132,8 +142,8 @@ class Posts extends \Hoa\Dispatcher\Kit {
     }
     catch (\Hoathis\Model\Exception\NotFound $e) {
       $kit->getKit('Redirector')
-          ->redirect('posts', ['controller' => 'posts',
-                               'action' => 'index']);
+          ->redirect('posts', array('controller' => 'posts',
+                                    'action' => 'index'));
     }
 
     return $post;

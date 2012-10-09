@@ -61,7 +61,7 @@ class Post extends \Hoa\Model {
                          'FROM   post ' .
                          'WHERE  id = :id'
                      )
-                     ->execute(['id' => $id])
+                     ->execute(array('id' => $id))
                      ->fetchAll();
 
         if(!empty($data)) {
@@ -73,7 +73,7 @@ class Post extends \Hoa\Model {
                          'FROM   comment '.
                          'WHERE  post = :post'
                      )
-                     ->execute(['post' => $id])
+                     ->execute(array('post' => $id))
                      ->fetchAll()
             );
         }
@@ -100,11 +100,11 @@ class Post extends \Hoa\Model {
                         'UPDATE post SET title = :title, content = :content ' .
                         'WHERE  id = :id'
                     )
-                    ->execute([
+                    ->execute(array(
                         'title'   => $this->title,
                         'content' => $this->content,
                         'id'      => $this->id
-                    ]);
+                    ));
     }
 
     public function create ( Array $attributes = array() ) {
@@ -123,11 +123,11 @@ class Post extends \Hoa\Model {
                 'INSERT INTO post (title, content, posted) ' .
                 'VALUES (:title, :content, :posted)'
              )
-             ->execute([
+             ->execute(array(
                 'title'   => $this->title,
                 'content' => $this->content,
                 'posted'  => $this->posted
-             ]);
+             ));
         $this->id = $this->getMappingLayer()->lastInsertId();
     }
 
@@ -137,16 +137,40 @@ class Post extends \Hoa\Model {
                   ->prepare(
                     'DELETE FROM post WHERE id = :id'
                   )
-                  ->execute([
+                  ->execute(array(
                     'id'  => $this->id,
-                  ]);
+                  ));
     }
 
-    public function getShortList ( ) {
+    public function getList ( $current_page, $post_per_page ) {
 
-        return $this->getMappingLayer()->query(
-            'SELECT id, title, posted FROM post ORDER BY id DESC'
-        )->fetchAll();
+        if( $current_page > ceil($this->count()/$post_per_page) ) {
+            throw new \Hoathis\Model\Exception\NotFound("Page not found");
+        }
+
+        $first_entry = ($current_page - 1) * $post_per_page;
+
+        return $this->getMappingLayer()
+                    ->prepare(
+                        'SELECT id, title, posted ' .
+                        'FROM post ' .
+                        'ORDER BY posted DESC ' .
+                        'LIMIT :first_entry, :post_per_page'
+                    )
+                    ->execute(array(
+                        'first_entry'   => $first_entry,
+                        'post_per_page' => $post_per_page,
+                    ))
+                    ->fetchAll();
+    }
+
+    public function count ( ) {
+
+        return $this->getMappingLayer()
+                    ->query(
+                        'SELECT COUNT(*) FROM post'
+                    )
+                    ->fetchColumn();
     }
 }
 

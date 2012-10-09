@@ -25,7 +25,7 @@ class Aggregator extends \Hoa\Dispatcher\Kit {
 
   private function setKit ( $kitName ) {
 
-      $this->_kits[$kitName] = dnew('Hoathis\Kit\\'.$kitName, [$this->router, $this->dispatcher, $this->view]);
+      $this->_kits[$kitName] = dnew('Hoathis\Kit\\'.$kitName, array($this->router, $this->dispatcher, $this->view));
   }
 }
 
