@@ -31,7 +31,7 @@ return array (
     'protocol.Data/Variable/Private' => 'Private/',
     'protocol.Data/Variable/Run' => 'Run/',
     'protocol.Data/Variable/Test' => 'Test/',
-    'protocol.Library' => '(:%protocol.Data:)Library/Hoathis/;(:%protocol.Data:)Library/Hoa/;(:%root.hoa:)/Hoathis/;(:%root.hoa:)/Hoa/'
+    'protocol.Library' => '(:%protocol.Data:)Library/Hoathis/;(:%protocol.Data:)Library/Hoa/;(:%root.hoa:)/Hoathis/;(:%root.hoa:)/Hoa/',
     'namespace.prefix.*' => '(:%protocol.Data:)Library/;(:%root.hoa:)/',
     'namespace.prefix.Application' => '(:%root.application:h:)/',
   ),
