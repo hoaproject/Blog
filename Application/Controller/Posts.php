@@ -3,6 +3,7 @@
 namespace {
 
 from('Application')
+-> import('Controller.Generic')
 -> import('Model.Post')
 -> import('Model.Comment');
 
@@ -10,7 +11,7 @@ from('Application')
 
 namespace Application\Controller {
 
-class Posts extends \Hoa\Dispatcher\Kit {
+class Posts extends Generic {
 
   private $post_per_page = 4;
 
