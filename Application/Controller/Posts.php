@@ -15,7 +15,7 @@ class Posts extends Generic {
 
   private $post_per_page = 4;
 
-  public function IndexAction ( $_this, $page ) {
+  public function IndexAction ( $page ) {
 
     $post                 = new \Application\Model\Post();
     try {
@@ -23,9 +23,9 @@ class Posts extends Generic {
                                            $this->post_per_page);
     }
     catch (\Hoathis\Model\Exception\NotFound $e) {
-      $_this->getKit('Redirector')
-            ->redirect('posts', array('controller' => 'posts',
-                                      'action' => 'index'));
+      $this->getKit('Redirector')
+           ->redirect('posts', array('controller' => 'posts',
+                                     'action' => 'index'));
     }
     $this->data->title    = 'All posts';
     $this->data->posts    = $list;
@@ -36,9 +36,9 @@ class Posts extends Generic {
     return;
   }
 
-  public function ShowAction ( $_this, $id ) {
+  public function ShowAction ( $id ) {
 
-    $post                 = $this->LoadPost($_this, $id);
+    $post                 = $this->LoadPost($this, $id);
 
     $this->data->title    = $post->title;
     $this->data->post     = $post;
@@ -52,6 +52,8 @@ class Posts extends Generic {
 
   public function NewAction ( ) {
 
+    $this->adminGuard();
+
     $post                = new \Application\Model\Post();
     $this->data->title   = 'New post';
     $this->data->post    = $post;
@@ -62,7 +64,9 @@ class Posts extends Generic {
     return;
   }
 
-  public function CreateAction ( $_this ) {
+  public function CreateAction ( ) {
+
+    $this->adminGuard();
 
     $post                = new \Application\Model\Post();
     try {
@@ -78,17 +82,19 @@ class Posts extends Generic {
       return;
     }
 
-    $_this->getKit('Redirector')
-          ->redirect('post', array('controller' => 'posts',
-                                   'action'     => 'show',
-                                   'id'         =>  $post->id));
+    $this->getKit('Redirector')
+         ->redirect('post', array('controller' => 'posts',
+                                  'action'     => 'show',
+                                  'id'         =>  $post->id));
 
     return;
   }
 
-  public function EditAction ( $_this, $id ) {
+  public function EditAction ( $id ) {
 
-    $post              = $this->LoadPost($_this, $id);
+    $this->adminGuard();
+
+    $post              = $this->LoadPost($this, $id);
 
     $this->data->title = 'Edit post #'.$post->id;
     $this->data->post  = $post;
@@ -99,9 +105,11 @@ class Posts extends Generic {
     return;
   }
 
-  public function UpdateAction ( $_this, $id ) {
+  public function UpdateAction ( $id ) {
 
-    $post = $this->LoadPost($_this, $id);
+    $this->adminGuard();
+
+    $post = $this->LoadPost($this, $id);
     try {
       $post->update($_POST["post"]);
     }
@@ -115,22 +123,24 @@ class Posts extends Generic {
       return;
     }
 
-    $_this->getKit('Redirector')
-          ->redirect('post', array('controller' => 'posts',
-                                   'action'     => 'show',
-                                   'id'         =>  $post->id));
+    $this->getKit('Redirector')
+         ->redirect('post', array('controller' => 'posts',
+                                  'action'     => 'show',
+                                  'id'         =>  $post->id));
 
     return;
   }
 
-  public function DeleteAction ( $_this, $id ) {
+  public function DeleteAction ( $id ) {
 
-    $post = $this->LoadPost($_this, $id);
+    $this->adminGuard();
+
+    $post = $this->LoadPost($this, $id);
     $post->delete();
 
-    $_this->getKit('Redirector')
-          ->redirect('posts', array('controller' => 'posts',
-                                    'action'     => 'list'));
+    $this->getKit('Redirector')
+         ->redirect('posts', array('controller' => 'posts',
+                                   'action'     => 'list'));
 
     return;
   }

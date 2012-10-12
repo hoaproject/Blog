@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<fragment xmlns="http://hoa-project.net/xyl/xylophone">
+  <snippet id="form">
+    <form action="@login" method="post" id="log">
+      <p><label for="name">Username:</label>
+         <input type="text" id="name" name="name" maxlength="31" required="true" /></p>
+      <p><label for="password">Password:</label>
+         <input type="password" id="password" name="password" required="true" /></p>
+      <input type="submit" />
+    </form>
+  </snippet>
+</fragment>
