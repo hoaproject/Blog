@@ -11,7 +11,7 @@ namespace Hoathis\Kit {
 
 class Redirector extends \Hoa\Dispatcher\Kit {
 
-  public function redirect ( $ruleId, Array $data, $secured = null,
+  public function redirect ( $ruleId, Array $data = array(), $secured = null,
                              $status = 302 ) {
 
     $uri = $this->router->unroute($ruleId, $data, $secured);

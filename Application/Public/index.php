@@ -31,7 +31,10 @@ $router->get('posts',       '/',                        'posts', 'index', array(
        ->post('create_post','/posts/create',            'posts', 'create')
        ->get('edit_post',   '/posts/(?<id>\d+)/edit',   'posts', 'edit')
        ->post('update_post','/posts/(?<id>\d+)',        'posts', 'update')
-       ->get('delete_post', '/posts/(?<id>\d+)/delete', 'posts', 'delete');
+       ->get('delete_post', '/posts/(?<id>\d+)/delete', 'posts', 'delete')
+       ->get('log',         '/log',                     'log',   'index')
+       ->post('login',      '/log/in',                  'log',   'in')
+       ->get('logout',      '/log/out',                 'log',   'out');
 
 try {
 

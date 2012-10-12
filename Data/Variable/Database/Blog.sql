@@ -21,6 +21,13 @@ CREATE TABLE comment (
     FOREIGN KEY(post) REFERENCES post(id)
 );
 
+CREATE TABLE user (
+    name     VARCHAR(31),
+    password VARCHAR(40),
+
+    PRIMARY KEY(name)
+);
+
 INSERT INTO post ( id, title, posted, content ) VALUES (
     0,
     'Call me Ph.D!',
@@ -150,4 +157,14 @@ INSERT INTO comment ( id, post, author, posted, content ) VALUES (
     'Isaac Kleiner',
     945610740,
     'Nulla euismod lacinia condimentum. Suspendisse hendrerit libero ac enim ultrices mattis. Curabitur consectetur, augue sagittis molestie euismod, justo magna ultricies ante, vehicula mollis eros odio non turpis. Nunc at justo vel odio.'
+);
+
+INSERT INTO user ( name, password ) VALUES (
+    'hywan',
+    '8843d7f92416211de9ebb963ff4ce28125932878'
+);
+
+INSERT INTO user ( name, password ) VALUES (
+    'iraphael',
+    '8843d7f92416211de9ebb963ff4ce28125932878'
 );
