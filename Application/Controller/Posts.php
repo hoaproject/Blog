@@ -15,7 +15,9 @@ class Posts extends Generic {
 
   private $post_per_page = 4;
 
-  public function IndexAction ( $page ) {
+  public function IndexAction ( ) {
+
+    $page = isset($this->router->getQuery()['page']) ? $this->router->getQuery()['page'] : 1;
 
     $post                 = new \Application\Model\Post();
     try {
@@ -29,6 +31,10 @@ class Posts extends Generic {
     }
     $this->data->title    = 'All posts';
     $this->data->posts    = $list;
+
+    // TODO use a single variable for both values
+    $this->data->number   = ceil($post->count()/$this->post_per_page);
+    $this->data->current  = $page;
 
     $this->view->addOverlay('hoa://Application/View/Posts/Index.xyl');
     $this->view->render();
