@@ -57,7 +57,7 @@ class Post extends \Hoa\Model {
 
         $data = $this->getMappingLayer()
                      ->prepare(
-                         'SELECT id, title, content ' .
+                         'SELECT * ' .
                          'FROM   post ' .
                          'WHERE  id = :id'
                      )
@@ -69,7 +69,7 @@ class Post extends \Hoa\Model {
             $this->comments->map(
                 $this->getMappingLayer()
                      ->prepare(
-                         'SELECT id, posted, author, content ' .
+                         'SELECT * ' .
                          'FROM   comment '.
                          'WHERE  post = :post'
                      )
