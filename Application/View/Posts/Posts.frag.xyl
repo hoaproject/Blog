@@ -14,7 +14,13 @@
       </p>
       <p>
         <label for="posted">Date</label>
-        <input id="post[posted]" name="post[posted]" type="date" required="true" value="(?posted)" />
+        <input type="date"
+               id="post[posted]"
+               name="post[posted]"
+               required="true"
+               value="(?posted)"
+               value-formatter="date"
+               value-formatter-format="Y-m-d" />
       </p>
       <p>
         <input type="submit" />

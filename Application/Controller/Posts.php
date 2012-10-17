@@ -153,9 +153,8 @@ class Posts extends Generic {
 
   private function LoadPost ( $kit, $id ) {
 
-    $post = new \Application\Model\Post();
     try {
-      $post->findById($id);
+      $post = \Application\Model\Post::findById($id);
     }
     catch (\Hoathis\Model\Exception\NotFound $e) {
       $kit->getKit('Redirector')

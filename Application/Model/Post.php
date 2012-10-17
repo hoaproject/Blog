@@ -44,20 +44,21 @@ class Post extends \Hoa\Model {
      */
     protected $_comments;
 
-
-
     protected function construct ( ) {
 
         $this->setMappingLayer(\Hoa\Database\Dal::getLastInstance());
 
+        $this->posted = time();
+
         return;
     }
 
-    public function findById ( $id ) {
+    static public function findById ( $id ) {
 
-        $data = $this->getMappingLayer()
+        $post = new Post();
+        $data = $post->getMappingLayer()
                      ->prepare(
-                         'SELECT * ' .
+                         'SELECT id, posted, title, content ' .
                          'FROM   post ' .
                          'WHERE  id = :id'
                      )
@@ -65,12 +66,12 @@ class Post extends \Hoa\Model {
                      ->fetchAll();
 
         if(!empty($data)) {
-            $this->map($data[0]);
-            $this->comments->map(
-                $this->getMappingLayer()
+            $post->map($data[0]);
+            $post->comments->map(
+                $post->getMappingLayer()
                      ->prepare(
-                         'SELECT * ' .
-                         'FROM   comment '.
+                         'SELECT id, posted, author, content ' .
+                         'FROM   comment ' .
                          'WHERE  post = :post'
                      )
                      ->execute(array('post' => $id))
@@ -82,7 +83,7 @@ class Post extends \Hoa\Model {
             throw new \Hoathis\Model\Exception\NotFound("Post not found");
         }
 
-        return;
+        return $post;
     }
 
     public function update ( Array $attributes = array() ) {
@@ -90,6 +91,7 @@ class Post extends \Hoa\Model {
         try {
             $this->title   = trim(strip_tags($attributes["title"]));
             $this->content = trim(strip_tags($attributes["content"]));
+            $this->posted  = strtotime(trim(strip_tags($attributes["posted"])));
         }
         catch (\Hoa\Model\Exception $e) {
             throw new \Hoathis\Model\Exception\ValidationFailed($e->getMessage());
@@ -97,12 +99,14 @@ class Post extends \Hoa\Model {
 
         return $this->getMappingLayer()
                     ->prepare(
-                        'UPDATE post SET title = :title, content = :content ' .
+                        'UPDATE post SET title = :title, content = :content, ' .
+                        'posted = :posted ' .
                         'WHERE  id = :id'
                     )
                     ->execute(array(
                         'title'   => $this->title,
                         'content' => $this->content,
+                        'posted'  => $this->posted,
                         'id'      => $this->id
                     ));
     }
