@@ -3,7 +3,7 @@
 namespace {
 
 from('Application')
--> import('Controller.Generic')
+-> import('Controller.Base')
 -> import('Model.Post')
 -> import('Model.Comment');
 
@@ -11,7 +11,7 @@ from('Application')
 
 namespace Application\Controller {
 
-class Posts extends Generic {
+class Posts extends Base {
 
   private $post_per_page = 4;
 
@@ -52,101 +52,6 @@ class Posts extends Generic {
 
     $this->view->addOverlay('hoa://Application/View/Posts/Show.xyl');
     $this->view->render();
-
-    return;
-  }
-
-  public function NewAction ( ) {
-
-    $this->adminGuard();
-
-    $post                = new \Application\Model\Post();
-    $this->data->title   = 'New post';
-    $this->data->post    = $post;
-
-    $this->view->addOverlay('hoa://Application/View/Posts/New.xyl');
-    $this->view->render();
-
-    return;
-  }
-
-  public function CreateAction ( ) {
-
-    $this->adminGuard();
-
-    $post                = new \Application\Model\Post();
-    try {
-      $post->create($_POST["post"]);
-    }
-    catch (\Hoathis\Model\Exception\ValidationFailed $e) {
-      $this->data->title = 'New post';
-      $this->data->post  = $post;
-
-      $this->view->addOverlay('hoa://Application/View/Posts/New.xyl');
-      $this->view->render();
-
-      return;
-    }
-
-    $this->getKit('Redirector')
-         ->redirect('post', array('controller' => 'posts',
-                                  'action'     => 'show',
-                                  'id'         =>  $post->id));
-
-    return;
-  }
-
-  public function EditAction ( $id ) {
-
-    $this->adminGuard();
-
-    $post              = $this->LoadPost($this, $id);
-
-    $this->data->title = 'Edit post #'.$post->id;
-    $this->data->post  = $post;
-
-    $this->view->addOverlay('hoa://Application/View/Posts/Edit.xyl');
-    $this->view->render();
-
-    return;
-  }
-
-  public function UpdateAction ( $id ) {
-
-    $this->adminGuard();
-
-    $post = $this->LoadPost($this, $id);
-    try {
-      $post->update($_POST["post"]);
-    }
-    catch (\Hoathis\Model\Exception\ValidationFailed $e) {
-      $this->data->title   = 'Edit post #'.$post->id;
-      $this->data->post    = $post;
-
-      $this->view->addOverlay('hoa://Application/View/Posts/Edit.xyl');
-      $this->view->render();
-
-      return;
-    }
-
-    $this->getKit('Redirector')
-         ->redirect('post', array('controller' => 'posts',
-                                  'action'     => 'show',
-                                  'id'         =>  $post->id));
-
-    return;
-  }
-
-  public function DeleteAction ( $id ) {
-
-    $this->adminGuard();
-
-    $post = $this->LoadPost($this, $id);
-    $post->delete();
-
-    $this->getKit('Redirector')
-         ->redirect('posts', array('controller' => 'posts',
-                                   'action'     => 'list'));
 
     return;
   }

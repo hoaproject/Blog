@@ -3,14 +3,14 @@
 namespace {
 
 from('Application')
--> import('Controller.Generic')
+-> import('Controller.Admin.Base')
 -> import('Model.User');
 
 }
 
-namespace Application\Controller {
+namespace Application\Controller\Admin {
 
-class Log extends Generic {
+class Log extends Base {
 
   public function IndexAction ( ) {
 

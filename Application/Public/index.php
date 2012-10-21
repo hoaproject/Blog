@@ -26,16 +26,16 @@ Hoa\Database\Dal::initializeParameters(array(
 $dispatcher = new Hoa\Dispatcher\Basic();
 $dispatcher->setKitName('Hoathis\Kit\Aggregator');
 $router     = new Hoa\Router\Http();
-$router->get('posts',       '/',                        'posts', 'index')
-       ->get('post',        '/posts/(?<id>\d+)',        'posts', 'show')
-       ->get('new_post',    '/posts/new',               'posts', 'new')
-       ->post('create_post','/posts/create',            'posts', 'create')
-       ->get('edit_post',   '/posts/(?<id>\d+)/edit',   'posts', 'edit')
-       ->post('update_post','/posts/(?<id>\d+)',        'posts', 'update')
-       ->get('delete_post', '/posts/(?<id>\d+)/delete', 'posts', 'delete')
-       ->get('log',         '/log',                     'log',   'index')
-       ->post('login',      '/log/in',                  'log',   'in')
-       ->get('logout',      '/log/out',                 'log',   'out');
+$router->get('posts',       '/',                               'posts', 'index')
+       ->get('post',        '/posts/(?<id>\d+)',               'posts', 'show')
+       ->get('new_post',    '/admin/posts/new',                'admin\posts', 'new')
+       ->post('create_post','/admin/posts/create',             'admin\posts', 'create')
+       ->get('edit_post',   '/admin/posts/(?<id>\d+)/edit',    'admin\posts', 'edit')
+       ->post('update_post','/admin/posts/(?<id>\d+)',         'admin\posts', 'update')
+       ->get('delete_post', '/admin/posts/(?<id>\d+)/delete',  'admin\posts', 'delete')
+       ->get('log',         '/admin/log',                      'admin\log',   'index')
+       ->post('login',      '/admin/log/in',                   'admin\log',   'in')
+       ->get('logout',      '/admin/log/out',                  'admin\log',   'out');
 
 try {
 
