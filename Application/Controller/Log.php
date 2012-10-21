@@ -62,7 +62,7 @@ class Log extends Generic {
         return;
     }
 
-    $data = $form->getFormData();
+    $data = $form->getData();
     $user = new \Application\Model\User();
     $user->name = $data['name'];
 
