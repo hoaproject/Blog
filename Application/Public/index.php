@@ -28,6 +28,7 @@ $dispatcher->setKitName('Hoathis\Kit\Aggregator');
 $router     = new Hoa\Router\Http();
 $router->get('posts',       '/',                               'posts', 'index')
        ->get('post',        '/posts/(?<id>\d+)',               'posts', 'show')
+       ->get('admin_posts', '/admin/posts',                    'admin\posts', 'index')
        ->get('new_post',    '/admin/posts/new',                'admin\posts', 'new')
        ->post('create_post','/admin/posts/create',             'admin\posts', 'create')
        ->get('edit_post',   '/admin/posts/(?<id>\d+)/edit',    'admin\posts', 'edit')

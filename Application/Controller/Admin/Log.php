@@ -18,13 +18,13 @@ class Log extends Base {
         \Hoa\Session::start();
 
         if(true === \Hoa\Session::isNamespaceSet('user')) {
-            $this->getKit('Redirector')->redirect('posts');
+            $this->getKit('Redirector')->redirect('admin_posts');
             return;
         }
     }
     catch ( \Hoa\Core\Exception $e ) { }
 
-    $this->view->addOverlay('hoa://Application/View/Log/Index.xyl');
+    $this->view->addOverlay('hoa://Application/View/Admin/Log/Index.xyl');
     $this->view->render();
 
     return;
@@ -36,14 +36,14 @@ class Log extends Base {
         \Hoa\Session::start();
 
         if(true === \Hoa\Session::isNamespaceSet('user')) {
-            $this->getKit('Redirector')->redirect('posts');
+            $this->getKit('Redirector')->redirect('admin_posts');
             return;
         }
     }
     catch ( \Hoa\Core\Exception $e ) { }
 
     $fragment = new \Hoa\Xyl(
-        new \Hoa\File\Read('hoa://Application/View/Log/Log.frag.xyl'),
+        new \Hoa\File\Read('hoa://Application/View/Admin/Log/Log.frag.xyl'),
         new \Hoa\Http\Response(),
         new \Hoa\Xyl\Interpreter\Html(),
         $this->router
@@ -82,7 +82,7 @@ class Log extends Base {
     $q = new \Hoa\Session\QNamespace('user');
     $q->name = $data['name'];
 
-    $this->getKit('Redirector')->redirect('posts');
+    $this->getKit('Redirector')->redirect('admin_posts');
     return;
   }
 

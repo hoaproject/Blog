@@ -3,15 +3,10 @@
 
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
   <div id="main">
-    <yield select="?f:postsfrag#back_to_list" />
-
+    <p><a href="@posts">☜ Back to list</a></p>
     <yield bind="?post">
       <h2 bind="?title" />
       <p bind="?content" />
-      <p>
-        <a href="@edit_post:id=(?id)">Edit</a> -
-        <a href="@delete_post:id=(?id)">Delete</a>
-      </p>
     </yield>
 
     <h2>Comments</h2>

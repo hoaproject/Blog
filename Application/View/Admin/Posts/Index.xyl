@@ -2,8 +2,11 @@
 
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
   <div id="main">
+    <p><a href="@new_post">New post</a></p>
     <ul>
       <li bind="?posts">
+        <a href="@edit_post:id=(?id)">Edit</a> -
+        <a href="@delete_post:id=(?id)">Delete</a> -
         <time><value formatter="date"
                      formatter-format="d/m/Y"
                      formatter-timestamp="(?posted)" /></time> —

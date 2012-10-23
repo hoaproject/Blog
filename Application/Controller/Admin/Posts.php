@@ -13,6 +13,35 @@ namespace Application\Controller\Admin {
 
 class Posts extends Base {
 
+  private $post_per_page = 4;
+
+  public function IndexAction ( ) {
+
+    $page = isset($this->router->getQuery()['page']) ? $this->router->getQuery()['page'] : 1;
+
+    $post                 = new \Application\Model\Post();
+    try {
+      $list               = $post->getList($page,
+                                           $this->post_per_page);
+    }
+    catch (\Hoathis\Model\Exception\NotFound $e) {
+      $this->getKit('Redirector')
+           ->redirect('posts', array('controller' => 'posts',
+                                     'action' => 'index'));
+    }
+    $this->data->title    = 'All posts';
+    $this->data->posts    = $list;
+
+    // TODO use a single variable for both values
+    $this->data->number   = ceil($post->count()/$this->post_per_page);
+    $this->data->current  = $page;
+
+    $this->view->addOverlay('hoa://Application/View/Admin/Posts/Index.xyl');
+    $this->view->render();
+
+    return;
+  }
+
   public function NewAction ( ) {
 
     $this->adminGuard();
@@ -21,7 +50,7 @@ class Posts extends Base {
     $this->data->title   = 'New post';
     $this->data->post    = $post;
 
-    $this->view->addOverlay('hoa://Application/View/Posts/New.xyl');
+    $this->view->addOverlay('hoa://Application/View/Admin/Posts/New.xyl');
     $this->view->render();
 
     return;
@@ -39,7 +68,7 @@ class Posts extends Base {
       $this->data->title = 'New post';
       $this->data->post  = $post;
 
-      $this->view->addOverlay('hoa://Application/View/Posts/New.xyl');
+      $this->view->addOverlay('hoa://Application/View/Admin/Posts/New.xyl');
       $this->view->render();
 
       return;
@@ -62,7 +91,7 @@ class Posts extends Base {
     $this->data->title = 'Edit post #'.$post->id;
     $this->data->post  = $post;
 
-    $this->view->addOverlay('hoa://Application/View/Posts/Edit.xyl');
+    $this->view->addOverlay('hoa://Application/View/Admin/Posts/Edit.xyl');
     $this->view->render();
 
     return;
@@ -80,7 +109,7 @@ class Posts extends Base {
       $this->data->title   = 'Edit post #'.$post->id;
       $this->data->post    = $post;
 
-      $this->view->addOverlay('hoa://Application/View/Posts/Edit.xyl');
+      $this->view->addOverlay('hoa://Application/View/Admin/Posts/Edit.xyl');
       $this->view->render();
 
       return;
