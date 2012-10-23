@@ -28,15 +28,16 @@ $dispatcher->setKitName('Hoathis\Kit\Aggregator');
 $router     = new Hoa\Router\Http();
 $router->get('posts',       '/',                               'posts', 'index')
        ->get('post',        '/posts/(?<id>\d+)',               'posts', 'show')
+       ->get('admin',       '/admin',                          'admin\log', 'in')
+       ->get('log',         '/admin/log',                      'admin\log',   'index')
+       ->post('login',      '/admin/log/in',                   'admin\log',   'in')
+       ->get('logout',      '/admin/log/out',                  'admin\log',   'out')
        ->get('admin_posts', '/admin/posts',                    'admin\posts', 'index')
        ->get('new_post',    '/admin/posts/new',                'admin\posts', 'new')
        ->post('create_post','/admin/posts/create',             'admin\posts', 'create')
        ->get('edit_post',   '/admin/posts/(?<id>\d+)/edit',    'admin\posts', 'edit')
        ->post('update_post','/admin/posts/(?<id>\d+)',         'admin\posts', 'update')
-       ->get('delete_post', '/admin/posts/(?<id>\d+)/delete',  'admin\posts', 'delete')
-       ->get('log',         '/admin/log',                      'admin\log',   'index')
-       ->post('login',      '/admin/log/in',                   'admin\log',   'in')
-       ->get('logout',      '/admin/log/out',                  'admin\log',   'out');
+       ->get('delete_post', '/admin/posts/(?<id>\d+)/delete',  'admin\posts', 'delete');
 
 try {
 

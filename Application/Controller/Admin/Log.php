@@ -52,38 +52,37 @@ class Log extends Base {
 
     $form = $fragment->getElement('log');
 
-    if(false === $form->hasBeenSent()) {
-        $this->getKit('Redirector')->redirect('log');
-        return;
+    if(   true === $form->hasBeenSent()
+       && true === $form->isValid()) {
+
+      $data = $form->getData();
+      $user = new \Application\Model\User();
+      $user->name = $data['name'];
+
+      try {
+          $user->open();
+      }
+      catch ( \Hoathis\Model\Exception\NotFound $e ) {
+          $this->getKit('Redirector')->redirect('log');
+          return;
+      }
+
+      if(sha1($data['password']) !== $user->password) {
+          $this->getKit('Redirector')->redirect('log');
+          return;
+      }
+
+      $q = new \Hoa\Session\QNamespace('user');
+      $q->name = $data['name'];
+
+      $this->getKit('Redirector')->redirect('admin_posts');
+      return;
     }
+    else {
 
-    if(false === $form->isValid()) {
-        $this->getKit('Redirector')->redirect('log');
-        return;
+      $this->getKit('Redirector')->redirect('log');
+      return;
     }
-
-    $data = $form->getData();
-    $user = new \Application\Model\User();
-    $user->name = $data['name'];
-
-    try {
-        $user->open();
-    }
-    catch ( \Hoathis\Model\Exception\NotFound $e ) {
-        $this->getKit('Redirector')->redirect('log');
-        return;
-    }
-
-    if(sha1($data['password']) !== $user->password) {
-        $this->getKit('Redirector')->redirect('log');
-        return;
-    }
-
-    $q = new \Hoa\Session\QNamespace('user');
-    $q->name = $data['name'];
-
-    $this->getKit('Redirector')->redirect('admin_posts');
-    return;
   }
 
   public function OutAction ( ) {
