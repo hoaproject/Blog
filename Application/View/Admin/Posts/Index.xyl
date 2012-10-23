@@ -2,7 +2,10 @@
 
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
   <div id="main">
-    <p><a href="@new_post">New post</a></p>
+    <p>
+      <a href="@new_post">New post</a> -
+      <a href="@logout">Logout</a>
+    </p>
     <ul>
       <li bind="?posts">
         <a href="@edit_post:id=(?id)">Edit</a> -
