@@ -17,7 +17,8 @@ class Posts extends Base {
 
   public function IndexAction ( ) {
 
-    $page = isset($this->router->getQuery()['page']) ? $this->router->getQuery()['page'] : 1;
+    $query = $this->router->getQuery();
+    $page = isset($query['page']) ? $query['page'] : 1;
 
     $post                 = new \Application\Model\Post();
     try {
