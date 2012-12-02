@@ -4,8 +4,7 @@ namespace {
 
 from('Hoa')
 -> import('Dispatcher.Kit')
--> import('Session.~')
--> import('Session.QNamespace');
+-> import('Session.~');
 
 from('Application')
 -> import('Controller.Base');
@@ -18,20 +17,21 @@ class Base extends \Application\Controller\Base {
 
   protected function adminGuard ( ) {
 
-      try {
-          \Hoa\Session::start();
-      }
-      catch( \Hoa\Core\Exception $e ) {
-          \Hoa\Session::destroy();
-          $this->getKit('Redirector')->redirect('log');
-          return null;
-      }
+    $self = $this;
 
-      if(true === \Hoa\Session::isNamespaceSet('user'))
-          return true;
+    event('hoa://Event/Session/user:expired')
+      ->attach(function ( \Hoa\Core\Event\Bucket $bucket ) use ( $self ) {
+          $self->getKit('Redirector')->redirect('log');
+      });
 
-      $this->getKit('Redirector')->redirect('log');
-      return false;
+    $user = new \Hoa\Session('user');
+
+    if(false === $user->isEmpty())
+        return true;
+
+    $user->hasExpired();
+
+    return false;
   }
 }
 
