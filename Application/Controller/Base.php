@@ -4,8 +4,7 @@ namespace {
 
 from('Hoa')
 -> import('Dispatcher.Kit')
--> import('Session.~')
--> import('Session.QNamespace');
+-> import('Session.~');
 
 from('Hoathis')
 -> import('Kit.Aggregator');
@@ -14,7 +13,6 @@ from('Hoathis')
 
 namespace Application\Controller {
 
-class Base extends \Hoathis\Kit\Aggregator {
-}
+class Base extends \Hoathis\Kit\Aggregator { }
 
 }
