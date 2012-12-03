@@ -10,6 +10,26 @@
     </yield>
 
     <h2>Comments</h2>
+
     <comment bind="?comments" />
+
+    <form action="@create_comment:post_id=(?post_id)" id="comment_submit">
+      <ul>
+        <li>
+          <small><time><value formatter="date"
+                              formatter-format="jS M. 'y (H:i)" /></time></small>
+          <input type="text" id="author" name="author"
+                 required="true" maxlength="31" placeholder="Author…"
+                 error="not_empty" />
+          <textarea id="comment" name="comment"
+                    required="true" maxlength="4096" placeholder="Comment…"
+                    error="not_empty" />
+          <error id="not_empty">
+            <p>It appears you forgot to fill the author or the comment.</p>
+          </error>
+          <input type="submit" value="➜" />
+        </li>
+      </ul>
+    </form>
   </div>
 </overlay>

@@ -49,6 +49,8 @@ class Posts extends Base {
 
     $this->data->title    = $post->title;
     $this->data->post     = $post;
+    // TODO use post id from post in view
+    $this->data->post_id  = $post->id;
     $this->data->comments = $post->comments;
 
     $this->view->addOverlay('hoa://Application/View/Posts/Show.xyl');

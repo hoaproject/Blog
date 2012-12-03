@@ -48,6 +48,22 @@ class Comment extends \Hoa\Model {
 
         return;
     }
+
+    public function create ( $post_id = null ) {
+
+        $this->getMappingLayer()->query('PRAGMA foreign_keys = ON');
+        $this->getMappingLayer()
+             ->prepare(
+                'INSERT INTO comment (post, author, posted, content) ' .
+                'VALUES (:post, :author, :posted, :content)'
+             )
+             ->execute(array_merge(
+                $this->getConstraints(),
+                array('post' => $post_id)
+            ));
+
+        $this->id = $this->getMappingLayer()->lastInsertId();
+    }
 }
 
 }
