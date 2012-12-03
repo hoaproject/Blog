@@ -14,15 +14,15 @@ class Log extends Base {
 
   public function IndexAction ( ) {
 
-    try {
-        \Hoa\Session::start();
+    event('hoa://Event/Session/user:expired')
+        ->attach(function ( \Hoa\Core\Event\Bucket $bucket ) { });
 
-        if(true === \Hoa\Session::isNamespaceSet('user')) {
-            $this->getKit('Redirector')->redirect('admin_posts');
-            return;
-        }
+    $user = new \Hoa\Session('user');
+
+    if(false === $user->isEmpty()) {
+        $this->getKit('Redirector')->redirect('admin_posts');
+        return;
     }
-    catch ( \Hoa\Core\Exception $e ) { }
 
     $this->view->addOverlay('hoa://Application/View/Admin/Log/Index.xyl');
     $this->view->render();
@@ -32,15 +32,17 @@ class Log extends Base {
 
   public function InAction ( ) {
 
-    try {
-        \Hoa\Session::start();
+    event('hoa://Event/Session/user:expired')
+        ->attach(function ( \Hoa\Core\Event\Bucket $bucket ) {
+            $this->getKit('Redirector')->redirect('log');
+        });
 
-        if(true === \Hoa\Session::isNamespaceSet('user')) {
-            $this->getKit('Redirector')->redirect('admin_posts');
-            return;
-        }
+    $sUser = new \Hoa\Session('user');
+
+    if(false === $sUser->isEmpty()) {
+        $this->getKit('Redirector')->redirect('admin_posts');
+        return;
     }
-    catch ( \Hoa\Core\Exception $e ) { }
 
     $fragment = new \Hoa\Xyl(
         new \Hoa\File\Read('hoa://Application/View/Admin/Log/Log.frag.xyl'),
@@ -72,9 +74,7 @@ class Log extends Base {
           return;
       }
 
-      $q = new \Hoa\Session\QNamespace('user');
-      $q->name = $data['name'];
-
+      $sUser['name'] = $data['name'];
       $this->getKit('Redirector')->redirect('admin_posts');
       return;
     }
@@ -86,11 +86,6 @@ class Log extends Base {
   }
 
   public function OutAction ( ) {
-
-    try {
-        \Hoa\Session::start();
-    }
-    catch ( \Hoa\Core\Exception $e ) { }
 
     \Hoa\Session::destroy();
     $this->getKit('Redirector')->redirect('log');

@@ -17,24 +17,27 @@ class Posts extends Base {
 
   public function IndexAction ( ) {
 
-    $page = isset($this->router->getQuery()['page']) ? $this->router->getQuery()['page'] : 1;
+    $this->adminGuard();
 
-    $post                 = new \Application\Model\Post();
+    $page = isset($this->router->getQuery()['page'])
+                ? $this->router->getQuery()['page']
+                : 1;
+
+    $post = new \Application\Model\Post();
     try {
-      $list               = $post->getList($page,
-                                           $this->post_per_page);
+      $list = $post->getList($page, $this->post_per_page);
     }
     catch (\Hoathis\Model\Exception\NotFound $e) {
       $this->getKit('Redirector')
            ->redirect('posts', array('controller' => 'posts',
-                                     'action' => 'index'));
+                                     'action'     => 'index'));
     }
-    $this->data->title    = 'All posts';
-    $this->data->posts    = $list;
+    $this->data->title   = 'All posts';
+    $this->data->posts   = $list;
 
     // TODO use a single variable for both values
-    $this->data->number   = ceil($post->count()/$this->post_per_page);
-    $this->data->current  = $page;
+    $this->data->number  = ceil($post->count()/$this->post_per_page);
+    $this->data->current = $page;
 
     $this->view->addOverlay('hoa://Application/View/Admin/Posts/Index.xyl');
     $this->view->render();
