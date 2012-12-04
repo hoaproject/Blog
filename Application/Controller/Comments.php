@@ -34,7 +34,7 @@ class Comments extends Base {
          ->redirect('post', array('controller' => 'posts',
                                   'action'     => 'show',
                                   'id'         => $post_id,
-                                  '_fragment'  => $comment->id));
+                                  '_fragment'  => 'comment-'.$comment->id));
 
     return;
   }
