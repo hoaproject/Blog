@@ -46,10 +46,20 @@ class Comment extends \Hoa\Model {
 
         $this->setMappingLayer(\Hoa\Database\Dal::getLastInstance());
 
+        $this->posted = time();
+
         return;
     }
 
-    public function create ( $post_id = null ) {
+    public function create ( $post_id, Array $attributes) {
+
+        try {
+            $this->author  = trim(strip_tags($attributes["author"]));
+            $this->content = trim(strip_tags($attributes["comment"]));
+        }
+        catch (\Hoa\Model\Exception $e) {
+            throw new \Hoathis\Model\Exception\ValidationFailed($e->getMessage());
+        }
 
         $this->getMappingLayer()->query('PRAGMA foreign_keys = ON');
         $this->getMappingLayer()

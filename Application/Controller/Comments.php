@@ -24,12 +24,8 @@ class Comments extends Base {
     if(   true === $form->hasBeenSent()
        && true === $form->isValid()) {
 
-        $formData         = $form->getData();
-        $comment          = new \Application\Model\Comment();
-        $comment->author  = $formData['author'];
-        $comment->posted  = time();
-        $comment->content = $formData['comment'];
-        $comment->create($post->id);
+        $comment  = new \Application\Model\Comment();
+        $comment->create($post->id, $form->getData());
     }
 
     $this->getKit('Redirector')
