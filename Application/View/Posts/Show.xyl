@@ -18,7 +18,7 @@
         <li>
           <small><time><value formatter="date"
                               formatter-format="jS M. 'y (H:i)" /></time></small>
-          <input type="text" id="author" name="author"
+          • <input type="text" id="author" name="author"
                  required="true" maxlength="31" placeholder="Author…"
                  error="not_empty" />
           <textarea id="comment" name="comment"
