@@ -74,6 +74,18 @@ class Comment extends \Hoa\Model {
 
         $this->id = $this->getMappingLayer()->lastInsertId();
     }
+
+    static public function deleteByPost( $post_id ) {
+
+      $comment = new Comment();
+      $comment->getMappingLayer()
+              ->prepare(
+                'DELETE FROM comment WHERE post = :post_id'
+              )
+              ->execute(array(
+                'post_id'  => $post_id,
+              ));
+    }
 }
 
 }

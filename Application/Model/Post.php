@@ -137,6 +137,8 @@ class Post extends \Hoa\Model {
 
     public function delete ( ) {
 
+      Comment::deleteByPost($this->id);
+
       return $this->getMappingLayer()
                   ->prepare(
                     'DELETE FROM post WHERE id = :id'
