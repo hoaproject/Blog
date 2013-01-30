@@ -16,14 +16,7 @@ namespace Application\Model {
 
 class User extends \Hoa\Model {
 
-    /**
-     * @invariant name: string(boundinteger(1, 31));
-     */
     protected $_name;
-
-    /**
-     * @invariant password: string(40);
-     */
     protected $_password;
 
 
