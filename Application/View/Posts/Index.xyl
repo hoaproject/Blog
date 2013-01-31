@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
-  <div id="main">
+  <yield id="yContent">
     <ul>
       <li bind="?posts">
         <time><value formatter="date"
@@ -11,5 +11,5 @@
       </li>
     </ul>
     <paginator max="(?number)" select="(?current)" />
-  </div>
+  </yield>
 </overlay>

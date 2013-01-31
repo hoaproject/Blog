@@ -26,7 +26,4 @@
         <input type="submit" />
       </p>
   </snippet>
-  <snippet id="back_to_list">
-    <p><a href="@admin_posts">☜ Back to list</a></p>
-  </snippet>
 </fragment>

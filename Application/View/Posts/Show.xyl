@@ -6,9 +6,7 @@
 -->
 
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
-  <div id="main">
-    <p><a href="@posts">☜ Back to list</a></p>
-
+  <yield id="yContent">
     <yield bind="?post">
       <h2 bind="?title" />
       <yield select="?f:content#main" />
@@ -36,5 +34,5 @@
         </li>
       </ul>
     </form>
-  </div>
+  </yield>
 </overlay>

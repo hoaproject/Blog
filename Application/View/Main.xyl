@@ -1,16 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xyl-stylesheet href="hoa://Library/Xyl/Css/Core.css" position="10"?>
+<?xyl-stylesheet href="hoa://Application/Public/Css/UI.css" position="last()"?>
+<?xyl-meta name="viewport" content="initial-scale=1.0"?>
 
 <document xmlns="http://hoa-project.net/xyl/xylophone">
   <title><value bind="?title" /> — Hoa blog</title>
 
-  <header>
-    <h1>Hoa blog</h1>
-  </header>
+  <script src="hoa://Library/Xyl/Javascript/Hoa.js"></script>
 
-  <div id="main" />
+  <nav id="menu" aria-selected="false">
+    <div>
+      <ul id="nav-top">
+        <!--
+        <li><a href="@g:all=" class="home">Accueil</a></li>
+        <li><a href="@s" class="source">Sources</a></li>
+        <li><a href="@l" class="literature">Littérature</a></li>
+        -->
+        <!--
+        <li><a href="@v" class="video">Vidéo</a></li>
+        -->
+        <!--
+        <li><a href="@b" class="blog">Blog</a></li>
+        <li><a href="@ev" class="event">Événement</a></li>
+        <li><a href="@forum" class="community">Communauté</a></li>
+        -->
+      </ul>
 
-  <footer>
-    <p>This blog is powered by <a href="http://hoa-project.net/">Hoa</a> and
-    <a href="http://php.net/">PHP</a>.</p>
-  </footer>
+      <ul id="nav-bottom">
+        <!--
+        <li><a href="@a" class="about">À propos</a></li>
+        -->
+        <!--
+        <li><a href="@c" class="contact">Contact</a></li>
+        -->
+      </ul>
+    </div>
+  </nav>
+
+  <div class="body">
+
+    <div aria-controls="menu">
+      <img src="hoa://Application/Public/Image/Icon_menu.png"
+           width="24px" height="24px" alt="Menu" />
+    </div>
+
+    <header>
+      <img src="hoa://Application/Public/Image/Hoa.png" alt="Hoa" />
+    </header>
+
+    <article id="content">
+      <yield id="yContent" />
+    </article>
+
+    <footer>
+      <p>Hoa est la création de Ivan Enderlin, tous droits réservés.</p>
+    </footer>
+
+  </div>
 </document>

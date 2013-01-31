@@ -38,7 +38,9 @@ $router->get('posts',       '/',                               'posts', 'index')
        ->post('create_post','/admin/posts/create',             'admin\posts', 'create')
        ->get('edit_post',   '/admin/posts/(?<id>\d+)/edit',    'admin\posts', 'edit')
        ->post('update_post','/admin/posts/(?<id>\d+)',         'admin\posts', 'update')
-       ->get('delete_post', '/admin/posts/(?<id>\d+)/delete',  'admin\posts', 'delete');
+       ->get('delete_post', '/admin/posts/(?<id>\d+)/delete',  'admin\posts', 'delete')
+
+       ->_get('_resource', 'http://static.hoa-project.net/(?<resource>)');
 
 try {
 

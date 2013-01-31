@@ -2,7 +2,7 @@
 <?xyl-fragment href="hoa://Application/View/Admin/Log/Log.frag.xyl" as="log"?>
 
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
-  <div id="main">
+  <yield id="yContent">
     <yield select="?f:log#form" />
-  </div>
+  </yield>
 </overlay>

@@ -2,12 +2,11 @@
 <?xyl-fragment href="hoa://Application/View/Admin/Posts/Posts.frag.xyl" as="postsfrag"?>
 
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
-  <div id="main">
-    <yield select="?f:postsfrag#back_to_list" />
+  <yield id="yContent">
     <yield bind="?post">
       <form action="@create_post" method="post">
         <yield select="?f:postsfrag#form" />
       </form>
     </yield>
-  </div>
+  </yield>
 </overlay>
