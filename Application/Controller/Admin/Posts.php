@@ -65,7 +65,7 @@ class Posts extends Base {
 
     $post                = new \Application\Model\Post();
     try {
-      $post->create($_POST["post"]);
+      $post->create($_POST['post']);
     }
     catch (\Hoathis\Model\Exception\ValidationFailed $e) {
       $this->data->title = 'New post';
@@ -106,7 +106,7 @@ class Posts extends Base {
 
     $post = $this->LoadPost($this, $id);
     try {
-      $post->update($_POST["post"]);
+      $post->update($_POST['post']);
     }
     catch (\Hoathis\Model\Exception\ValidationFailed $e) {
       $this->data->title   = 'Edit post #'.$post->id;

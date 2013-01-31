@@ -16,27 +16,9 @@ namespace Application\Model {
 
 class Post extends \Hoa\Model {
 
-    /**
-     * @invariant id: boundinteger(0);
-     */
     protected $_id;
-
-    /**
-     * @invariant title: string(boundinteger(1, 255));
-     */
     protected $_title;
-
-    /**
-     * @invariant posted: boundinteger(
-     *                        timestamp('1 january 1999'),
-     *                        timestamp('now')
-     *                    );
-     */
     protected $_posted;
-
-    /**
-     * @invariant content: string(boundinteger(1));
-     */
     protected $_content;
 
     /**
@@ -89,9 +71,9 @@ class Post extends \Hoa\Model {
     public function update ( Array $attributes = array() ) {
 
         try {
-            $this->title   = trim(strip_tags($attributes["title"]));
-            $this->content = trim(strip_tags($attributes["content"]));
-            $this->posted  = strtotime(trim(strip_tags($attributes["posted"])));
+            $this->title   = trim(strip_tags($attributes['title']));
+            $this->content = trim($attributes['content']);
+            $this->posted  = strtotime(trim(strip_tags($attributes['posted'])));
         }
         catch (\Hoa\Model\Exception $e) {
             throw new \Hoathis\Model\Exception\ValidationFailed($e->getMessage());

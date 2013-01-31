@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xyl-use href="hoa://Application/View/Posts/Comment.xyl"?>
+<!--
+  added dynamically
+  <?xyl-fragment href="…" as="content"?>
+-->
 
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
   <div id="main">
     <p><a href="@posts">☜ Back to list</a></p>
+
     <yield bind="?post">
       <h2 bind="?title" />
-      <p bind="?content" />
+      <yield select="?f:content#main" />
     </yield>
 
     <h2>Comments</h2>

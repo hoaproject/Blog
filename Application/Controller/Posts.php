@@ -7,6 +7,9 @@ from('Application')
 -> import('Model.Post')
 -> import('Model.Comment');
 
+from('Hoa')
+-> import('StringBuffer.Read');
+
 }
 
 namespace Application\Controller {
@@ -47,8 +50,23 @@ class Posts extends Base {
 
     $post                 = $this->LoadPost($this, $id);
 
-    $this->data->title    = $post->title;
-    $this->data->post     = $post;
+    $this->data->title       = $post->title;
+    $this->data->post->title = $post->title;
+
+    $buffer = new \Hoa\StringBuffer\Read();
+    $buffer->initializeWith(
+        '<?xml version="1.0" encoding="utf-8"?>' . "\n\n" .
+        '<fragment xmlns="http://hoa-project.net/xyl/xylophone">' . "\n".
+        '  <snippet id="main">' . "\n" .
+        $post->content .
+        '  </snippet>' . "\n" .
+        '</fragment>'
+    );
+    $this->view->addFragment(
+        $buffer->getStreamName(),
+        'content'
+    );
+
     // TODO use post id from post in view
     $this->data->post_id  = $post->id;
     $this->data->comments = $post->comments;
