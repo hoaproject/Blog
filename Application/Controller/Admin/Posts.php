@@ -19,11 +19,11 @@ class Posts extends Base {
 
     $this->adminGuard();
 
-    $page = isset($this->router->getQuery()['page'])
-                ? $this->router->getQuery()['page']
-                : 1;
-
-    $post = new \Application\Model\Post();
+    $query = $this->router->getQuery();
+    $page  = isset($query['page'])
+                 ? $query['page']
+                 : 1;
+    $post  = new \Application\Model\Post();
     try {
       $list = $post->getList($page, $this->post_per_page);
     }
