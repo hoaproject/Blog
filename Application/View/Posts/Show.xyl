@@ -12,6 +12,7 @@
       <yield select="?f:content#main" />
     </yield>
 
+    <!--
     <h2>Comments</h2>
 
     <comment bind="?comments" />
@@ -34,5 +35,6 @@
         </li>
       </ul>
     </form>
+    -->
   </yield>
 </overlay>

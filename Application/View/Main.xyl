@@ -11,28 +11,22 @@
   <nav id="menu" aria-selected="false">
     <div>
       <ul id="nav-top">
-        <!--
-        <li><a href="@g:all=" class="home">Accueil</a></li>
+        <li><a href="@g" class="home">Accueil</a></li>
         <li><a href="@s" class="source">Sources</a></li>
         <li><a href="@l" class="literature">Littérature</a></li>
-        -->
         <!--
         <li><a href="@v" class="video">Vidéo</a></li>
         -->
-        <!--
-        <li><a href="@b" class="blog">Blog</a></li>
+        <li><a href="@posts" class="blog">Blog</a></li>
         <li><a href="@ev" class="event">Événement</a></li>
         <li><a href="@forum" class="community">Communauté</a></li>
-        -->
       </ul>
 
       <ul id="nav-bottom">
         <!--
         <li><a href="@a" class="about">À propos</a></li>
         -->
-        <!--
         <li><a href="@c" class="contact">Contact</a></li>
-        -->
       </ul>
     </div>
   </nav>
@@ -49,6 +43,8 @@
     </header>
 
     <article id="content">
+      <h1>Blog</h1>
+
       <yield id="yContent" />
     </article>
 
