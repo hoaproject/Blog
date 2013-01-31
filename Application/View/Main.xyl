@@ -53,4 +53,24 @@
     </footer>
 
   </div>
+
+  <script>
+    Hoa.Document.onReady(function ( ) {
+
+        var nav = Hoa.$('#menu');
+
+        Hoa.$('div[aria-controls="menu"]')
+           .addEventListener('click', function ( ) {
+
+            if('false' === nav.getAttribute('aria-selected'))
+                nav.setAttribute('aria-selected', true);
+            else
+                nav.setAttribute('aria-selected', false);
+        }, false);
+    });
+  </script>
+
+  <script src="hoa://Application/Public/Javascript/Prism.js" />
+  <script src="hoa://Application/Public/Javascript/Prism.hoa.js" />
+  <script src="hoa://Application/Public/Javascript/Prism.plugin.line.js" />
 </document>
