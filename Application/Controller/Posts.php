@@ -8,7 +8,7 @@ from('Application')
 -> import('Model.Comment');
 
 from('Hoa')
--> import('StringBuffer.Read');
+-> import('Stringbuffer.Read');
 
 }
 
@@ -53,7 +53,7 @@ class Posts extends Base {
     $this->data->title       = $post->title;
     $this->data->post->title = $post->title;
 
-    $buffer = new \Hoa\StringBuffer\Read();
+    $buffer = new \Hoa\Stringbuffer\Read();
     $buffer->initializeWith(
         '<?xml version="1.0" encoding="utf-8"?>' . "\n\n" .
         '<fragment xmlns="http://hoa-project.net/xyl/xylophone">' . "\n".
