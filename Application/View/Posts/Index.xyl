@@ -10,6 +10,6 @@
         <a href="@post:id=(?id)" bind="?title" />
       </li>
     </ul>
-    <paginator max="(?number)" select="(?current)" />
+    <paginator class="paginator" max="(?number)" select="(?current)" />
   </yield>
 </overlay>
