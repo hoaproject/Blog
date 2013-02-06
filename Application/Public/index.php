@@ -39,6 +39,7 @@ $router->get('posts',       '/',                               'posts', 'index')
        ->get('edit_post',   '/admin/posts/(?<id>\d+)/edit',    'admin\posts', 'edit')
        ->post('update_post','/admin/posts/(?<id>\d+)',         'admin\posts', 'update')
        ->get('delete_post', '/admin/posts/(?<id>\d+)/delete',  'admin\posts', 'delete')
+       ->get('api_posts',   '/api/posts',                      'api\posts', 'index')
 
        ->_get('_resource', 'http://static.hoa-project.net/(?<resource>)')
        ->_get('g',     '/',                null, null, array('_subdomain' => '__root__'))
