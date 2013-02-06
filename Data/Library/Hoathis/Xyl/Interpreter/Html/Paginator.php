@@ -90,24 +90,19 @@ class Paginator extends \Hoa\Xyl\Interpreter\Html\Generic {
 
         $max = max(0, intval($this->computeAttributeValue(
             $this->abstract->readAttribute('max')
-            // pourquoi pas directement $this->readAttribute('max') ?
-            // parce que l'attribut n'est pas mappé vers l'HTML.
         )));
         $selected = max(0, intval($this->computeAttributeValue(
             $this->abstract->readAttribute('select')
         )));
 
-        // pour rendre le contenu : $this->computeValue($out);
-        // mais pas utile ici normalement.
-
-        $this->writeAttribute('class', 'paginator');
+        $this->writeAttribute('role', 'navigation');
         $out->writeAll('<ul' . $this->readAttributesAsString() . '>');
 
         $handle = null;
 
         for($i = 1; $i <= $max; ++$i)
             if($i === $selected)
-                $handle .= '<li class="selected">' . $i . '</li>';
+                $handle .= '<li aria-selected="true">' . $i . '</li>';
             else
                 $handle .= '<li><a href="?page='.$i.'">' . $i . '</a></li>';
 
