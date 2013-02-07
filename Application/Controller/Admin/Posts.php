@@ -77,10 +77,7 @@ class Posts extends Base {
       return;
     }
 
-    $this->getKit('Redirector')
-         ->redirect('post', array('controller' => 'posts',
-                                  'action'     => 'show',
-                                  'id'         =>  $post->id));
+    $this->redirectToPost($post);
 
     return;
   }
@@ -118,10 +115,7 @@ class Posts extends Base {
       return;
     }
 
-    $this->getKit('Redirector')
-         ->redirect('post', array('controller' => 'posts',
-                                  'action'     => 'show',
-                                  'id'         =>  $post->id));
+    $this->redirectToPost($post);
 
     return;
   }
@@ -152,6 +146,17 @@ class Posts extends Base {
     }
 
     return $post;
+  }
+
+  protected function redirectToPost ( $post ) {
+
+    $normalized_title = \Application\Model\Post::getNormalizedTitle($post->title);
+
+    $this->getKit('Redirector')
+         ->redirect('post', array('controller'     => 'posts',
+                                  'action'         => 'show',
+                                  'id'             => $post->id,
+                                  'normalized_title' => $normalized_title));
   }
 }
 
