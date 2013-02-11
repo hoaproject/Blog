@@ -48,10 +48,10 @@ class Posts extends Base {
 
   public function ShowAction ( $id ) {
 
-    $post                 = $this->LoadPost($this, $id);
+    $post              = $this->LoadPost($this, $id);
 
-    $this->data->title       = $post->title;
-    $this->data->post->title = $post->title;
+    $this->data->title = $post->title;
+    $this->data->post  = $post;
 
     $buffer = new \Hoa\Stringbuffer\Read();
     $buffer->initializeWith(
