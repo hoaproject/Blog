@@ -11,9 +11,9 @@
 
     <yield bind="?post">
       <h2 bind="?title" />
-      Posted on <time><value formatter="date"
-                             formatter-format="d/m/Y"
-                             formatter-timestamp="(?posted)" /></time>
+      <time><value formatter="date"
+                   formatter-format="d/m/Y"
+                   formatter-timestamp="(?posted)" /></time>
       <yield select="?f:content#main" />
     </yield>
 
