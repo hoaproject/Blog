@@ -9,9 +9,9 @@
   <yield id="yContent">
     <yield bind="?post">
       <h2 bind="?title" />
-      <time><value formatter="date"
+      <small>Publié le <time><value formatter="date"
                    formatter-format="d/m/Y"
-                   formatter-timestamp="(?posted)" /></time>
+                   formatter-timestamp="(?posted)" /></time>.</small>
       <yield select="?f:content#main" />
     </yield>
 
