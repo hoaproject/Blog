@@ -5,7 +5,8 @@ namespace {
 from('Hoa')
 -> import('Model.~')
 -> import('Model.Exception')
--> import('Database.Dal');
+-> import('Database.Dal')
+-> import('String');
 
 from('Hoathis')
 -> import('Model.Exception.*');
@@ -138,18 +139,39 @@ class Post extends \Hoa\Model {
 
         $first_entry = ($current_page - 1) * $post_per_page;
 
-        return $this->getMappingLayer()
-                    ->prepare(
-                        'SELECT id, title, posted ' .
-                        'FROM post ' .
-                        'ORDER BY posted DESC ' .
-                        'LIMIT :first_entry, :post_per_page'
-                    )
-                    ->execute(array(
-                        'first_entry'   => $first_entry,
-                        'post_per_page' => $post_per_page,
-                    ))
-                    ->fetchAll();
+        $list = $this->getMappingLayer()
+                     ->prepare(
+                      'SELECT id, title, posted ' .
+                      'FROM post ' .
+                      'ORDER BY posted DESC ' .
+                      'LIMIT :first_entry, :post_per_page'
+                     )
+                     ->execute(array(
+                      'first_entry'   => $first_entry,
+                      'post_per_page' => $post_per_page,
+                     ))
+                     ->fetchAll();
+
+        foreach($list as &$post) {
+
+          $post['normalized_title'] = Post::getNormalizedTitle($post['title']);
+        }
+
+        return $list;
+    }
+
+    public static function getNormalizedTitle( $title ) {
+
+      $normalized_title = new \Hoa\String($title);
+      $normalized_title = $normalized_title->toAscii()
+                                           ->replace('/\s/', '-')
+                                           ->replace('/[^a-zA-Z0-9\-]+/', '')
+                                           ->substr(0, 32)
+                                           ->toLowerCase();
+
+      // force cast because json_encode (used for API) try to return this as an
+      // object without it
+      return (string)$normalized_title;
     }
 
     public function count ( ) {

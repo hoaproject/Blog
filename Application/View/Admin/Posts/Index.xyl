@@ -13,7 +13,7 @@
         <time><value formatter="date"
                      formatter-format="d/m/Y"
                      formatter-timestamp="(?posted)" /></time> —
-        <a href="@post:id=(?id)" bind="?title" />
+        <a href="@post:id=(?id)&amp;normalized_title=(?normalized_title)" bind="?title" />
       </li>
     </ul>
     <paginator max="(?number)" select="(?current)" />

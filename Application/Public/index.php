@@ -27,7 +27,7 @@ $dispatcher = new Hoa\Dispatcher\Basic();
 $dispatcher->setKitName('Hoathis\Kit\Aggregator');
 $router     = new Hoa\Router\Http();
 $router->get('posts',       '/',                               'posts', 'index')
-       ->get('post',        '/posts/(?<id>\d+)',               'posts', 'show')
+       ->get('post',        '/posts/(?<id>\d+)\-(?<normalized_title>.+)\.html', 'posts', 'show')
        ->post('create_comment',    '/posts/(?<post_id>\d+)/comments/create','comments', 'create')
        ->get('admin',       '/admin',                          'admin\log', 'in')
        ->get('log',         '/admin/log',                      'admin\log',   'index')
