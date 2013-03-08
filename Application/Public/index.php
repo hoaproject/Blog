@@ -48,7 +48,9 @@ $router->get('posts',       '/',                               'posts', 'index')
        ->_get('ev',    '/Event.html',      null, null, array('_subdomain' => '__root__'))
        ->_get('forum', 'http://forum.hoa-project.net')
        ->_get('a',     '/About.html',      null, null, array('_subdomain' => '__root__'))
-       ->_get('c',     '/Contact.html',    null, null, array('_subdomain' => '__root__'));
+       ->_get('c',     '/Contact.html',    null, null, array('_subdomain' => '__root__'))
+
+       ->_get('github', 'https://github.com/hoaproject/(?<repository>)');
 
 try {
 
