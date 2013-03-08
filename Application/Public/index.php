@@ -45,10 +45,12 @@ $router->get('posts',       '/',                               'posts', 'index')
        ->_get('g',     '/',                null, null, array('_subdomain' => '__root__'))
        ->_get('s',     '/Source.html',     null, null, array('_subdomain' => '__root__'))
        ->_get('l',     '/Literature.html', null, null, array('_subdomain' => '__root__'))
+       ->_get('lh',    '/Literature/Hack/(?<chapter>).html', null, null, array('_subdomain' => '__root__'))
        ->_get('ev',    '/Event.html',      null, null, array('_subdomain' => '__root__'))
        ->_get('forum', 'http://forum.hoa-project.net')
        ->_get('a',     '/About.html',      null, null, array('_subdomain' => '__root__'))
        ->_get('c',     '/Contact.html',    null, null, array('_subdomain' => '__root__'))
+       ->_get('u',     '/Whouse/(?<who>).html', null, null, array('_subdomain' => '__root__'))
 
        ->_get('github', 'https://github.com/hoaproject/(?<repository>)');
 
