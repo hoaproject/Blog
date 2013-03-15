@@ -163,7 +163,7 @@ class Post extends \Hoa\Model {
     public static function getNormalizedTitle( $title ) {
 
       $normalized_title = new \Hoa\String($title);
-      $normalized_title = $normalized_title->toAscii(true)
+      $normalized_title = $normalized_title->toAscii()
                                            ->replace('/\s/', '-')
                                            ->replace('/[^a-zA-Z0-9\-]+/', '')
                                            ->substr(0, 32)
