@@ -16,7 +16,7 @@ namespace Application\Controller {
 
 class Posts extends Base {
 
-  private $post_per_page = 4;
+  private $post_per_page = 8;
 
   public function IndexAction ( ) {
 
