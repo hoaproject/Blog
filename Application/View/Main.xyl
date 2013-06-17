@@ -17,7 +17,7 @@
         <li><a href="@v" class="video">Vidéos</a></li>
         <li><a href="@posts" class="blog">Blog</a></li>
         <li><a href="@ev" class="event">Événements</a></li>
-        <li><a href="@forum" class="community">Communauté</a></li>
+        <li><a href="@cy" class="community">Communauté</a></li>
       </ul>
 
       <ul id="nav-bottom">
