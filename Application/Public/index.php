@@ -50,9 +50,8 @@ $router->get('posts',       '/',                               'posts', 'index')
        ->_get('v+',    '/Awecode/(?<id>).html', null, null, array('_subdomain' => '__root__'))
        ->_get('ev',    '/Event.html',      null, null, array('_subdomain' => '__root__'))
        ->_get('forum', 'http://forum.hoa-project.net')
-       ->_get('cy',     '/Community.html',      null, null, array('_subdomain' => '__root__'))
        ->_get('a',     '/About.html',      null, null, array('_subdomain' => '__root__'))
-       ->_get('c',     '/Contact.html',    null, null, array('_subdomain' => '__root__'))
+       ->_get('c',     '/Community.html',    null, null, array('_subdomain' => '__root__'))
        ->_get('u',     '/Whouse/(?<who>).html', null, null, array('_subdomain' => '__root__'))
 
        ->_get('github', 'https://github.com/hoaproject/(?<repository>)');
