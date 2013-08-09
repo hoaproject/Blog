@@ -6,7 +6,7 @@ from('Hoa')
 -> import('Model.~')
 -> import('Model.Exception')
 -> import('Database.Dal')
--> import('String');
+-> import('String.~');
 
 from('Hoathis')
 -> import('Model.Exception.*');
@@ -166,7 +166,7 @@ class Post extends \Hoa\Model {
       $normalized_title = $normalized_title->toAscii()
                                            ->replace('/\s/', '-')
                                            ->replace('/[^a-zA-Z0-9\-]+/', '')
-                                           ->substr(0, 32)
+                                           ->reduce(0, 32)
                                            ->toLowerCase();
 
       // force cast because json_encode (used for API) try to return this as an
