@@ -52,6 +52,8 @@ $router->get('posts',       '/',                               'posts', 'index')
        ->_get('lists', 'http://lists.hoa-project.net/index.cgi/lists')
        ->_get('forum', 'http://forum.hoa-project.net')
        ->_get('a',     '/About.html',      null, null, array('_subdomain' => '__root__'))
+       ->_get('f',     '/Foundation.html', null, null, array('_subdomain' => '__root__'))
+       ->_get('f+',    '/Foundation/(?<_able>).html', null, null, array('_subdomain' => '__root__'))
        ->_get('c',     '/Community.html',    null, null, array('_subdomain' => '__root__'))
        ->_get('u',     '/Whouse/(?<who>).html', null, null, array('_subdomain' => '__root__'))
 
