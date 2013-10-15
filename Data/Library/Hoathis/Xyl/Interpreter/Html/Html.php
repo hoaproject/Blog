@@ -77,3 +77,12 @@ class Html extends \Hoa\Xyl\Interpreter\Html {
 }
 
 }
+
+namespace {
+
+/**
+ * Flex entity.
+ */
+Hoa\Core\Consistency::flexEntity('Hoathis\Xyl\Interpreter\Html\Html');
+
+}

@@ -12,7 +12,7 @@ from('Hoa')
 -> import('Router.Http')
 -> import('Xyl.~')
 -> import('File.Read')
--> import('Http.Response');
+-> import('Http.Response.~');
 
 from('Hoathis')
 -> import('Xyl.Interpreter.Html.~');
