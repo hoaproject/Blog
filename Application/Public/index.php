@@ -58,7 +58,8 @@ $router->get('posts',       '/',                               'posts', 'index')
        ->_get('c',     '/Community.html',    null, null, array('_subdomain' => '__root__'))
        ->_get('u',     '/Whouse/(?<who>).html', null, null, array('_subdomain' => '__root__'))
 
-       ->_get('github', 'https://github.com/hoaproject/(?<repository>)');
+       ->_get('twitter', 'https://twitter.com/hoaproject')
+       ->_get('github',  'https://github.com/hoaproject/(?<repository>)');
 
 try {
 
