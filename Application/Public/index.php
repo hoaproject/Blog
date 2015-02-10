@@ -1,31 +1,32 @@
 <?php
 
-namespace {
-
 require_once dirname(dirname(__DIR__)) .
              DIRECTORY_SEPARATOR . 'Data' .
              DIRECTORY_SEPARATOR . 'Core.link.php';
 
-from('Hoa')
--> import('Database.Dal')
--> import('Dispatcher.Basic')
--> import('Router.Http')
--> import('Xyl.~')
--> import('File.Read')
--> import('Http.Response.~');
+use Hoa\Database;
+use Hoa\Dispatcher;
+use Hoa\Router;
+use Hoa\Xyl;
+use Hoa\File;
+use Hoa\Http;
+use Hoathis\Kit;
+use Hoathis\Xyl\Interpreter\Html\Html;
 
-from('Hoathis')
--> import('Xyl.Interpreter.Html.~');
-
-Hoa\Database\Dal::initializeParameters(array(
-    'connection.list.default.dal' => Hoa\Database\Dal::PDO,
+Database\Dal::initializeParameters([
+    'connection.list.default.dal' => Database\Dal::PDO,
     'connection.list.default.dsn' => 'sqlite:hoa://Data/Variable/Database/Blog.sqlite',
     'connection.autoload'         => 'default'
-));
+]);
 
-$dispatcher = new Hoa\Dispatcher\Basic();
+$dispatcher = new Dispatcher\ClassMethod([
+    'synchronous.call'  => 'Application\Controller\(:call:U:)',
+    'synchronous.able'  => '(:able:U:)Action',
+    'asynchronous.call' => '(:%synchronous.call:)',
+    'asynchronous.able' => '(:%synchronous.able:)'
+]);
 $dispatcher->setKitName('Hoathis\Kit\Aggregator');
-$router     = new Hoa\Router\Http();
+$router     = new Router\Http();
 $router->get('posts',       '/',                               'posts', 'index')
        ->get('post',        '/posts/(?<id>\d+)\-(?<normalized_title>.+)\.html', 'posts', 'show')
        ->post('create_comment',    '/posts/(?<post_id>\d+)/comments/create','comments', 'create')
@@ -46,11 +47,11 @@ $router->get('posts',       '/',                               'posts', 'index')
        ->_get('s',     '/Source.html',     null, null, array('_subdomain' => '__root__'))
        ->_get('l',     '/Literature.html', null, null, array('_subdomain' => '__root__'))
        ->_get('lh',    '/Literature/Hack/(?<chapter>).html', null, null, array('_subdomain' => '__root__'))
-       ->_get('v',     '/Awecode.html',    null, null, array('_subdomain' => '__root__'))
+       ->_get('v',     '/Video.html',      null, null, array('_subdomain' => '__root__'))
        ->_get('v+',    '/Awecode/(?<id>).html', null, null, array('_subdomain' => '__root__'))
        ->_get('ev',    '/Event.html',      null, null, array('_subdomain' => '__root__'))
        ->_get('ev+',   '/Event/(?<_able>).html', null, null, array('_subdomain' => '__root__'))
-       ->_get('lists', 'http://lists.hoa-project.net/index.cgi/lists')
+       ->_get('lists', 'http://lists.hoa-project.net/lists')
        ->_get('forum', 'http://forum.hoa-project.net')
        ->_get('a',     '/About.html',      null, null, array('_subdomain' => '__root__'))
        ->_get('f',     '/Foundation.html', null, null, array('_subdomain' => '__root__'))
@@ -65,17 +66,15 @@ try {
 
     $dispatcher->dispatch(
         $router,
-        new Hoa\Xyl(
-            new Hoa\File\Read('hoa://Application/View/Main.xyl'),
-            new Hoa\Http\Response(),
-            new Hoathis\Xyl\Interpreter\Html(),
+        new Xyl(
+            new File\Read('hoa://Application/View/Main.xyl'),
+            new Http\Response(),
+            new Html(),
             $router
         )
     );
 }
-catch ( Hoa\Router\Exception\NotFound $e ) {
+catch ( Router\Exception\NotFound $e ) {
 
     echo 'Your page seems to be not found /o\.', "\n";
-}
-
 }

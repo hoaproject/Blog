@@ -1,16 +1,12 @@
 <?php
 
-namespace {
+namespace Application\Model;
 
-from('Hoa')
--> import('Model.~')
--> import('Database.Dal');
+use Hoa\Model;
+use Hoa\Database;
+use Hoathis\Model\Exception;
 
-}
-
-namespace Application\Model {
-
-class Comment extends \Hoa\Model {
+class Comment extends Model {
 
     protected $_id;
     protected $_post;
@@ -22,7 +18,7 @@ class Comment extends \Hoa\Model {
 
     protected function construct ( ) {
 
-        $this->setMappingLayer(\Hoa\Database\Dal::getLastInstance());
+        $this->setMappingLayer(Database\Dal::getLastInstance());
 
         $this->posted = time();
 
@@ -35,8 +31,8 @@ class Comment extends \Hoa\Model {
             $this->author  = trim(strip_tags($attributes["author"]));
             $this->content = trim(strip_tags($attributes["comment"]));
         }
-        catch (\Hoa\Model\Exception $e) {
-            throw new \Hoathis\Model\Exception\ValidationFailed($e->getMessage());
+        catch (Model\Exception $e) {
+            throw new Exception\ValidationFailed($e->getMessage());
         }
 
         $this->getMappingLayer()->query('PRAGMA foreign_keys = ON');
@@ -47,7 +43,7 @@ class Comment extends \Hoa\Model {
              )
              ->execute(array_merge(
                 $this->getConstraints(),
-                array('post' => $post_id)
+                ['post' => $post_id]
             ));
 
         $this->id = $this->getMappingLayer()->lastInsertId();
@@ -55,15 +51,13 @@ class Comment extends \Hoa\Model {
 
     static public function deleteByPost( $post_id ) {
 
-      $comment = new Comment();
-      $comment->getMappingLayer()
-              ->prepare(
-                'DELETE FROM comment WHERE post = :post_id'
-              )
-              ->execute(array(
-                'post_id'  => $post_id,
-              ));
+        $comment = new Comment();
+        $comment->getMappingLayer()
+                ->prepare(
+                    'DELETE FROM comment WHERE post = :post_id'
+                )
+                ->execute([
+                    'post_id' => $post_id,
+                ]);
     }
-}
-
 }

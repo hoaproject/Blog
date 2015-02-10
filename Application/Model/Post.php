@@ -1,21 +1,13 @@
 <?php
 
-namespace {
+namespace Application\Model;
 
-from('Hoa')
--> import('Model.~')
--> import('Model.Exception')
--> import('Database.Dal')
--> import('String.~');
+use Hoa\Model;
+use Hoa\Database;
+use Hoa\String;
+use Hoathis\Model\Exception;
 
-from('Hoathis')
--> import('Model.Exception.*');
-
-}
-
-namespace Application\Model {
-
-class Post extends \Hoa\Model {
+class Post extends Model {
 
     protected $_id;
     protected $_title;
@@ -29,7 +21,7 @@ class Post extends \Hoa\Model {
 
     protected function construct ( ) {
 
-        $this->setMappingLayer(\Hoa\Database\Dal::getLastInstance());
+        $this->setMappingLayer(Database\Dal::getLastInstance());
 
         $this->posted = time();
 
@@ -45,7 +37,7 @@ class Post extends \Hoa\Model {
                          'FROM   post ' .
                          'WHERE  id = :id'
                      )
-                     ->execute(array('id' => $id))
+                     ->execute(['id' => $id])
                      ->fetchAll();
 
         if(!empty($data)) {
@@ -57,27 +49,27 @@ class Post extends \Hoa\Model {
                          'FROM   comment ' .
                          'WHERE  post = :post'
                      )
-                     ->execute(array('post' => $id))
+                     ->execute(['post' => $id])
                      ->fetchAll()
             );
         }
         else
         {
-            throw new \Hoathis\Model\Exception\NotFound("Post not found");
+            throw new Exception\NotFound('Post not found');
         }
 
         return $post;
     }
 
-    public function update ( Array $attributes = array() ) {
+    public function update ( Array $attributes = [] ) {
 
         try {
             $this->title   = trim(strip_tags($attributes['title']));
             $this->content = trim($attributes['content']);
             $this->posted  = strtotime(trim(strip_tags($attributes['posted'])));
         }
-        catch (\Hoa\Model\Exception $e) {
-            throw new \Hoathis\Model\Exception\ValidationFailed($e->getMessage());
+        catch (Model\Exception $e) {
+            throw new Exception\ValidationFailed($e->getMessage());
         }
 
         return $this->getMappingLayer()
@@ -86,23 +78,23 @@ class Post extends \Hoa\Model {
                         'posted = :posted ' .
                         'WHERE  id = :id'
                     )
-                    ->execute(array(
+                    ->execute([
                         'title'   => $this->title,
                         'content' => $this->content,
                         'posted'  => $this->posted,
                         'id'      => $this->id
-                    ));
+                    ]);
     }
 
-    public function create ( Array $attributes = array() ) {
+    public function create ( Array $attributes = [] ) {
 
         try {
-            $this->title   = trim(strip_tags($attributes["title"]));
-            $this->content = trim(strip_tags($attributes["content"]));
-            $this->posted  = strtotime(trim(strip_tags($attributes["posted"])));
+            $this->title   = trim(strip_tags($attributes['title']));
+            $this->content = trim(strip_tags($attributes['content']));
+            $this->posted  = strtotime(trim(strip_tags($attributes['posted'])));
         }
-        catch (\Hoa\Model\Exception $e) {
-            throw new \Hoathis\Model\Exception\ValidationFailed($e->getMessage());
+        catch (Model\Exception $e) {
+            throw new Exception\ValidationFailed($e->getMessage());
         }
 
         $this->getMappingLayer()
@@ -110,11 +102,11 @@ class Post extends \Hoa\Model {
                 'INSERT INTO post (title, content, posted) ' .
                 'VALUES (:title, :content, :posted)'
              )
-             ->execute(array(
+             ->execute([
                 'title'   => $this->title,
                 'content' => $this->content,
                 'posted'  => $this->posted
-             ));
+             ]);
         $this->id = $this->getMappingLayer()->lastInsertId();
     }
 
@@ -126,15 +118,15 @@ class Post extends \Hoa\Model {
                   ->prepare(
                     'DELETE FROM post WHERE id = :id'
                   )
-                  ->execute(array(
-                    'id'  => $this->id,
-                  ));
+                  ->execute([
+                    'id' => $this->id,
+                  ]);
     }
 
     public function getList ( $current_page, $post_per_page ) {
 
         if( $current_page > ceil($this->count()/$post_per_page) ) {
-            throw new \Hoathis\Model\Exception\NotFound("Page not found");
+            throw new Exception\NotFound("Page not found");
         }
 
         $first_entry = ($current_page - 1) * $post_per_page;
@@ -162,7 +154,7 @@ class Post extends \Hoa\Model {
 
     public static function getNormalizedTitle( $title ) {
 
-      $normalized_title = new \Hoa\String($title);
+      $normalized_title = new String($title);
       $normalized_title = $normalized_title->toAscii()
                                            ->replace('/\s/', '-')
                                            ->replace('/[^a-zA-Z0-9\-]+/', '')
@@ -182,6 +174,4 @@ class Post extends \Hoa\Model {
                     )
                     ->fetchColumn();
     }
-}
-
 }
