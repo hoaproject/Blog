@@ -2,7 +2,7 @@
 <?xyl-fragment href="hoa://Application/View/Admin/Posts/Posts.frag.xyl" as="postsfrag"?>
 
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
-  <yield id="yContent">
+  <yield id="main_content">
     <yield bind="?post">
       <form action="@create_post" method="post">
         <yield select="?f:postsfrag#form" />
