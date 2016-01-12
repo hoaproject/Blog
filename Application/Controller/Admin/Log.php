@@ -6,7 +6,7 @@ class Log extends Base {
 
   public function IndexAction ( ) {
 
-    event('hoa://Event/Session/user:expired')
+    \Hoa\Event::getEvent('hoa://Event/Session/user:expired')
         ->attach(function ( \Hoa\Event\Bucket $bucket ) { });
 
     $user = new \Hoa\Session('user');
@@ -24,7 +24,7 @@ class Log extends Base {
 
   public function InAction ( ) {
 
-    event('hoa://Event/Session/user:expired')
+    \Hoa\Event::getEvent('hoa://Event/Session/user:expired')
         ->attach(function ( \Hoa\Event\Bucket $bucket ) {
             $this->getKit('Redirector')->redirect('log');
         });

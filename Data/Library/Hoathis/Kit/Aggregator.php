@@ -18,6 +18,6 @@ class Aggregator extends \Hoa\Dispatcher\Kit {
 
   private function setKit ( $kitName ) {
 
-      $this->_kits[$kitName] = \Hoa\Consistency::dnew('Hoathis\Kit\\'.$kitName, array($this->router, $this->dispatcher, $this->view));
+      $this->_kits[$kitName] = \Hoa\Consistency\Autoloader::dnew('Hoathis\Kit\\'.$kitName, array($this->router, $this->dispatcher, $this->view));
   }
 }
