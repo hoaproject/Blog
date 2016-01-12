@@ -34,27 +34,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace {
-
-from('Hoa')
-
-/**
- * \Hoa\Xyl\Interpreter\Html
- */
--> import('Xyl.Interpreter.Html.~');
-
-
-
-from('Hoathis')
-
-/**
- * \Hoathis\Xyl\Interpreter\Html\*
- */
--> import('Xyl.Interpreter.Html.*');
-
-}
-
-namespace Hoathis\Xyl\Interpreter\Html {
+namespace Hoathis\Xyl\Interpreter\Html;
 
 /**
  * Class \Hoathis\Xyl\Interpreter\Html.
@@ -76,13 +56,7 @@ class Html extends \Hoa\Xyl\Interpreter\Html {
     }
 }
 
-}
-
-namespace {
-
 /**
  * Flex entity.
  */
-Hoa\Consistency\Consistency::flexEntity('Hoathis\Xyl\Interpreter\Html\Html');
-
-}
+\Hoa\Consistency\Consistency::flexEntity('Hoathis\Xyl\Interpreter\Html\Html');

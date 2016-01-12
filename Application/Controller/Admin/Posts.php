@@ -1,15 +1,6 @@
 <?php
 
-namespace {
-
-from('Application')
--> import('Controller.Admin.Base')
--> import('Model.Post')
--> import('Model.Comment');
-
-}
-
-namespace Application\Controller\Admin {
+namespace Application\Controller\Admin;
 
 class Posts extends Base {
 
@@ -158,6 +149,4 @@ class Posts extends Base {
                                   'id'             => $post->id,
                                   'normalized_title' => $normalized_title));
   }
-}
-
 }

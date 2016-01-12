@@ -1,18 +1,6 @@
 <?php
 
-namespace {
-
-from('Application')
--> import('Controller.Base')
--> import('Model.Post')
--> import('Model.Comment');
-
-from('Hoa')
--> import('Stringbuffer.Read');
-
-}
-
-namespace Application\Controller {
+namespace Application\Controller;
 
 class Posts extends Base {
 
@@ -76,6 +64,4 @@ class Posts extends Base {
 
     return;
   }
-}
-
 }

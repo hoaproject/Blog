@@ -1,14 +1,6 @@
 <?php
 
-namespace {
-
-from('Application')
--> import('Controller.Admin.Base')
--> import('Model.User');
-
-}
-
-namespace Application\Controller\Admin {
+namespace Application\Controller\Admin;
 
 class Log extends Base {
 
@@ -91,6 +83,4 @@ class Log extends Base {
     $this->getKit('Redirector')->redirect('log');
     return;
   }
-}
-
 }

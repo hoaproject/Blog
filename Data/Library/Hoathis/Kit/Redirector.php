@@ -1,13 +1,6 @@
 <?php
 
-namespace {
-
-from('Hoa')
--> import('Dispatcher.Kit');
-
-}
-
-namespace Hoathis\Kit {
+namespace Hoathis\Kit;
 
 class Redirector extends \Hoa\Dispatcher\Kit {
 
@@ -21,7 +14,5 @@ class Redirector extends \Hoa\Dispatcher\Kit {
 
     exit;
   }
-
-}
 
 }

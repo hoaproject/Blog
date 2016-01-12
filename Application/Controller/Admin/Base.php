@@ -1,17 +1,6 @@
 <?php
 
-namespace {
-
-from('Hoa')
--> import('Dispatcher.Kit')
--> import('Session.~');
-
-from('Application')
--> import('Controller.Base');
-
-}
-
-namespace Application\Controller\Admin {
+namespace Application\Controller\Admin;
 
 class Base extends \Application\Controller\Base {
 
@@ -33,6 +22,4 @@ class Base extends \Application\Controller\Base {
 
     return false;
   }
-}
-
 }

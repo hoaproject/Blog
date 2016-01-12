@@ -34,18 +34,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace {
-
-from('Hoa')
-
-/**
- * \Hoa\Xyl\Interpreter\Html\Generic
- */
--> import('Xyl.Interpreter.Html.Generic');
-
-}
-
-namespace Hoathis\Xyl\Interpreter\Html {
+namespace Hoathis\Xyl\Interpreter\Html;
 
 /**
  * Class \Hoathis\Xyl\Interpreter\Html\Paginator.
@@ -110,6 +99,4 @@ class Paginator extends \Hoa\Xyl\Interpreter\Html\Generic {
 
         return;
     }
-}
-
 }

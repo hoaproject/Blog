@@ -1,14 +1,6 @@
 <?php
 
-namespace {
-
-from('Application')
--> import('Controller.Base')
--> import('Model.Post');
-
-}
-
-namespace Application\Controller\Api {
+namespace Application\Controller\Api;
 
 class Posts extends \Application\Controller\Base {
 
@@ -24,6 +16,4 @@ class Posts extends \Application\Controller\Base {
 
     return;
   }
-}
-
 }

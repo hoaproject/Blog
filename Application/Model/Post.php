@@ -4,7 +4,7 @@ namespace Application\Model;
 
 use Hoa\Model;
 use Hoa\Database;
-use Hoa\String;
+use Hoa\Ustring;
 use Hoathis\Model\Exception;
 
 class Post extends Model {
@@ -154,7 +154,7 @@ class Post extends Model {
 
     public static function getNormalizedTitle( $title ) {
 
-      $normalized_title = new String($title);
+      $normalized_title = new Ustring($title);
       $normalized_title = $normalized_title->toAscii()
                                            ->replace('/\s/', '-')
                                            ->replace('/[^a-zA-Z0-9\-]+/', '')

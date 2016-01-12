@@ -17,6 +17,7 @@ use Hoathis\Xyl\Interpreter\Html\Html;
 
 $autoloader = new Consistency\Autoloader();
 $autoloader->addNamespace('Application', dirname(__DIR__));
+$autoloader->addNamespace('Hoathis', dirname(dirname(__DIR__)) . DS . 'Data' . DS . 'Library' . DS . 'Hoathis' . DS);
 $autoloader->register();
 
 Protocol::getInstance()['Application']->setReach(dirname(__DIR__) . DS);

@@ -1,15 +1,6 @@
 <?php
 
-namespace {
-
-from('Application')
--> import('Controller.Base')
--> import('Model.Comment')
--> import('Model.Post');
-
-}
-
-namespace Application\Controller {
+namespace Application\Controller;
 
 class Comments extends Base {
 
@@ -36,6 +27,4 @@ class Comments extends Base {
 
     return;
   }
-}
-
 }
