@@ -20,7 +20,7 @@ class Base extends \Application\Controller\Base {
     $self = $this;
 
     event('hoa://Event/Session/user:expired')
-      ->attach(function ( \Hoa\Core\Event\Bucket $bucket ) use ( $self ) {
+      ->attach(function ( \Hoa\Event\Bucket $bucket ) use ( $self ) {
           $self->getKit('Redirector')->redirect('log');
       });
 

@@ -4,14 +4,23 @@ require_once dirname(dirname(__DIR__)) .
              DIRECTORY_SEPARATOR . 'Data' .
              DIRECTORY_SEPARATOR . 'Core.link.php';
 
+use Hoa\Consistency;
 use Hoa\Database;
 use Hoa\Dispatcher;
-use Hoa\Router;
-use Hoa\Xyl;
 use Hoa\File;
 use Hoa\Http;
+use Hoa\Protocol;
+use Hoa\Router;
+use Hoa\Xyl;
 use Hoathis\Kit;
 use Hoathis\Xyl\Interpreter\Html\Html;
+
+$autoloader = new Consistency\Autoloader();
+$autoloader->addNamespace('Application', dirname(__DIR__));
+$autoloader->register();
+
+Protocol::getInstance()['Application']->setReach(dirname(__DIR__) . DS);
+Protocol::getInstance()['Data']->setReach(dirname(dirname(__DIR__)) . DS . 'Data' . DS);
 
 Database\Dal::initializeParameters([
     'connection.list.default.dal' => Database\Dal::PDO,

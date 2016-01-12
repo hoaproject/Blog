@@ -83,6 +83,6 @@ namespace {
 /**
  * Flex entity.
  */
-Hoa\Core\Consistency::flexEntity('Hoathis\Xyl\Interpreter\Html\Html');
+Hoa\Consistency\Consistency::flexEntity('Hoathis\Xyl\Interpreter\Html\Html');
 
 }
