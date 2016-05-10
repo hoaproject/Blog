@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="Nouvel awecode : Hoa\Eventsource"?>
+<?xyl-meta name="date" value="2013-08-10T00:00:00+02:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>Après un vote sur <a href="https://twitter.com/hoaproject">Twitter</a>, le sujet du prochain
+    awecode avait été fixé :
+    <a href="@lh:chapter=Eventsource"><code>Hoa\Eventsource</code></a>. La
+    bibliothèque a été finalisée depuis un moment déjà, la documentation est
+    complète et le code a été éprouvé. C'est le moment pour une démonstration !</p>
+    <p>Voici donc le <a href="@v+:id=Eventsource">nouvel awecode sur
+    <code>Hoa\Eventsource</code></a>. Au sommaire : pourquoi et comment utiliser
+    <code>Hoa\Eventsource\Server</code> ? Un exemple simple et utile au quotidien
+    illustrera la technologie EventSource.</p>
+    <p>Pour rappel, voici quelques liens vers
+    <a href="@lh:chapter=Eventsource">la documentation</a> et
+    <a href="@github:repository=Eventsource">le dépôt sur Github</a>. Profitez
+    bien !</p>
+  </article>
+</overlay>

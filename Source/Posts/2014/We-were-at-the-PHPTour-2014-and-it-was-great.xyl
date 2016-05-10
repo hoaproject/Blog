@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="We were at the PHPTour 2014 and it was great!"?>
+<?xyl-meta name="date" value="2014-07-25T02:00:00+02:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <img src="http://static.hoa-project.net/Image/Logo/PHPTour_Lyon.png"
+         width="400"
+         class="center" />
+    
+    <p>The <a href="http://afup.org/pages/phptourlyon2014/">PHPTour</a> is a brand
+    new cycle of the <a href="http://afup.org/">AFUP</a> conferences. The
+    23<sup>th</sup> and 24<sup>th</sup> June 2014, at the Manufacture des Tabacs at
+    Lyon (FR), the forum has gently welcomed us to present a talk about
+    <cite lang="fr">Praspel, un langage de spécification par contrats</cite>
+    (<cite>Praspel, a specification language based on contracts</cite>, presented in
+    french).</p>
+    
+    <img src="https://farm3.staticflickr.com/2904/14408646938_7d1d9cff18_b.jpg"
+         alt="Ivan Enderlin and Julien Bianchi"
+         width="400"
+         class="center" />
+    
+    <p>As usual, the presentation and all the demonstrations are
+    <a href="@ev+:_able=Phptour14">available on the dedicated page of the event</a>.
+    In addition to these latters, we have the
+    <a href="http://youtu.be/PYcQmK_A_rw">recording of the conference</a> (in
+    french)!</p>
+    
+    <div class="video">
+      <iframe src="http://www.youtube-nocookie.com/embed/PYcQmK_A_rw?rel=0"></iframe>
+    </div>
+    <p>Enjoy and see you somewhere else!</p>
+  </article>
+</overlay>

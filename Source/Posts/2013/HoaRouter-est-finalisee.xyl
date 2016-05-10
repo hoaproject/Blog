@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="Hoa\Router est finalisée"?>
+<?xyl-meta name="date" value="2013-07-11T00:00:00+02:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>Une de plus ! Et cette fois-ci, c'est une bibliothèque importante.
+    <code>Hoa\Router</code> est finalisée.</p>
+    <p>Un programme doit gérer beaucoup de <strong>requêtes</strong>, et une tâche
+    <strong>essentielle</strong> est de savoir les <strong>router</strong>, c'est à
+    dire de savoir où les <strong>acheminer</strong>. C'est le rôle qui incombe à
+    <a href="@github:repository=Router">la bibliothèque <code>Hoa\Router</code></a>.
+    Cette bibliothèque propose actuellement deux routeurs : HTTP et CLI, ainsi
+    qu'une interface. C'est une bibliothèque importante et sensible car elle se
+    trouve sur le front de chaque application.  Elle doit être
+    <strong>robuste</strong>, <strong>performante</strong> et
+    <strong>simple</strong> à utiliser ! En effet, quand nous voulons déclarer des
+    règles travaillant sur des URI, des sous-domaines, des connexions sécurisées
+    etc., il ne faut pas écrire 30 lignes de code pour avoir un seul résultat. Nous
+    ne voulons pas non plus attendre 1 seconde pour un résultat, surtout si
+    l'application gère des milliers de requêtes à la minute.</p>
+    <p>Cela fait des mois que nous travaillons à sa finalisation et surtout à sa <a
+    href="@lh:chapter=Router">documentation</a>, qui s'accompagne comme d'habitude
+    du fameux <code>README.md</code>. Un grand merci à la communauté de Hoa, encore
+    une fois, ainsi qu'à ses utilisateurs, pour leurs retours et leurs tests
+    précieux !</p>
+  </article>
+</overlay>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="Thank you JoliCode to use Hoa!"?>
+<?xyl-meta name="date" value="2015-03-30T00:00:00+02:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p><a href="http://jolicode.com/">JoliCode</a> is a famous Web agency in France.
+    They make Web and mobile quality projects.</p>
+    <figure>
+      <img src="http://static.hoa-project.net/Image/Logo/Jolicode.svg" />
+      <figcaption><p>JoliCode's logo.</p></figcaption>
+    </figure>
+    <p>Their customers includes <a href="https://en.wikipedia.org/wiki/Arte">arte</a>,
+    <a href="https://en.wikipedia.org/wiki/Canal%2B">Canal+</a>,
+    <a href="https://en.wikipedia.org/wiki/Acer_Inc.">Acer</a>,
+    <a href="https://www.humancoders.com/">HumanCoders</a> etc. JoliCode is especially
+    famous in France because of their presence in a lot of conferences, talks and
+    events, and their help in such events. We met them in the past at the
+    <a href="http://hoa-project.net/Event/Phptour14.html">PHPTour 2014</a> by the
+    way.</p>
+    <p>Recently, JoliCode announced to us they use Hoa internally for some of their
+    customers. Their
+    <a href="http://central.hoa-project.net/Resource/Library/Ruler">favorite library
+    is <code>Hoa\Ruler</code></a>. It perfectly fits in existing applications
+    written with <a href="http://symfony.com/">Symfony</a> for instance.</p>
+    <p>Because of the agency size and importance in France, we decided to add their
+    logo on our homepage. JoliCode team : Welcome in the truster list and
+    <strong>thank you for your confidence</strong>!</p>
+  </article>
+</overlay>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="My tailor is rich"?>
+<?xyl-meta name="date" value="2014-02-13T00:00:00+01:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>Maybe you have noticed that Hoa is going <strong>bilingual</strong>. After
+    months of effort, the website has been <strong>fully</strong> translated from
+    French to English, even the awecodes!  The documentation is under translation:
+    half of the hack book chapters have been translated. The language depends of
+    your preferences set in your browser.  However, you can change the language by
+    clicking on the little flags in the footer of the website (not yet on the
+    blog).</p>
+    <p>Our main public and first users are French-speaking. It was really
+    <strong>awesome</strong> to see the French community experiencing the
+    documentation, the awecodes and the way we present Hoa. Thank you so much for
+    the <strong>feedbacks</strong>. Now, the logical next step is to make Hoa
+    accessible to the most popular speaking language in order to get more users and
+    more contributors. Since a few weeks, without any specific mentions, we have
+    seen 2 new contributors and a lot of activities around Hoa (we will soon publish
+    a new article about it). So now it is official, and thank you for your
+    support.</p>
+    <p>If you would like to translate, you will find links on different
+    untranslated pages. Please, feel free to contribute! In addition, if you noticed
+    a typo, again, feel free to report it. Thank you!</p>
+    
+    <hr />
+    
+    <p>Peut-être avez-vous remarqué que Hoa devient <strong>bilingue</strong>. Après
+    des mois d'effort, le site a été <strong>entièrement</strong> traduit du
+    français vers l'anglais, même les awecodes ! La documentation est en cours de
+    traduction : la moitié des chapitres du <em lang="en">hack book</em> ont été
+    traduits. La langue dépend des préférences de votre navigateur. Toutefois, vous
+    pouvez la changer en cliquant sur les petits drapeaux dans le pied de page du
+    site (pas encore sur le blog).</p>
+    <p>Notre principal public et nos premiers utilisateurs sont francophones.
+    C'était vraiment <strong>génial</strong> de voir la communauté française
+    expérimenter la documentation, les awecodes et la manière dont présenter Hoa.
+    Merci infiniment pour ces <strong>retours</strong> précieux. Maintenant, la
+    suite logique est de rendre Hoa accessible à la langue la plus parlée afin
+    d'avoir plus d'utilisateurs et plus de contributeurs. Depuis quelques semaines,
+    sans en avoir parlé, nous avons vu 2 nouveaux contributeurs et beaucoup
+    d'activités autour de Hoa (nous allons bientôt publier un article à ce sujet).
+    Donc maintenant c'est officiel et merci de votre aide !</p>
+    <p>Si vous voulez traduire, vous trouverez des liens sur les différentes pages
+    encore non-traduites. Sentez-vous libre de contribuer ! De plus, si vous
+    remarquez des erreurs, encore une fois, sentez-vous libre de nous le dire.</p>
+  </article>
+</overlay>

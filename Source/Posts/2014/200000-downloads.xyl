@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="200,000 downloads!"?>
+<?xyl-meta name="date" value="2014-11-12T00:00:00+01:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>Since yesterday, Hoa's libraries have been downloaded <strong>more than 200,000 times</strong>
+    from <a href="https://packagist.org/search/?q=hoa">Packagist</a>!</p>
+    
+    <p>Whilst we care a lot about it (<a href="@ev+:_able=Hoaapex14">remind this
+    presentation given at the Hoa Apex 2<sup>nd</sup> edition</a>, our community
+    event), with such a download volume, the code quality is in the center of our
+    concerns like never before. With <strong>more than 100,000 assertions</strong> in our unit tests
+    and the deployment of our own continuous integration tools (coming soon
+    publicly!), we are able to ensure and to continue to release quality code while
+    improving libraries.</p>
+    
+    <p><a href="@s#Rush_Release">Rush, our own release processus</a>, allows to use
+    a version format close enough to semver to use it easily in your
+    <code>composer.json</code> files. This approach also eases the use and the
+    integration of Hoa's libraries in other projects. Rush allows to distribute code
+    as soon as it is stable, and bring back together rolling-release and
+    scheduled-based release.</p>
+    
+    <img src="hoa://Application/Public/Image/Logo/PHPMetrics.png" class="center" />
+    <p>We are very curious and we would love to know who are behind all these
+    downloads. We know that <a href="http://phpmetrics.org/">phpmetrics</a>, a static analysis tool for PHP, is a new big-user. Please, contact us to tell how and why you are using one of our
+    libraries! There is free space on our homepage!</p>
+    
+    <p>While waiting the 1 millionth download, we continue to improve libraries,
+    their documentation, their quality etc.</p>
+    
+    <p>Thank you very much!</p>
+  </article>
+</overlay>

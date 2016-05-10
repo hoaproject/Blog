@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="1 million installations and a meta-shop"?>
+<?xyl-meta name="date" value="2015-11-09T00:00:00+01:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>Hello developers!</p>
+    <p>Today, we are really <strong>excited</strong> to announce that the project
+    has reached the incredible number of <strong>1,000,000 installations</strong>!
+    This is insane 😄. Behind this number, it mostly shows the project is more and
+    more used. The installation curve grows really fast:</p>
+    <figure>
+      <img
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NTAgMzUwIj4KPHN0eWxlPgpAZm9udC1mYWNlIHsKICAgIGZvbnQtZmFtaWx5OiBUZXh0OwogICAgc3JjOiB1cmwoJ2h0dHA6Ly9zdGF0aWMuaG9hLXByb2plY3QubmV0L0ZvbnQvTXVzZW8ud29mZicpIGZvcm1hdCgnd29mZicpLAogICAgICAgICB1cmwoJ2h0dHA6Ly9zdGF0aWMuaG9hLXByb2plY3QubmV0L0ZvbnQvTXVzZW8uZW90JykgIGZvcm1hdCgnZW90JyksCiAgICAgICAgIHVybCgnaHR0cDovL3N0YXRpYy5ob2EtcHJvamVjdC5uZXQvRm9udC9NdXNlby50dGYnKSAgZm9ybWF0KCd0cnVldHlwZScpOwogICAgZm9udC13ZWlnaHQ6IG5vcm1hbDsKICAgIGZvbnQtc3R5bGU6IG5vcm1hbDsKfQoKdGV4dCB7IGZvbnQtZmFtaWx5OiBUZXh0IH0KLmF4aXMgewogICAgZmlsbDogI2FhOWM4ZDsKICAgIGZvbnQtc2l6ZTogLjZlbTsKICAgIHRleHQtc2hhZG93OiBub25lOwp9CgouYXhpcyBwYXRoLAouYXhpcyBsaW5lIHsKICAgIGZpbGw6IG5vbmU7CiAgICBzdHJva2U6ICNjMWI3YWM7CiAgICBzaGFwZS1yZW5kZXJpbmc6IGNyaXNwRWRnZXM7Cn0KCi5hcmVhIHsKICAgIGZpbGw6ICNmNWU3ZDM7CiAgICBzdHJva2U6ICNkZTgzMDA7Cn0KPC9zdHlsZT4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTAsMjApIj48cGF0aCBkPSJNMCwyOTcuMzg5MjI0ODA4NjMwMkwzNjYuODc3MzU1MjU4NjUwMiwyNDcuNzg0NDk2MTcyNjAzNTVMNDUyLjg2NzQyMDM0OTQzNDcsMjIxLjY3Njc0NDI1ODkwNTMzTDUwMy44ODQ4OTIwODYzMzA5LDE5NS41Njg5OTIzNDUyMDcxNkw1NDAuMTk2OTg1MjY4OTI3NywxNjkuNDYxMjQwNDMxNTA4OTRMNjIxLjk2NDcxMzk0MzEzMTMsOTEuMTM3OTg0NjkwNDE0MjdMNjM2LjY0MDk3MjkzNTkzNyw3OS44ODUwMjE0NjA1NzIwNkw2NDUuNzI2Mjc2MTIxOTU5Niw3Mi4zNDE5Njk3Nzc2NjYzOUw2NDcuMTI0MDE1MDczNjU1NCw3MC43MzY4NjUxOTAwMTIyMkw2NTEuMzE3MjMxOTI4NzQyNyw2Ni45MjAxNzI5Mzc3NDg2N0w2NTMuNDEzODQwMzU2Mjg2NCw2My44Mzg0MTM5MDE4NTU3NDVMNjU3LjYwNzA1NzIxMTM3MzgsNTkuMDc5MjMxODA1NTA3NjhMNjY1Ljk5MzQ5MDkyMTU0ODQsNTBMNjgwLDMzLjgwOTUzODcyODIzOTE3NUw2ODAsMzAwTDY2NS45OTM0OTA5MjE1NDg0LDMwMEw2NTcuNjA3MDU3MjExMzczOCwzMDBMNjUzLjQxMzg0MDM1NjI4NjQsMzAwTDY1MS4zMTcyMzE5Mjg3NDI3LDMwMEw2NDcuMTI0MDE1MDczNjU1NCwzMDBMNjQ1LjcyNjI3NjEyMTk1OTYsMzAwTDYzNi42NDA5NzI5MzU5MzcsMzAwTDYyMS45NjQ3MTM5NDMxMzEzLDMwMEw1NDAuMTk2OTg1MjY4OTI3NywzMDBMNTAzLjg4NDg5MjA4NjMzMDksMzAwTDQ1Mi44Njc0MjAzNDk0MzQ3LDMwMEwzNjYuODc3MzU1MjU4NjUwMiwzMDBMMCwzMDBaIiBjbGFzcz0iYXJlYSI+PC9wYXRoPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDMwMCkiIGNsYXNzPSJ4IGF4aXMiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE5LjUzOTIyNTc2MjI0NzM0NCwwKSIgc3R5bGU9Im9wYWNpdHk6IDE7IiBjbGFzcz0idGljayI+PGxpbmUgeDI9IjAiIHkyPSI2Ij48L2xpbmU+PHRleHQgeD0iMCIgeT0iOSIgc3R5bGU9InRleHQtYW5jaG9yOiBtaWRkbGU7IiBkeT0iLjcxZW0iPjA0LTIwMTM8L3RleHQ+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDgzLjEzNjM0ODA2NDQwNTYyLDApIiBzdHlsZT0ib3BhY2l0eTogMTsiIGNsYXNzPSJ0aWNrIj48bGluZSB4Mj0iMCIgeTI9IjYiPjwvbGluZT48dGV4dCB4PSIwIiB5PSI5IiBzdHlsZT0idGV4dC1hbmNob3I6IG1pZGRsZTsiIGR5PSIuNzFlbSI+MDctMjAxMzwvdGV4dD48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTQ3LjQzMjMzOTg0MjQxMTc4LDApIiBzdHlsZT0ib3BhY2l0eTogMTsiIGNsYXNzPSJ0aWNrIj48bGluZSB4Mj0iMCIgeTI9IjYiPjwvbGluZT48dGV4dCB4PSIwIiB5PSI5IiBzdHlsZT0idGV4dC1hbmNob3I6IG1pZGRsZTsiIGR5PSIuNzFlbSI+MTAtMjAxMzwvdGV4dD48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjExLjc1NzQ1MTE4MTkxMTYyLDApIiBzdHlsZT0ib3BhY2l0eTogMTsiIGNsYXNzPSJ0aWNrIj48bGluZSB4Mj0iMCIgeTI9IjYiPjwvbGluZT48dGV4dCB4PSIwIiB5PSI5IiBzdHlsZT0idGV4dC1hbmNob3I6IG1pZGRsZTsiIGR5PSIuNzFlbSI+MDEtMjAxNDwvdGV4dD48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjc0LjYyNjU4NDQ0NjcyODMsMCkiIHN0eWxlPSJvcGFjaXR5OiAxOyIgY2xhc3M9InRpY2siPjxsaW5lIHgyPSIwIiB5Mj0iNiI+PC9saW5lPjx0ZXh0IHg9IjAiIHk9IjkiIHN0eWxlPSJ0ZXh0LWFuY2hvcjogbWlkZGxlOyIgZHk9Ii43MWVtIj4wNC0yMDE0PC90ZXh0PjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzMzguMjIzNzA2NzQ4ODg2NTcsMCkiIHN0eWxlPSJvcGFjaXR5OiAxOyIgY2xhc3M9InRpY2siPjxsaW5lIHgyPSIwIiB5Mj0iNiI+PC9saW5lPjx0ZXh0IHg9IjAiIHk9IjkiIHN0eWxlPSJ0ZXh0LWFuY2hvcjogbWlkZGxlOyIgZHk9Ii43MWVtIj4wNy0yMDE0PC90ZXh0PjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0MDIuNTE5Njk4NTI2ODkyOCwwKSIgc3R5bGU9Im9wYWNpdHk6IDE7IiBjbGFzcz0idGljayI+PGxpbmUgeDI9IjAiIHkyPSI2Ij48L2xpbmU+PHRleHQgeD0iMCIgeT0iOSIgc3R5bGU9InRleHQtYW5jaG9yOiBtaWRkbGU7IiBkeT0iLjcxZW0iPjEwLTIwMTQ8L3RleHQ+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQ2Ni44NDQ4MDk4NjYzOTI2LDApIiBzdHlsZT0ib3BhY2l0eTogMTsiIGNsYXNzPSJ0aWNrIj48bGluZSB4Mj0iMCIgeTI9IjYiPjwvbGluZT48dGV4dCB4PSIwIiB5PSI5IiBzdHlsZT0idGV4dC1hbmNob3I6IG1pZGRsZTsiIGR5PSIuNzFlbSI+MDEtMjAxNTwvdGV4dD48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTI5LjcxMzk0MzEzMTIwOTIsMCkiIHN0eWxlPSJvcGFjaXR5OiAxOyIgY2xhc3M9InRpY2siPjxsaW5lIHgyPSIwIiB5Mj0iNiI+PC9saW5lPjx0ZXh0IHg9IjAiIHk9IjkiIHN0eWxlPSJ0ZXh0LWFuY2hvcjogbWlkZGxlOyIgZHk9Ii43MWVtIj4wNC0yMDE1PC90ZXh0PjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1OTMuMzExMDY1NDMzMzY3NiwwKSIgc3R5bGU9Im9wYWNpdHk6IDE7IiBjbGFzcz0idGljayI+PGxpbmUgeDI9IjAiIHkyPSI2Ij48L2xpbmU+PHRleHQgeD0iMCIgeT0iOSIgc3R5bGU9InRleHQtYW5jaG9yOiBtaWRkbGU7IiBkeT0iLjcxZW0iPjA3LTIwMTU8L3RleHQ+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDY1Ny42MDcwNTcyMTEzNzM4LDApIiBzdHlsZT0ib3BhY2l0eTogMTsiIGNsYXNzPSJ0aWNrIj48bGluZSB4Mj0iMCIgeTI9IjYiPjwvbGluZT48dGV4dCB4PSIwIiB5PSI5IiBzdHlsZT0idGV4dC1hbmNob3I6IG1pZGRsZTsiIGR5PSIuNzFlbSI+MTAtMjAxNTwvdGV4dD48L2c+PHBhdGggZD0iTTAsNlYwSDY4MFY2IiBjbGFzcz0iZG9tYWluIj48L3BhdGg+PC9nPjxnIGNsYXNzPSJ5IGF4aXMiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsMzAwKSIgc3R5bGU9Im9wYWNpdHk6IDE7IiBjbGFzcz0idGljayI+PGxpbmUgeTI9IjAiIHgyPSItNiI+PC9saW5lPjx0ZXh0IHk9IjAiIHg9Ii05IiBzdHlsZT0idGV4dC1hbmNob3I6IGVuZDsiIGR5PSIuMzJlbSI+MDwvdGV4dD48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwyNzMuODkyMjQ4MDg2MzAxOCkiIHN0eWxlPSJvcGFjaXR5OiAxOyIgY2xhc3M9InRpY2siPjxsaW5lIHkyPSIwIiB4Mj0iLTYiPjwvbGluZT48dGV4dCB5PSIwIiB4PSItOSIgc3R5bGU9InRleHQtYW5jaG9yOiBlbmQ7IiBkeT0iLjMyZW0iPjEwMCwwMDA8L3RleHQ+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsMjQ3Ljc4NDQ5NjE3MjYwMzU1KSIgc3R5bGU9Im9wYWNpdHk6IDE7IiBjbGFzcz0idGljayI+PGxpbmUgeTI9IjAiIHgyPSItNiI+PC9saW5lPjx0ZXh0IHk9IjAiIHg9Ii05IiBzdHlsZT0idGV4dC1hbmNob3I6IGVuZDsiIGR5PSIuMzJlbSI+MjAwLDAwMDwvdGV4dD48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwyMjEuNjc2NzQ0MjU4OTA1MzMpIiBzdHlsZT0ib3BhY2l0eTogMTsiIGNsYXNzPSJ0aWNrIj48bGluZSB5Mj0iMCIgeDI9Ii02Ij48L2xpbmU+PHRleHQgeT0iMCIgeD0iLTkiIHN0eWxlPSJ0ZXh0LWFuY2hvcjogZW5kOyIgZHk9Ii4zMmVtIj4zMDAsMDAwPC90ZXh0PjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLDE5NS41Njg5OTIzNDUyMDcxNikiIHN0eWxlPSJvcGFjaXR5OiAxOyIgY2xhc3M9InRpY2siPjxsaW5lIHkyPSIwIiB4Mj0iLTYiPjwvbGluZT48dGV4dCB5PSIwIiB4PSItOSIgc3R5bGU9InRleHQtYW5jaG9yOiBlbmQ7IiBkeT0iLjMyZW0iPjQwMCwwMDA8L3RleHQ+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsMTY5LjQ2MTI0MDQzMTUwODk0KSIgc3R5bGU9Im9wYWNpdHk6IDE7IiBjbGFzcz0idGljayI+PGxpbmUgeTI9IjAiIHgyPSItNiI+PC9saW5lPjx0ZXh0IHk9IjAiIHg9Ii05IiBzdHlsZT0idGV4dC1hbmNob3I6IGVuZDsiIGR5PSIuMzJlbSI+NTAwLDAwMDwvdGV4dD48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwxNDMuMzUzNDg4NTE3ODEwNykiIHN0eWxlPSJvcGFjaXR5OiAxOyIgY2xhc3M9InRpY2siPjxsaW5lIHkyPSIwIiB4Mj0iLTYiPjwvbGluZT48dGV4dCB5PSIwIiB4PSItOSIgc3R5bGU9InRleHQtYW5jaG9yOiBlbmQ7IiBkeT0iLjMyZW0iPjYwMCwwMDA8L3RleHQ+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsMTE3LjI0NTczNjYwNDExMjUpIiBzdHlsZT0ib3BhY2l0eTogMTsiIGNsYXNzPSJ0aWNrIj48bGluZSB5Mj0iMCIgeDI9Ii02Ij48L2xpbmU+PHRleHQgeT0iMCIgeD0iLTkiIHN0eWxlPSJ0ZXh0LWFuY2hvcjogZW5kOyIgZHk9Ii4zMmVtIj43MDAsMDAwPC90ZXh0PjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLDkxLjEzNzk4NDY5MDQxNDI3KSIgc3R5bGU9Im9wYWNpdHk6IDE7IiBjbGFzcz0idGljayI+PGxpbmUgeTI9IjAiIHgyPSItNiI+PC9saW5lPjx0ZXh0IHk9IjAiIHg9Ii05IiBzdHlsZT0idGV4dC1hbmNob3I6IGVuZDsiIGR5PSIuMzJlbSI+ODAwLDAwMDwvdGV4dD48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCw2NS4wMzAyMzI3NzY3MTYwNikiIHN0eWxlPSJvcGFjaXR5OiAxOyIgY2xhc3M9InRpY2siPjxsaW5lIHkyPSIwIiB4Mj0iLTYiPjwvbGluZT48dGV4dCB5PSIwIiB4PSItOSIgc3R5bGU9InRleHQtYW5jaG9yOiBlbmQ7IiBkeT0iLjMyZW0iPjkwMCwwMDA8L3RleHQ+PC9nPjxwYXRoIGQ9Ik0tNiw1MEgwVjMwMEgtNiIgY2xhc3M9ImRvbWFpbiI+PC9wYXRoPjwvZz48L2c+PC9zdmc+"
+        style="max-width: 800px" />
+      <figcaption>Installations of Hoa's libraries through the time.</figcaption>
+    </figure>
+    <p>We often hear that a new project is based on Hoa. It really warms our
+    heart and it provides new motivation to continue harder!</p>
+    
+    <p>Today, we are also very excited to announce the opening of our
+    <strong>meta-shop</strong>:
+    <a href="http://hoa-project.com/">hoa-project.<strong>COM</strong></a>. If you like the project
+    and you would like to <strong>support us</strong>, you can do that by buying a product in either
+    our <a href="https://shop.spreadshirt.fr/hoaproject">Spreadshirt shop</a> or in
+    our <a href="http://www.unixstickers.com/tag/hoa">UnixStickers shop</a>.</p>
+    <p>Our favorite products are the following:</p>
+    
+    
+    <div class="products" style="text-align: center">
+      <div class="product" style="display: inline-block; text-align: left; margin: 0 1.5em 2em">
+        <img
+          src="https://image.spreadshirtmedia.net/image-server/v1/products/133731777/views/2,width=300,height=300,version=1445959353.png" class="product__poster" style="max-width: 280px" />
+        <div class="product__title" style="font-weight: bold; color: #e0995e">Hoa Apex 3rd edition goodies</div>
+        <div class="product__price" style="font-size: small">33.50€</div>
+        <a
+          href="https://shop.spreadshirt.fr/hoaproject/hoa+apex+3rd+edition+goodies-A104146643" class="product__buy" style="display: block; text-align: center; margin-top: .5em; padding-top: .4em; padding-bottom: .4em">Buy</a>
+      </div>
+      <div class="product" style="display: inline-block; text-align: left; margin: 0 1.5em 2em">
+        <img src="https://image.spreadshirtmedia.net/image-server/v1/products/133911019/views/1,width=300,height=300,version=1446537851.png" class="product__poster" style="max-width: 280px" />
+        <div class="product__title" style="font-weight: bold; color: #e0995e">Hoa simple t-shirt</div>
+        <div class="product__price" style="font-size: small">24.10€</div>
+        <a href="https://shop.spreadshirt.fr/hoaproject/hoa+casual+t-shirt-A104219423" class="product__buy" style="display: block; text-align: center; margin-top: .5em; padding-top: .4em; padding-bottom: .4em">Buy</a>
+      </div>
+      <div class="product" style="display: inline-block; text-align: left; margin: 0 1.5em 2em">
+        <img src="http://www.unixstickers.com/image/cache/data/stickers/hoa/hoa.sh-600x600.png" class="product__poster" style="max-width: 280px" />
+        <div class="product__title" style="font-weight: bold; color: #e0995e">Hoa Project Logo Shaped Sticker</div>
+        <div class="product__price" style="font-size: small">2.69$</div>
+        <a href="http://www.unixstickers.com/stickers/coding_stickers/hoa-project-php-libraries-logo-shaped-sticker" class="product__buy" style="display: block; text-align: center; margin-top: .5em; padding-top: .4em; padding-bottom: .4em">Buy</a>
+      </div>
+    </div>
+    
+    <p>Thank you very much!</p>
+  </article>
+</overlay>

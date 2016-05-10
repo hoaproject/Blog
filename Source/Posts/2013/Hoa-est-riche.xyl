@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="Hoa est riche"?>
+<?xyl-meta name="date" value="2013-04-10T00:00:00+02:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>Hoa est riche, très riche. Pas question d'argent ici, mais d'êtres humains.
+    La communauté de Hoa est soutenante, attentive, intelligente, accueillante,
+    amusante, patiente, fidèle, surprenante … En tant que créateur du projet, je ne
+    peux qu'être ému de cette communauté qui m'aide en toutes circonstances. À vous
+    tous, anciens ou nouveaux, un énorme merci pour votre soutien ! Hoa est basé sur
+    de solides fondations, bien au-delà du code, je peux parler d'amitié.</p>
+    <p><strong>Merci</strong>.</p>
+  </article>
+</overlay>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="New design and search bar"?>
+<?xyl-meta name="date" value="2015-03-04T00:00:00+01:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>Months ago, we would like to add a search bar to optimize the way users,
+    developers and new comers find resources on the website. It was optimized for
+    mobile, for several disabilities but the design was getting old and with the
+    landed layout, it was not possible to integrate a search bar. That's why we
+    decided to redesign the website.</p>
+    <p>Let me show you a quick tour.</p>
+    
+    <h2>Homepage</h2>
+    
+    <p>The homepage has been redesigned but not from the ground up. We removed the
+    “Download” button because we noted that only 4 downloads were made through this
+    button in 2014 while we reached 300,000 downloads with Composer and Github. So
+    this button was definitively not useful!</p>
+    <p>We replaced this button by the list of Hoa's libraries. In this way, the new
+    comers have a better idea of what Hoa is about and it provides direct links to
+    the documentation.</p>
+    
+    <figure>
+      <img src="https://farm9.staticflickr.com/8575/16090034004_def82e55a2_b.jpg"
+           style="max-width: 640px" />
+      <figcaption>
+        <p><a href="https://www.flickr.com/photos/hywan/16090034004/in/set-72157650747344760">Previous
+        version of the homepage</a>.</p>
+      </figcaption>
+    </figure>
+    
+    <p>The community is centre stage with a bright new poster showing more than
+    800 people following and supporting the project!</p>
+    
+    <figure>
+      <img src="https://farm9.staticflickr.com/8679/16524950630_f4da2b9868_h.jpg"
+           style="max-width: 640px" />
+      <figcaption>
+        <p><a href="https://www.flickr.com/photos/hywan/16524950630/in/set-72157650747344760">New
+        version of the homepage</a>.</p>
+      </figcaption>
+    </figure>
+    
+    <p>By default, the page fits into the viewport, masking the menu and the search
+    bar.</p>
+    
+    <h2>Menu</h2>
+    
+    <p>The previous menu was smart in the early days but the Web changes quickly and
+    the user interface too. Moreover, it was impossible to introduce a search bar in
+    this context.</p>
+    
+    <figure>
+      <img src="https://farm9.staticflickr.com/8662/16712355485_514480eed1_z.jpg" />
+      <figcaption>
+        <p><a href="https://www.flickr.com/photos/hywan/16712355485/in/album-72157650747344760/">Previous
+        version of the menu</a>.</p>
+      </figcaption>
+    </figure>
+    
+    <p>The menu has new icons, on top of a
+    <a href="https://www.flickr.com/photos/hywan/14511660597/in/set-72157645742377986">gorgeous
+    blurred background</a>. The icons are more meaningful and provide more colours.</p>
+    <p>The main content shifts to the bottom and to the right to create a space for
+    the search bar!</p>
+    
+    <figure>
+      <img src="https://farm9.staticflickr.com/8587/16524947230_1375a36839_z.jpg" />
+      <figcaption>
+        <p><a href="https://www.flickr.com/photos/hywan/16524947230/in/set-72157650747344760">New
+        version of the menu</a>.</p>
+      </figcaption>
+    </figure>
+    
+    <h2>Search bar</h2>
+    
+    <p>When we focused the search bar, the menu disappears and the main content
+    moves far in the window. It provides a clean and simple interface.</p>
+    
+    <figure>
+      <img src="https://farm9.staticflickr.com/8597/16505069357_de67997341_z.jpg" />
+      <figcaption>
+        <p><a href="https://www.flickr.com/photos/hywan/16505069357/in/set-72157650747344760">The
+        search interface</a>.</p>
+      </figcaption>
+    </figure>
+    
+    <p>Type something and our search engine will suggest you several links. The
+    icons remind the menu classification. Click and here you go!</p>
+    
+    <figure>
+      <img src="https://farm9.staticflickr.com/8574/16524945370_aaf3e93416_z.jpg" />
+      <figcaption>
+        <p><a href="https://www.flickr.com/photos/hywan/16524945370/in/set-72157650747344760">The
+        search interface in action</a>!</p>
+      </figcaption>
+    </figure>
+    
+    <p>The search engine is based on
+    <a href="http://www.elasticsearch.org/">ElasticSearch</a>. Thanks to
+    <a href="http://blog.dev-art.fr/">Guillaume Dievart</a> and
+    <a href="https://twitter.com/raphaeI">Raphaël Emourgeon</a> for the huge help.
+    They made it real!</p>
+    
+    <h2>Community</h2>
+    
+    <p>Finally, Hoa exists because of its community. This is why the community page
+    has been redesigned from the ground up with the avatar of every contributor and
+    the community poster.</p>
+    
+    <figure>
+      <img src="https://farm9.staticflickr.com/8567/16524954680_967269888e_o.png"
+           style="max-width: 640px" />
+      <figcaption>
+        <p><a href="https://www.flickr.com/photos/hywan/16524954680/in/set-72157650747344760">The
+        community page</a>.</p>
+      </figcaption>
+    </figure>
+    
+    <h2>Conclusion</h2>
+    
+    <p>Everywhere in the website, we have polished and rethought all the
+    details to promote the community, their work, the libraries, the documentation
+    etc. The design is however not yet perfect so
+    <a href="@github:repository=W3">feel free to contribute</a> or to
+    <a href="@c">tell us what's wrong</a>, we will be glad to hear you!</p>
+  </article>
+</overlay>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="Êtes-vous inscrits sur les listes ?"?>
+<?xyl-meta name="date" value="2013-06-18T00:00:00+02:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>La communauté de Hoa communique via <a href="@c#IRC">IRC</a>, des mails
+    internes et le forum. Ce forum est un lieu de trop et n'est destiné qu'au
+    support des utilisateurs finaux. Il est difficile pour la communauté d'être
+    synchronisée sur tous ces endroits en même temps. Dans un souci
+    d'<strong>homogénéité</strong> et de <strong>simplification</strong>, la
+    plateforme de mails internes s'ouvre pour accueillir le forum : les
+    <em lang="en">mailing-lists</em> sont <strong>accessibles à tous</strong> !</p>
+    <p>La <a href="@lists">liste des <em lang="en">mailing-lists</em></a> est
+    exhaustive. Les listes les plus utiles se trouvent sur la page réservée à
+    <a href="@c#Mailing-lists">la communauté</a>, qui a été fusionnée avec la page
+    des contacts.</p>
+    <p>Le forum sera rapidement fermé dès que la transition aura été effectuée.
+    Alors : êtes-vous inscrits sur les listes ?</p>
+  </article>
+</overlay>

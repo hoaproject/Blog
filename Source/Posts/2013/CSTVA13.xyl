@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="CSTVA'13"?>
+<?xyl-meta name="date" value="2013-03-15T00:00:00+01:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>Hoa souhaite être un pont entre le monde de la recherche et de
+    l'industrie. Plusieurs bibliothèques de Hoa sont nées de travaux de recherche au
+    sein des laboratoires de l'<a href="https://www.inria.fr/">INRIA</a> et du
+    <a href="http://www.femto-st.fr/fr/Departements-de-recherche/DISC/">DISC/Femto-ST</a>,
+    comme <code>Hoa\Realdom</code>,
+    <a href="@lh:chapter=Praspel"><code>Hoa\Praspel</code></a> ou encore
+    <a href="@lh:chapter=Compiler"><code>Hoa\Compiler</code></a>.</p>
+    <p>Durant la semaine du <time datetime="03-2013">18 au 22 mars 2013</time> au
+    Luxembourg, les derniers travaux sur <code>Hoa\Realdom</code> et
+    <code>Hoa\Praspel</code> seront présentés à
+    <a href="http://cstva2013.univ-fcomte.fr/">CSTVA</a> (<em lang="en">Constraints in Software Testing Verification
+    and Analysis</em>), un <em lang="en">workshop</em>
+    d'<a href="http://icst.lu">ICST</a> (<em lang="en">International Conference on
+    Software Testing, Verification and Validation</em>). L'article présenté
+    s'appelle <cite lang="en">A Constraint Solver for PHP Arrays</cite>.</p>
+    <p>Vous retrouvez toutes les informations et ressources (dont l'article et la
+    présentation) sur la <a href="@ev">page des événements</a> de Hoa à la fin de la
+    conférence.</p>
+  </article>
+</overlay>

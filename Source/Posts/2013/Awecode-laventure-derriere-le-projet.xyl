@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="Awecode, l'aventure derrière le projet"?>
+<?xyl-meta name="date" value="2013-05-23T00:00:00+02:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>Ce billet raconte awecode vu des coulisses. Mais avant de commencer, nous
+    aimerions personnellement vous remercier pour l'<strong>accueil</strong> plus
+    qu'<strong>incroyable</strong> fait à awecode. Cela nous touche particulièrement
+    et nous encourage dans la voie que nous avons choisie pour Hoa et son
+    apprentissage. <strong>Merci</strong> !</p>
+    <p>Plus qu'un projet, une aventure. Elle a commencé il y a un an déjà. Le projet
+    <a href="http://popcornjs.org/">Popcorn.js</a> de Mozilla, permettant d'exécuter
+    des actions en fonction de marqueurs placés sur une vidéo, devenait mature et a
+    été rendu public. Nous avons tout de suite eu cette idée. Le premier
+    <em lang="en">proof-of-concept</em> a été esquissé en une après-midi et le
+    résultat était prometteur. Mais que fallait-il pour un résultat final ? Il
+    fallait une suite d'outils capable d'<strong>automatiser</strong> la création
+    des awecodes de manière impeccable. Nous allons détailler cette « chaîne de
+    production » et tout le travail qu'il y a eu autour.</p>
+    
+    <h3>Des particules et de la physique</h3>
+    
+    <p>Un awecode commence par une vidéo d'introduction ; la voici :</p>
+    <div class="center mw500">
+      <div class="video">
+        <iframe src="http://player.vimeo.com/video/66602406?title=0&amp;byline=0&amp;portrait=0&amp;color=d8d4b6"
+                allowFullScreen="true"></iframe>
+      </div>
+    </div>
+    <p>11 secondes de vidéo et une bonne centaine d'heures de travail.</p>
+    <p>Nous voyons un ensemble de particules qui s'agitent de manière libre dans
+    l'espace, puis viennent se concentrer au centre pour former le logo Hoa. Nous
+    pouvons faire l'analogie avec les bibliothèques, les multiples projets et la
+    communauté de Hoa : chaque particule est libre, elle interagit avec les autres,
+    et toutes ces particules constituent Hoa ; aucune n'est en trop, elles ont
+    toutes leur place.</p>
+    <p>Réaliser cette introduction a été un véritable challenge technique, relevé
+    par un ami de longue date et designer historique de Hoa : Baptiste Fedi. Dans le
+    civil, il est doctorant en Chimie, dans un laboratoire deux étages plus bas que
+    le laboratoire de Ivan Enderlin, mais dans le monde numérique, c'est un
+    passionné et talentueux designer et animateur. Son arme :
+    <a href="http://blender.org/">Blender</a>, un logiciel de création 3D. Ses
+    multiples compétences en Chimie et en Physique ont été nécessaires : plus de
+    250 000 particules s'agitent suivant plusieurs forces mécaniques précises !</p>
+    <img src="hoa://Application/Public/Image/Blog/Awecode_particules.jpg" class="center" />
+    <p>Le résultat est en réalité l'animation jouée à l'envers, ce qui a introduit
+    une difficulté supplémentaire pour le <em lang="en">timing</em> et tous les
+    calculs autour des particules.</p>
+    <img src="hoa://Application/Public/Image/Blog/Awecode_compositing.jpg" class="center" />
+    <p>Après des mois et un nombre incalculable de nuits passées sur le réglage du
+    moteur physique, des forces et du mouvement des particules, de la caméra,
+    du <em lang="en">compositing</em>, et des heures de calcul de rendu, il était
+    temps de passer à la musique.</p>
+    
+    <h3>Quelques notes, une mélodie</h3>
+    
+    <p>Un autre challenge a été la musique. Hoa est un projet qui ne connaît pas de
+    frontière, pas de langue, pas de culture. C'est un projet libre et open-source,
+    par et pour tous. La teinte de la musique devait refléter cet état d'esprit. Ce
+    défi a été relevé par Amine Mraihi, un ami musicien de talent. Avec son frère,
+    Hamza, tous deux médecins dans le civil, ils parcourent inlassablement le monde
+    et le font vibrer au son de leurs instruments.</p>
+    <p>C'est en studio, encore après une longue soirée, que <strong>le</strong> son
+    a été trouvé. Une note, une simple note, jouée sur un
+    <a href="https://fr.wikipedia.org/wiki/Saz">saz</a>.</p>
+    <img src="hoa://Application/Public/Image/Blog/Awecode_studio.jpg" class="center" />
+    <p>Une mélodie se dessine. Plusieurs pistes sont enregistrées, des dizaines et
+    des dizaines de prises. La technique doit être impeccable. Il ne reste que la
+    voix. Encore des dizaines de prises, des arrangements, des essais avec la vidéo,
+    nous tenons le bon bout.</p>
+    <img src="hoa://Application/Public/Image/Blog/Awecode_headset.jpg" class="center" />
+    <p>Au final, trois pistes pour l'instrument et trois pistes pour la voix. Nous
+    tenons notre vidéo d'introduction ! Mais il reste encore énormément de
+    travail …</p>
+    
+    <h3><em lang="en">Screencast</em></h3>
+    
+    <p>Après l'introduction, nous avons le <em lang="en">screencast</em>. Un mélange
+    entre <a href="http://videolan.org">VLC</a> et
+    <a href="https://ffmpeg.org/">ffmpeg</a> afin d'automatiser l'enregistrement de
+    l'écran sur toutes les plateformes. Plusieurs scripts pour préparer les
+    navigateurs, les terminaux, placer les fenêtres, mettre en place des thèmes
+    (polices, couleurs, tailles…), des environnements, des raccourcis, des scripts
+    tiers etc. Des détails à en perdre la tête mais nécessaires pour ne pas troubler
+    le spectateur et lui proposer une <strong>immersion</strong> complète.</p>
+    
+    <h3>Assemblage et publication</h3>
+    
+    <p>L'assemblage vidéo et son se fait à l'aide de Blender et de ffmpeg, toujours
+    à l'aide de scripts. Des thèmes Blender permettent de créer des transitions,
+    comme des titres, des crédits etc., que nous modifions à l'aide d'informations
+    contenues dans des fichiers XML ou JSON (pas encore présent sur le premier
+    awecode à cause d'un problème de dernière minute, mais les scripts
+    fonctionnent). Le résultat est publié sur Vimeo, sur
+    <a href="https://vimeo.com/channels/awecode">la chaîne awecode</a>,
+    <a href="https://vimeo.com/blog/post:518"><em>via</em> Dropbox</a>. Les vidéos
+    sont bien sûr accessibles en haute-définition, tout comme le son.</p> <p>Les
+    vidéos sont ensuite intégrées sur le site de Hoa avec la deuxième partie d'un
+    awecode : le code.</p>
+    
+    <h3>Quand le code prenait vie</h3>
+    
+    <p>Avant d'enregistrer un awecode, le code est versionné dans un dépôt, où
+    chaque <em lang="en">commit</em> représente une étape clé. Lors de
+    l'enregistrement du <em lang="en">screencast</em>, nous travaillons sur ce dépôt
+    pour faire évoluer le code de manière <strong>transparente</strong> et
+    <strong>automatique</strong>. Après l'enregistrement, nous rejouons la vidéo et
+    un script nous aide à lire les logs du dépôt pour nous préparer la description
+    de la partie code d'un awecode.</p>
+    <img src="hoa://Application/Public/Image/Blog/Awecode_patcher.jpg" class="center" />
+    <p>Cette description est au format JSON, pour être manipulée plus facilement par
+    notre <a href="hoa://Application/Public/Javascript/Hoa.Awecode.js">bibliothèque
+    Javascript <code>Hoa.Awecode.js</code></a>. Elle contient la liste des fichiers,
+    tous les patches à appliquer à certaines <em lang="en">keyframes</em>. D'autres
+    informations sont ajoutées dynamiquement.</p>
+    <p>Sur le site de Hoa, quand la vidéo est lue, les patches s'appliquent sur le
+    code. Le tout prend la forme d'un plugin pour Popcorn.js.</p>
+    <img src="hoa://Application/Public/Image/Blog/Awecode_diff.gif" class="center" />
+    
+    <h2>Final</h2>
+    
+    <p>Au final, ce sont des heures de travail, des dizaines de scripts et une
+    communauté qui ont permi de donner vie à ce projet. Excepté pour la musique de
+    la vidéo d'introduction, le projet a été réalisé uniquement avec des logiciels
+    libres, et la création d'un awecode aujourd'hui ne demande que des logiciels
+    libres. Tout ce travail a été abattu par des bénévoles, sur leur temps libre,
+    très souvent durant de bien longues nuits. Un immense <strong>merci</strong> en
+    particulier à Baptiste et Amine, mais aussi à toute la communauté pour ses
+    retours, ses encouragements et son soutien.</p>
+    <p>Nous continuons à rendre les scripts plus matures et des contributions sont
+    d'ores et déjà en cours ! Nous savons que awecode et ses outils intéressent le
+    monde de l'enseignement par exemple, n'hésitez pas à <a href="@c">nous
+    contacter</a> et <a href="@github:repository=Literature.git">à
+    contribuer</a> !</p>
+    <p>Nous espérons que ce projet vous permettra de plus facilement découvrir les
+    richesses de Hoa et que vous saurez apprécier tout ce travail. Déjà plusieurs
+    autres awecodes sont en préparation, mais n'hésitez pas à <a href="@c">nous
+    soumettre</a> vos idées, vos remarques ou vos critiques.</p>
+  </article>
+</overlay>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="Marvirc, the trendy IRC bot"?>
+<?xyl-meta name="date" value="2014-02-20T00:00:00+01:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>For our usage, two hoackers have made an IRC bot called
+    <a href="https://github.com/Hywan/Marvirc">Marvirc</a>. This bot is based on the
+    following libraries: <a href="@github:repository=Irc"><code>Hoa\Irc</code></a>,
+    <a href="@github:repository=Socket"><code>Hoa\Socket</code></a>,
+    <a href="@github:repository=Websocket"><code>Hoa\Websocket</code></a> and
+    <a href="@github:repository=Console"><code>Hoa\Console</code></a> (with
+    dependencies).</p>
+    <img src="http://hywan.github.io/Marvirc/Static/Logo.png" class="center" />
+    <p>The goal of this bot was twofold. Firstly to test <code>Hoa\Irc</code> and
+    see its limitations (<a href="https://github.com/Jir4">Yohann Dupont</a> and
+    <a href="https://github.com/CircleCode">Matthieu Codron</a> are working on new
+    features). Secondly we needed an IRC bot for several tasks such as Git
+    notifications, monitoring, links generator etc. This bot has been mainly made by
+    <a href="http://github.com/Hywan">Ivan Enderlin</a> and the <code>Hoa\Irc</code>
+    library has been mainly developed by Yohann. Hoa's team
+    <a href="https://github.com/hoaproject/Marvirc">has forked this bot</a> to add
+    its own actions. Adding a new action to mentions, messages and private messages
+    is pretty simple,
+    <a href="https://github.com/Hywan/Marvirc/#custom-actions-on-mentions-messages-and-private-messages">take
+    a look at the <code>README.md</code></a>. Also this bot has a great feature
+    called
+    <a href="https://github.com/Hywan/Marvirc/#possession-through-websocket-realtime-notifications">“Possession
+    through WebSocket”</a>. The bot is able to start a WebSocket server and each
+    received message is redirected verbatim on the IRC client. Thus, to take an
+    example from the <code>README.md</code>:</p>
+    <pre><code class="shell">$ marvirc join --socket    chat.freenode.org:6667 \
+                   --username  FakeMarvirc            \
+                   --channel   '#hoaproject'          \
+                   --websocket 127.0.0.1:8889 &amp;amp;
+    $ echo 'You are awesome :-).' | hoa websocket:client --server 127.0.0.1:8889</code></pre>
+    <p>And we will see the bot saying <code>You are awesome</code>. This is very
+    easy to use and this eases a lot realtime notifications from several services
+    such as Git hooks.</p>
+    <p>Today we are happy because the official page of Marvirc on Github has been
+    visited more than 2500+ times in less than 48 hours. This is the
+    18<sup>th</sup> trending PHP repository on Github today:</p>
+    <img src="http://hywan.github.io/Marvirc/Static/Temporary/Trending.png" class="center" />
+    <p>You are welcome to contribute on this bot or on the underlying libraries,
+    such as <code>Hoa\Irc</code>. Thanks you!</p>
+  </article>
+</overlay>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="Hoa\Websocket est finalisée"?>
+<?xyl-meta name="date" value="2013-04-08T00:00:00+02:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>Et une de plus ! Une bibliothèque supplémentaire de finalisée dans Hoa.</p>
+    <p>Le protocole WebSocket permet une communication
+    <strong>bidirectionnelle</strong> et <strong>full-duplex</strong> entre un
+    client et un serveur. La <a href="@github:repository=Websocket">bibliothèque
+    <code>Hoa\Websocket</code></a> permet de créer un <strong>serveur</strong>
+    WebSocket. Elle supporte la
+    <a href="https://tools.ietf.org/html/rfc6455">RFC6455</a> et
+    <a href="https://tools.ietf.org/wg/hybi/draft-ietf-hybi-thewebsocketprotocol/">Hybi00</a>
+    en même temps (des clients avec des protocoles différents peuvent communiquer
+    ensemble). Notons qu'elle passe avec succès la
+    <a href="http://autobahn.ws/">suite de tests Autobahn</a>. Au final, nous avons
+    une bibliothèque très <strong>simple</strong> à utiliser,
+    <strong>performante</strong> et <strong>sûre</strong>. Vous pouvez vous
+    reporter au <code>README.md</code> pour un exemple très rapide ou alors à
+    <a href="@lh:chapter=Websocket">la documentation</a> pour un exemple plus
+    complet.</p>
+    <p>Des contributeurs préparent une démo (et même plus) très stimulante. Venez
+    <a href="@c#IRC">sur IRC</a> pour participer ou attendez patiemment quelques
+    semaines !</p>
+  </article>
+</overlay>

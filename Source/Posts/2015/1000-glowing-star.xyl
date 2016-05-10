@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="1000 🌟!"?>
+<?xyl-meta name="date" value="2015-07-28T00:00:00+02:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>Since Hoa has <a href="https://github.com/hoaproject">Git mirrors on
+    Github</a> we have been several times present on the <a
+    href="https://github.com/trending">trending page</a>. Week after weeks, we see
+    the numbers of the Github community <strong>growing</strong>.</p>
+    <figure>
+      <img src="http://static.hoa-project.net/Image/Community.jpg" style="width: 100%; max-width: 1500px" />
+      <figcaption>Growing community…</figcaption>
+    </figure>
+    <p>And since recently, we have reached a new milestone: … <strong>1000 stars</strong>! Yes.
+    1000 people that like Hoa around the world!</p>
+    <p>We would like to thank everyone! This is the kind of numbers that gives us
+    super-powers and a renewed motivation!</p>
+    <p>So thank you very much and <strong>keep sharing</strong>!</p>
+  </article>
+</overlay>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="Hoa\Registry est finalisée"?>
+<?xyl-meta name="date" value="2013-07-10T00:00:00+02:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>Une petite bibliothèque de Hoa a été finalisée récemment :
+    <a href="@github:repository=Registry"><code>Hoa\Registry</code></a>.</p>
+    <p>Les <strong>registres</strong> statiques sont des tableaux contenant des
+    <strong>informations</strong> de toutes sortes. La bibliothèque
+    <code>Hoa\Registry</code> propose un registre statique et quelques facilités
+    pour le manipuler. Comme d'habitude, le fichier <code>README.md</code> propose
+    un aperçu rapide et <a href="@lh:chapter=Registry">la documentation</a> détaille
+    le fonctionnement.</p>
+    <p>Cette bibliothèque est simple mais fort utile ! À très bientôt pour plus
+    de finalisations et des nouveautés.</p>
+  </article>
+</overlay>

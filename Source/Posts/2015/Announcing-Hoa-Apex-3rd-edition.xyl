@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="Announcing Hoa Apex 3rd edition"?>
+<?xyl-meta name="date" value="2015-08-12T00:00:00+02:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>We are excited to announce <strong>Hoa Apex 3<sup>rd</sup>
+    edition</strong>!</p>
+    <p>Hoa Apex is a dedicated event to the <strong>community</strong> of Hoa, where
+    contributors, users and main developers meet each other. This is a unique moment
+    to share ideas and projects together. After
+    <a href="http://hoa-project.net/Event/Hoaapex13.html"><em lang="fr">Le
+    Locle</em> in Switzerland in 2013</a> and after
+    <a href="http://hoa-project.net/Event/Hoaapex14.html"><em lang="fr">Marseille</em>
+    in France in 2014</a>, this year we will stay in France but <strong>at Paris the 26 and 27<sup>th</sup> September</strong>.</p>
+    
+    <figure class="landscape">
+      <img src="https://farm4.staticflickr.com/3885/15066928205_9c674028e3_h.jpg" />
+      <figcaption><a href="https://www.flickr.com/photos/zeeyolqpictures/15066928205/"><cite>Paris</cite></a>
+      by Yoann Jezequel</figcaption>
+    </figure>
+    
+    <p>The <a href="http://hoa-project.net/Event/Hoaapex15.html">dedicated page</a>
+    provides information about dates, venues, hotels, conferences etc. Please, keep
+    in mind that the conferences have not yet been frozen.</p>
+    <p>We would like to thank <a href="http://inovia.fr/">Inovia</a> for hosting the
+    event during these 2 days.</p>
+    
+    <figure>
+      <img src="http://static.hoa-project.net/Image/Logo/Inovia.png" />
+      <figcaption>Inovia's logo.</figcaption>
+    </figure>
+    
+    <p>If you are a contributor, please,
+    <a href="http://hoa-project.net/Event/Hoaapex15.html">join us</a>! It's free and
+    it's going to be awesome. As usual, your family is welcomed too! If you are not
+    a contributor, you are welcomed too of course! In all cases, please,
+    <a href="http://hoa-project.net/Community.html">contact us</a>.</p>
+  </article>
+</overlay>

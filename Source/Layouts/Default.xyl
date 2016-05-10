@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-stylesheet href="hoa://Library/Xyl/Css/Core.css"?>
+<?xyl-stylesheet href="hoa://Application/Public/Css/Layout.css"?>
+<?xyl-stylesheet href="hoa://Application/Public/Css/UI.css"?>
+<?xyl-meta name="viewport" content="initial-scale=1.0"?>
+<?xyl-meta name="theme-color" content="#b24646"?>
+<?xyl-link rel="icon" type="image/png" href="hoa://Application/Public/Image/Hoa.icon.png"?>
+<?xyl-link type="application/atom+xml" rel="alternate" href="/atom.xml"?>
+
+<document xmlns="http://hoa-project.net/xyl/xylophone" id="document">
+  <title>Blog of the Hoa project</title>
+
+  <script src="hoa://Application/Public/Javascript/Hoa.js"></script>
+
+  <nav id="menu">
+    <ul>
+      <li><a href="http://hoa-project.net/Source.html"     class="source"     data-shortcut="s">Sources</a></li>
+      <li><a href="http://hoa-project.net/Literature.html" class="literature" data-shortcut="l">Literature</a></li>
+      <li><a href="http://hoa-project.net/Video.html"      class="video"      data-shortcut="v">Videos</a></li>
+      <li><a href="http://hoa-project.net/Event.html"      class="event"      data-shortcut="e">Events</a></li>
+      <li><a href="http://hoa-project.net/Community.html"  class="community"  data-shortcut="c">Community</a></li>
+      <li><a href="http://hoa-project.com"                 class="shop"                        >Shop</a></li>
+      <li><a href="http://hoa-project.net/About.html"      class="about"      data-shortcut="a">About</a></li>
+    </ul>
+  </nav>
+
+  <form role="search" method="POST" action="http://search.hoa-project.net/(?language)">
+    <input type="search" name="q" placeholder="Search…" data-shortcut="shift+/" />
+    <img
+      id="search_close"
+      src="hoa://Application/Public/Image/Icon/Cross.svg"
+      width="24px"
+      alt="Close search"
+      role="button" />
+  </form>
+  <output id="search_output">
+    <dl />
+  </output>
+
+  <div id="body">
+
+    <header>
+      <a href="/" class="plain" data-shortcut="h">
+        <img src="hoa://Application/Public/Image/Hoa.svg" alt="Hoa" />
+      </a>
+    </header>
+
+    <main>
+      <article id="main" />
+    </main>
+
+    <footer>
+      <p>Hoa is the creation of Ivan Enderlin, all rights reserved.</p>
+    </footer>
+  </div>
+
+  <div aria-controls="menu" data-shortcut="m">
+    <img
+      src="hoa://Application/Public/Image/Icon/Menu.svg"
+      width="24px"
+      alt="menu"
+      role="button" />
+  </div>
+
+  <yield id="scripts">
+    <script>
+      Hoa.namespace([Element], {
+          guard: Hoa.〱true,
+          body : function (element) {
+              return {
+                  removeAllChildren: function () {
+                      while(element.hasChildNodes())
+                          element.removeChild(element.lastChild);
+
+                      return;
+                  }
+              };
+          }
+      });
+
+      Hoa.Document.onReady(function () {
+          var html      = document.body.parentNode;
+          var menu      = Hoa.$('[aria-controls="menu"]');
+          var search    = {};
+          search.form   = Hoa.$('form[role="search"]');
+          search.input  = Hoa.$('input[type="search"]', search.form);
+          search.output = Hoa.$('#search_output');
+
+          var toggleMenu = function () {
+              html.classList.toggle('menu');
+
+              return;
+          };
+
+          var openSearch = function () {
+              html.classList.add('search');
+              html.classList.remove('menu');
+              search.input.focus();
+              search.input.select();
+
+              return;
+          };
+
+          var closeSearch = function () {
+              html.classList.remove('search');
+              search.input.blur();
+
+              return;
+          };
+
+          Hoa.Event.from(menu).bareOn('click', toggleMenu);
+          Hoa.Event.from(search.form).bareOn(
+              'submit',
+              function (evt) {
+                  evt.preventDefault();
+
+                  return;
+              }
+          );
+          Hoa.Event.from(search.input).bareOn('focus', openSearch);
+          Hoa.Event.from(search.input).bareOn(
+              'keypress',
+              new function () {
+                  var output      = Hoa.$('dl', search.output);
+                  var clearOutput = function () {
+                      output.hoa.removeAllChildren();
+
+                      return;
+                  };
+
+                  return Hoa.Concurrent.delay(
+                      150,
+                      function (evt) {
+                          // Esc
+                          if (27 === evt.keyCode) {
+                              clearOutput();
+                              closeSearch();
+                              evt.preventDefault();
+
+                              return;
+                          }
+
+                          var xhr = Hoa.Async.XHR();
+                          xhr.open(search.form.method, search.form.action, true);
+                          xhr.onload = function () {
+                              // TODO
+                              // * add loader
+                              // * add "no result"
+
+                              var result = JSON.parse(this.response);
+                              clearOutput();
+
+                              for (var i = 0, max = result.length; i &amp;lt; max; i++) {
+                                  var entry = result[i];
+                                  var dt    = Hoa.DOM.dt(
+                                      [
+                                          Hoa.DOM.a(
+                                              entry.title,
+                                              {
+                                                  href    : entry.url,
+                                                  tabindex: 0
+                                              }
+                                          )
+                                      ],
+                                      {
+                                          'data-type': entry.type
+                                      }
+                                  );
+                                  var dd = Hoa.DOM.dd(entry.url);
+
+                                  output.appendChild(dt);
+                                  output.appendChild(dd);
+                              }
+                          };
+                          xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                          xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+                          xhr.send('q=' + search.input.value);
+                      }
+                  )
+              }
+          );
+          Hoa.Event.on('click', '#search_close', closeSearch);
+          Hoa.Event.on(
+              'keypress',
+              'body',
+              function (evt) {
+                  var key    = '';
+                  var gotcha = true;
+
+                  if (true === evt.metaKey) {
+                      key += 'meta+';
+                  }
+
+                  if (true === evt.altKey) {
+                      key += 'alt+';
+                  }
+
+                  if (true === evt.ctrlKey) {
+                      key += 'ctrl+';
+                  }
+
+                  if (true === evt.shiftKey) {
+                      key += 'shift+';
+                  }
+
+                  key += evt.key;
+
+                  switch (key) {
+                      default:
+                          var element = Hoa.$('[data-shortcut="' + key + '"]');
+
+                          if (element instanceof HTMLAnchorElement ||
+                              element instanceof HTMLDivElement) {
+                              element.click();
+                          } else if (element instanceof HTMLInputElement) {
+                              element.focus();
+                          } else {
+                              gotcha = false;
+                          }
+                  }
+
+                  if (true === gotcha) {
+                      evt.preventDefault();
+                  }
+              },
+              false
+          );
+          Hoa.Event.bareOn(
+              'keypress',
+              function (evt) {
+                  // Esc
+                  if (27 === evt.keyCode) {
+                      closeSearch();
+                      evt.preventDefault();
+
+                      return;
+                  }
+              }
+          );
+
+          var headers = Hoa.$$('h2[id], h3[id], h4[id], h5[id], h6[id]');
+          for (var i = 0; i &amp;lt; headers.length; ++i) {
+              var header = headers[i];
+              header.innerHTML =
+                  header.innerHTML +
+                  '&amp;lt;a href="#' + header.getAttribute('id') + '"' +
+                  'class="plain anchor">🔗&amp;lt;/a>';
+          };
+      });
+    </script>
+  </yield>
+</document>

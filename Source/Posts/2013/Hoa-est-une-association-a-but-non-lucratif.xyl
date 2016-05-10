@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="Hoa est une association à but non-lucratif"?>
+<?xyl-meta name="date" value="2013-08-28T00:00:00+02:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>Le projet et la communauté grandissent et peuvent dès maintenant s'appuyer
+    sur une structure légale d'un point de vue législatif. En effet, depuis quelques
+    jours, Hoa est une association à but non-lucratif !</p>
+    <p>Plus formellement, l'association Hoa Project a pour objectif de soutenir le
+    projet Hoa en développant, déployant et faisant la promotion des logiciels
+    libres issus de Hoa Project, de ses produits dérivés et des projets
+    associés.</p>
+    
+    <p>L'association a des <a href="@f+:_able=Statutes">statuts</a> assez
+    « classiques ». Toutefois, comme le projet, l'association est au maximum ouverte
+    et intelligente. Le premier
+    <a href="@f#Bureau">bureau</a> est constitué de :</p>
+    <ul>
+      <li>Ivan Enderlin, président ;</li>
+      <li>Raphaël Emourgeon, trésorier ;</li>
+      <li>Matthieu Codron, secrétaire général.</li>
+    </ul>
+    <p>Nous trouvons trois
+    <a href="@f+:_able=Statutes#Composition_de_l-association">catégories de
+    membres</a> : d'honneur, bienfaiteurs et actifs. Et l'association est au maximum
+    <a href="@f+:_able=Statutes#Droit_de_communication">transparente</a>, encore une
+    fois, tout comme Hoa ! Nous trouverons plus d'informations sur la
+    <a href="@f">page de l'association</a>.</p>
+    <p>Merci à tous pour votre soutien, vos remarques et votre temps !</p>
+  </article>
+</overlay>

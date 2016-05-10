@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="Nouveau contributeur : Renaud Littolff"?>
+<?xyl-meta name="date" value="2013-08-29T00:00:00+02:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>La commnauté de Hoa grandit encore et c'est toujours un
+    <strong>plaisir</strong> d'accueillir de nouveaux contributeurs. Aujourd'hui,
+    toute la commnauté de Hoa souhaite la <strong>bienvenue</strong> à Renaud
+    Littolff, <em>aka</em> marmotz. Son nom s'ajoute à la
+    <a href="https://github.com/hoaproject/Central/blob/master/CONTRIBUTOR.md">liste
+    des contributeurs</a> !</p>
+    <p>Renaud est très actif dans le projet <a href="http://atoum.org/">atoum</a> et
+    comme les commnautés sont proches, il a fini par attraper le virus Hoa ! Renaud
+    utilise Hoa dans d'autres projets et nous aide beaucoup à son intégration grâce
+    à des retours précieux et précis. Par exemple, son expertise dans l'écriture de
+    <em lang="en">bundles</em> Symfony est opportun… mais ça, c'est un mauvais
+    <em lang="en">teasing</em>…</p>
+    <p>Bref : bienvenue !</p>
+  </article>
+</overlay>

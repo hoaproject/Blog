@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="Reboot the contribution process"?>
+<?xyl-meta name="date" value="2015-08-11T00:00:00+02:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>One of the biggest challenge when creating and maintaining an open-source
+    project is to <strong>communicate</strong> with the <strong>community</strong>.
+    The community is the basis and the main power of the open-source: It provides an
+    important task-force and also advanced skills in several domains. Then, since
+    the community is one of the foundation of any open-source project and we need to
+    communicate between each other a lot, a new challenge appears: How to provide a
+    <strong>decentralized</strong> and <strong>remote overview</strong> of the work?
+    Put in other words:</p>
+    <ul>
+      <li>What should be done?</li>
+      <li>What is ready to be done?</li>
+      <li>What is in progress?</li>
+      <li>What is under review?</li>
+    </ul>
+    <p>They are all <strong>legitimate</strong> questions. For who though? The
+    questions are useful for long-term contributors as much as <strong>new
+    contributors</strong>. In addition to these questions, we might also wonder: Who
+    are the people to talk to? Who is responsible to what?</p>
+    <p>To answer these questions, we totally
+    <a href="http://hoa-project.net/Literature/Contributor/Guide.html"><strong>reboot</strong>
+    our <strong>contributor guide</strong></a>. In the meantime, we also introduced
+    new powerful tools to ease the contribution process. Let's highlight some of
+    them.</p>
+    
+    <h2>Boards to get overviews!</h2>
+    
+    <p>Let's remind that Hoa hosts its own Git repositories. However, mirrors exist
+    on <a href="https://github.com/hoaproject">Github</a> and
+    <a href="https://pikacode.com/hoaproject">Pikacode</a>. Several tools are linked
+    on Github, such as: <a href="https://waffle.io/">Waffle</a>. This service
+    provides <em lang="jp">カンバン</em> for free if you have public Github repositories. A <em lang="en">カンバン</em> (kanban) is basically a <strong>board</strong> presenting works in columns. We set the following columns:</p>
+    <ol>
+      <li><strong>Backlog</strong>, things under discussion,</li>
+      <li><strong>Ready</strong>, things that are ready to be done,</li>
+      <li><strong>In progress</strong>, things that are being done by some
+      contributors,</li>
+      <li><strong>Done</strong>, things that have been recently done.</li>
+    </ol>
+    <p>All hack book chapters have been updated to include a link to the associated
+    board of the library. So, for instance, go check
+    <a href="http://hoa-project.net/Literature/Hack/Websocket.html">the <code>Hoa\Websocket</code> library</a>:
+    You will see a
+    <img src="hoa://Application/Public/Image/Icon/Waffle.svg" alt="Board" height="25px" />
+    icon pointing to <a href="https://waffle.io/hoaproject/Websocket">its dedicated
+    board</a>. Great!</p>
+    <p>Since the <code>Central</code> is a repository aggregating all repositories,
+    this is logical its board provides
+    <a href="https://waffle.io/hoaproject/Central">the <strong>highest</strong>
+    overview of <strong>all</strong> the works of <strong>all</strong> the
+    libraries</a>.</p>
+    
+    <h2>Difficulty?</h2>
+    
+    <p>A new “feature” we believe to be a game changer for contributors is the
+    difficulty labels. Each work (issues or PR) has several labels attached, such as
+    <code>bug</code>, <code>enhancement</code>, <code>question</code> etc.  Now we
+    have 3 new labels describing the difficulty of the work; thus:</p>
+    <ul>
+      <li><code>casual</code>, can be done by a <strong>new</strong> contributor or
+      can be done <strong>quickly</strong>,</li>
+      <li><code>medium</code>, requires <strong>some skills</strong> to address this
+      work,</li>
+      <li><code>hard</code>, requires <strong>strong skills</strong> in the code and
+      the domain it addresses.</li>
+    </ul>
+    <p>Nice overview isn't it? Not yet. Instead of checking all works one after the
+    other to discover its difficulty, we can use board' search engine by typing
+    <code>difficulty: <em>level</em></code>. Enjoy the filtering!</p>
+    <p>And yes, you guessed it, you can do the same thing on the
+    <code>Central</code>, so:</p>
+    <ul>
+      <li><a href="https://waffle.io/hoaproject/Central?search=difficulty: casual">all
+      the <code>casual</code> works</a>,</li>
+      <li><a href="https://waffle.io/hoaproject/Central?search=difficulty: medium">all
+      the <code>medium</code> works</a>,</li>
+      <li><a href="https://waffle.io/hoaproject/Central?search=difficulty: hard">all
+      the <code>hard</code> works</a>.</li>
+    </ul>
+    <p>This feature will guide you when starting new contributions. Also it provides
+    an overview of how difficult works are going to be. This is really important:
+    Not everyone has 1 week to give to an open-source project. Sometimes we only
+    have 1 hour.  What to do in this case? Pick a library, choose the
+    <code>casual</code> difficulty and enjoy!</p>
+    
+    <h2>Development tools</h2>
+    
+    <p>We have introduced a new library recently:
+    <a href="https://github.com/hoaproject/Devtools"><code>Hoa\Devtools</code></a>.
+    This library gathers a majority of the tools we daily use to maintain Hoa. This
+    library is for contributors as well as maintainers.</p>
+    <p>Among the tools it includes, we find
+    <a href="https://github.com/FriendsOfPHP/PHP-CS-Fixer">PHP-CS-Fixer</a>.
+    Recently, Hoa has adopted PSR-1 and PSR-2, and we used this tool.
+    <code>Hoa\Devtools</code> provides a nice command: <code>hoa devtools:cs</code>
+    which prepares all the fixers, rules etc. to apply for you.</p>
+    <p>Development tools are automatically installed when you install test tools
+    (aka <a href="https://github.com/hoaproject/Test"><code>Hoa\Test</code></a>).</p>
+    
+    <h2>Conclusion</h2>
+    
+    <p>This blog post highlights some of the main points we rebooted in the
+    contribution process, such as the boards and work difficulty. We think it will
+    change the way you see the project, the way we communicate about it and more
+    importantly, the way you interact with it. Please,
+    <a href="http://hoa-project.net/Literature/Contributor/Guide.html">check the
+    contributor guide</a>. We cannot wait for your first contribution!</p>
+  </article>
+</overlay>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="New sponsor: Pikacode"?>
+<?xyl-meta name="date" value="2014-01-31T00:00:00+01:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>After <a href="http://jetbrains.com/phpstorm/">Jetbrains (PHPStorm)</a> and
+    <a href="http://verylastroom.com/">Rezzza (VeryLastRoom)</a>, we are pleased to
+    figure among our sponsors… <a href="https://pikacode.com/">Pikacode</a>!
+    Pikacode is a hosting company of Git and Mercurial repositories. Two options are
+    available: free and paying. The former includes an illimited number of public
+    repositories and collaborators, a ticket system, 100Mb of storage, SSL support
+    and daily backup.</p>
+    <p>Hoa hosts <a href="http://git.hoa-project.net/">its repositories</a> on its
+    own machines, but we are always looking for mirrors. Pikacode offers us enough
+    free space for <a href="https://pikacode.com/hoaproject/">new mirrors</a>.  The
+    architecture is the same as <a href="https://github.com/hoaproject/">Github</a>,
+    which is also used as a mirror. Just like Github, please, feel comfortable to
+    use sevices offered by Pikacode to contribute to Hoa.</p>
+    <p>Thank you Pikacode!</p>
+    
+    <hr />
+    
+    <p>Après <a href="http://jetbrains.com/phpstorm/">Jetbrains (PHPStorm)</a> et
+    <a href="http://verylastroom.com/">Rezzza (VeryLastRoom)</a>, nous avons le
+    plaisir de compter dans les rangs de nos sponsors…
+    <a href="https://pikacode.com/">Pikacode</a> ! Pikacode est une entreprise
+    française d'hébergement de dépôts Git et Mercurial. Deux formules sont
+    proposées : gratuite et payante. La première comprend un nombre illimité de
+    dépôts publics et de collaborateurs, ainsi que des pages Web, un système de
+    tickets, 100Mo d'espace de stockage, le support de SSL et des sauvegardes
+    quotidiennes.</p>
+    <p>Hoa héberge <a href="http://git.hoa-project.net/">ses dépôts</a> sur ses
+    propres machines, mais nous sommes toujours à la recherche de miroirs. Pikacode
+    nous offre gratuitement un espace suffisant pour
+    <a href="https://pikacode.com/hoaproject/">de nouveaux miroirs</a>.
+    L'architecture est la même que pour <a
+    href="https://github.com/hoaproject/">Github</a>, qui nous sert également de
+    miroir. Tout comme pour Github, n'hésitez pas à utiliser les services offerts
+    par Pikacode pour contribuer à Hoa.</p>
+    <p>Merci à Pikacode !</p>
+  </article>
+</overlay>

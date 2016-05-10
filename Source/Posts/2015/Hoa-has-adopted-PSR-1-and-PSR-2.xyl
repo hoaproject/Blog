@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="Hoa has adopted PSR-1 and PSR-2"?>
+<?xyl-meta name="date" value="2015-06-05T00:00:00+02:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>Since its first line of code, Hoa has always respected and promoted standards
+    from several consortiums such as: <a href="http://w3c.org">W3C</a>,
+    <a href="http://ietf.org">IETF</a>,
+    <a href="http://iso.org">ISO</a>,
+    <a href="https://en.wikipedia.org/wiki/POSIX">POSIX</a> &amp;amp; co. Why is it
+    important? Because softwares are <strong>beautiful</strong> when they work
+    together. We are not able to do everything at best and a lot of people are doing
+    things better than us. We cannot imprison our users inside our own code. To let
+    every user free, it is really important to scrupulously respect every standards.
+    Today, Hoa is compatible with more than 50 standards.</p>
+    <p>Of course, when standards are not correct or too much limited, it is our duty
+    to ameliorate them by discussing, drafting, gathering suitable people around a
+    (virtual) table and regarding forward together. In several ways, Hoa is implied
+    inside consortiums (W3C or IETF to name a few).</p>
+    <p>The <a href="http://php-fig.org/">PHP-FIG</a> is more a group than a
+    consortium but the main idea is essential to PHP. This is an interoperability
+    group between major PHP projects (including frameworks, libraries, softwares
+    etc.). It means: Defining the way code is loaded and organized, designing
+    interfaces for specific entities etc. PSR-0 and PSR-4 are 2 standards about
+    “autoloading” (how code can be loaded automatically without dealing with paths
+    and filenames). Hoa was compliant with PSR-0 and PSR-4 before they were written
+    and even voted. PSR-1 and PSR-2 is about coding style.</p>
+    <p>Whilst we thought it was not useful for Hoa to adopt this standard, many
+    <del>troll battles</del> debates happened on IRC and Twitter. Several users were
+    arguing it will improve contributions. This was the main argument in favor of
+    PSR-1 and PSR-2. And because we always listen to our users, we finally started
+    to move our code base from previous coding style to PSR-1 and PSR-2.</p>
+    <p>Because PSR-1 and PSR-2 are not exhaustives, we added more rules. We also
+    developed
+    <a href="http://central.hoa-project.net/Resource/Library/Devtools"><code>hoa
+    devtools:cs</code></a>, which puts everything together ready for
+    <a href="https://github.com/FriendsOfPHP/PHP-CS-Fixer">php-cs-fixer</a> (from
+    Friends of PHP).  Thanks to these tools, it took 20 days to update almost
+    120K LOC.</p>
+    <p>So, now, <strong>Hoa is PSR-1 and PSR-2 compatible</strong>. Happy
+    hacking!</p>
+  </article>
+</overlay>

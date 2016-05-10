@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="Hoa\Ruler, une nouvelle contribution"?>
+<?xyl-meta name="date" value="2013-09-26T00:00:00+02:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>Depuis plusieurs semaines maintenant,
+    <a href="http://verylastroom.com/">VeryLastRoom</a> expérimente une de leur
+    nouvelle contribution à Hoa. Après avoir contribués à
+    <a href="@lh:chapter=Math"><code>Hoa\Math</code></a> et
+    <a href="@lh:chapter=Compiler"><code>Hoa\Compiler</code></a>, ils ont maintenant
+    créé une bibliothèque de toute pièce :
+    <a href="@github:repository=Ruler"><code>Hoa\Ruler</code></a> !</p>
+    <p>Cette bibliothèque permet de manipuler un <strong>moteur de règles</strong>.
+    Les règles peuvent être écrites en utilisant un langage <strong>dédié</strong>,
+    très proche du langage SQL. Le langage est suffisamment <strong>simple</strong>
+    afin qu'un utilisateur puisse les écrire lui-même. Enfin, les règles peuvent
+    être <strong>compilées</strong> pour être enregistrées dans une base de données
+    ou autres.</p>
+    <p>De telles règles sont très utiles, par exemple, pour une solution commerciale
+    qui a besoin de manipuler des promotions ou des offres spéciales. L'utilisateur
+    de cette solution peut vouloir écrire la règle suivante :
+    tous les clients appartenant à tel ou tel groupe, enregistrés depuis telle
+    date, avec un montant d'achat supérieur à, ont le droit à une réduction de
+    tant. Une fois cette règle écrite, elle est compilée, enregistrée et exécutée
+    dans la solution. Des exemples complets montrant comment écrire et exécuter une
+    règle, comment ajouter des opérateurs ou des fonctions et comment compiler une
+    règle, sont présentés dans le fichier
+    <a href="@github:repository=Ruler"><code>README.md</code></a>.</p>
+    <p>Après plusieurs semaines intenses en industrie à éprouver l'API et les
+    performances, la décision a été prise d'entamer le processus de finalisation de
+    la bibliothèque. La documentation est en cours d'écriture mais le
+    <code>README.md</code> donne les informations nécessaires pour un usage au
+    quotidien.</p>
+    <p>Un grand merci à VeryLastRoom pour cette importante contribution ! N'hésitez
+    pas, vous aussi, à <a href="@github:repository=Ruler">contribuer à cette
+    bibliothèque</a> !</p>
+  </article>
+</overlay>

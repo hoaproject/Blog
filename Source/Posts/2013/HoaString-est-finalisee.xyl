@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="Hoa\String est finalisée"?>
+<?xyl-meta name="date" value="2013-08-29T00:00:00+02:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>Et encore une : <a href="@github:repository=String">la bibliothèque
+    <code>Hoa\String</code></a> est finalisée !</p>
+    <p>Les chaînes de caractères peuvent parfois être <strong>complexes</strong>,
+    particulièrement lorsqu'elles utilisent l'encodage <strong>Unicode</strong>. La
+    bibliothèque <code>Hoa\String</code> propose plusieurs opérations de chaînes de
+    caractères UTF-8. Elle cache une certaine complexité à utiliser conjointement
+    les extensions <a href="http://php.net/mbstring"><code>mbstring</code></a>,
+    <a href="http://php.net/iconv"><code>iconv</code></a> ou encore
+    <a href="http://php.net/intl"><code>intl</code></a>, et offre une API propre et
+    élégante.</p>
+    <p>Comme d'habitude, nous trouverons une
+    <a href="@lh:chapter=String">documentation détaillée</a> et le fameux
+    <code>README.md</code> pour un aperçu rapide.</p>
+  </article>
+</overlay>

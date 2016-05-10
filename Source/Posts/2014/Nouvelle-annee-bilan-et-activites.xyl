@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="Nouvelle année, bilan et activités"?>
+<?xyl-meta name="date" value="2014-01-07T00:00:00+01:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>Une nouvelle année qui commence, c'est surtout l'occasion de faire le
+    <strong>bilan</strong>. Hoa a beaucoup évolué. Les sections suivantes résument
+    les points majeurs.</p>
+    
+    <h3>Améliorer la communication</h3>
+    
+    <p>L'année 2013 a été un tournant dans la communication avec l'extérieur. Nous
+    pensons que Hoa est plus que prêt à être livré, à tourner en production, à être
+    bidouillé etc. Le blog a été ouvert en janvier, le contenu du
+    <a href="@twitter">compte Twitter</a> a changé, et nous avons lancé le projet
+    <a href="@v">awecode</a>. Que dire à part que c'est un succès ! Nous sommes
+    bientôt à 500 <em lang="en">followers</em> sur Twitter, un nouvel article sur le
+    blog est lu entre 150 et 250 fois les deux premières heures, les awecodes ont
+    été vus environ 2000 fois : le nom de Hoa n'est plus du tout inconnu en France.
+    Un indicateur : en mars, il fallait 1 mois pour avoir 1000 installations de Hoa
+    <em>via</em> Composer. Aujourd'hui, il faut environ <strong>2 à
+    3 jours</strong> !</p>
+    <p>Mais maintenant, il serait temps de passer à
+    l'<strong>international</strong>… Ces derniers mois, nous avons travaillé très
+    dur (et nous continuons encore aujourd'hui) à traduire le site ! Nous annonçons
+    aujourd'hui que Hoa est désormais accessible en <strong>français</strong> et en
+    <strong>anglais</strong> ! Le site est traduit en entier, la documentation est en
+    cours de traduction (cela fera l'objet d'un prochain article) et même les vidéos
+    ont des sous-titres dans les deux langues ! Vous étiez très nombreux à demander Hoa en
+    anglais, c'est maintenant chose faite.</p>
+    
+    <h3>Hoa en production</h3>
+    
+    <p>Grâce à nos efforts de communication, des entreprises sont intéressées par certaines de
+    nos <strong>innovations</strong> ; que ce soit <a href="@l#Recherche">Praspel</a>,
+    <a href="@lh:chapter=Compiler"><code>Hoa\Compiler</code></a>, ou des
+    implémentations robustes de protocoles comme
+    <a href="@lh:chapter=Websocket"><code>Hoa\Websocket</code></a>. Nous pouvons
+    citer <a href="http://verylastroom.com/">VeryLastRoom</a>, application largement
+    saluée, qui repose sur Hoa avec <code>Hoa\Compiler</code>, <code>Hoa\Math</code>
+    ou leur dernière contribution
+    <a href="@github:repository=Ruler"><code>Hoa\Ruler</code></a>. Nous pouvons
+    aussi citer <a href="http://atipik.fr/">Atipik</a>, dont un dernier produit
+    repose essentiellement sur <code>Hoa\Websocket</code>. Enfin, nous citerons le
+    <a href="http://henry.wallonie.be/">Service Public de Wallonie</a> qui utilise
+    également Hoa pour certains de ses logiciels internes. Merci de nous
+    faire confiance !</p>
+    
+    <h3>Une association et des sponsors</h3>
+    
+    <p>2013 c'est aussi l'année où Hoa est devenu une <strong>association à but
+    non-lucratif</strong>. Et cela nous a ouvert les portes pour de nouveaux
+    sponsors. Un immense merci à
+    <a href="http://jetbrains.com/phpstorm/">PHPStorm</a> qui offre des licences de son
+    logiciel gratuitement à tous les contributeurs de Hoa, et
+    <a href="http://verylastroom.com/">VeryLastRoom</a> qui nous
+    apporte un soutient matériel important. Plus récemment,
+    <a href="http://securactive.net/">SecurActive</a> a également apporté un
+    soutient matériel, merci à vous tous !</p>
+    
+    <h3>Nouvelles machines</h3>
+    
+    <p>En parlant de matériel, vous avez pu apprendre que nous avons migré tous nos
+    services sur de nouvelles machines plus performantes et taillées sur mesures.
+    Merci à VeryLastRoom de nous prêter ces 2 nouvelles machines ! Tous les
+    services ont été migrés avec succès, aucune donnée n'a été perdue malgré
+    quelques légères perturbations.</p>
+    <p>Que faire de ces deux machines ? Une machine est dédiée aux besoins de Hoa,
+    comme l'hébergement et la gestion des dépôts Git, des archives, des
+    <em lang="en">builts</em>, des sites Web, des mails et divers ressources.
+    L'autre machine sera dédiée aux contributeurs (un espace gratuit leur est
+    offert) ainsi qu'au serveur d'intégration continue.</p>
+    <p>Pour atteindre les objectifs de 2013-2014, nous avions besoin d'une meilleure
+    architecture. C'est maintenant chose faite ! L'activité au niveau du code de Hoa
+    a été temporairement réduite mais c'est pour mieux repartir, sur des bases très
+    <strong>solides</strong> et aller <strong>plus loin</strong>.</p>
+    
+    <h3>Plusieurs événements</h3>
+    
+    <p>Cette année a été l'occasion d'organiser le premier <strong>événement
+    communautaire</strong> : <a href="@ev+:_able=Hoaapex13">Hoa Apex</a> !
+    Merci à tous les participants de Hoa Apex
+    pour leur présence, joie et idées ! Nous avons été invités à d'autres
+    événements, comme l'<a href="@ev+:_able=Afuplyon13">AFUP Lyon</a> pour le côté
+    industriel, les <a href="@ev+:_able=Jdev13">JDév'</a> pour le côté enseignement
+    ou encore <a href="@ev+:_able=Cstva13">CSTVA</a> pour le côté recherche. Année
+    riche en déplacements et en rencontres.</p>
+    
+    <h3>Rappel</h3>
+    
+    <p>Je (Ivan) tiens à rappeler que Hoa est constitué de
+    <strong>bénévoles</strong>, et que tous ont un travail à côté. Je tiens à
+    profondément vous remercier pour votre temps et votre générosité. Hoa a évolué
+    de manière <strong>spectaculaire</strong> grâce à vous et vous pouvez être très
+    <strong>fier</strong> et vous <strong>réjouir</strong> de cette année 2013 !</p>
+    
+    <h3>En route vers 2014 ?</h3>
+    
+    <p>L'année de Hoa se termine en mars. Les objectifs fixés lors de Hoa Apex en
+    mars sont toujours ouverts. Le prochain chantier est la construction du serveur
+    d'intégration continue avec la migration des tests.</p>
+    <p>Nous nous réjouissons de cette année qui s'annonce aussi riche que 2013 ! À
+    tous, une excellente aventure ;-).</p>
+  </article>
+</overlay>

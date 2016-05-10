@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="Hello world"?>
+<?xyl-meta name="date" value="2013-01-31T00:00:00+01:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>Bonjour à tous !</p>
+    
+    <p>Ceci est le <strong>premier</strong> billet d'une série que nous espérons
+    longue. Le blog de Hoa est enfin disponible. Il a été entièrement réalisé par
+    les <strong>contributeurs</strong> de Hoa et je tiens à les remercier très
+    chaleureusement pour ce cadeau. Ce blog va nous permettre de
+    <strong>communiquer</strong> autour du projet en partageant ses avancées, ses
+    décisions, mais aussi des trouvailles, des nouveautés et plein d'autres
+    choses.</p>
+    
+    <h3 id="Nouveau_site">Nouveau site</h3>
+    
+    <p>Pour commencer, vous aurez sans doute remarqué le nouveau site. Il n'est pas
+    complet mais évolue pratiquement tous les jours, surtout la partie qui contient
+    la <a href="@l">documentation</a>. Vous noterez que la <a href="@g">page
+    d'accueil</a> a été entièrement refaite et qu'elle contient désormais la liste
+    des derniers billets de ce blog, un graphique montrant l'activité de
+    <code>Central</code> (le dépôt regroupant toutes les bibliothèques), ainsi que
+    des interviews d'utilisateurs que nous souhaitons mettre en avant. Nous restons
+    <a href="@c" title="Nous contacter">ouverts</a> à toutes propositions ! Enfin
+    le site est censé s'adapter à tous types de machines. Si vous rencontrez des
+    problèmes, encore une fois, n'hésitez pas à nous le dire au plus vite.</p>
+    
+    <h3 id="A_venir">À venir</h3>
+    
+    <p>Depuis que Hoa s'annonce mature, plusieurs projets ont été démarrés
+    afin d'améliorer son image et sa communication. Le nouveau site et le blog ne
+    sont que les premiers : d'autres projets plus surprenant vont voir bientôt le
+    jour.</p>
+  </article>
+</overlay>

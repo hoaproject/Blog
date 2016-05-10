@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="The Nucleus release series"?>
+<?xyl-meta name="date" value="2016-01-12T00:00:00+01:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>You know that feeling when you have a prickle in the feet: You can walk but
+    sometimes it hurts. Well, it's been a long time we are thinking about solving
+    an issue in Hoa: The <code>Hoa\Core</code> library. While Hoa stands as a set
+    of libraries, <code>Hoa\Core</code> was kind of a monolithic piece of code
+    required by all libraries.  This was not terrible and it was even justified at
+    the origin. Indeed, it was designed to gather several thin layers into a
+    single library for performance reasons. Let me explain it shortly. Parsing
+    time is not very costly compared to I/O: Accessing to a file, opening it and
+    reading it. The core aimed at putting the minimum always needed codes into
+    small and optimized files, in order to reduce this I/O time. However, since
+    recent PHP versions and recent I/O progresses (SSD, kernel, FS…), this is no
+    longer necessary. That's why in October we finally decided that it was time to
+    <strong>split the core</strong>!</p>
+    <p>This work could introduce small potential BC breaks so we decided to do
+    this while <strong>dropping PHP5.4 support</strong>. Since PHP5.4 is
+    dead and no longer support by the PHP group, it is logical that we drop it too.
+    Dropping a PHP version is considered as a BC break and this was expected, as
+    described in <a href="@s">the Source page</a>.</p>
+    
+    <h2>Consequences of the split</h2>
+    
+    <p>Splitting a core is well-known to produce a ton of energy.
+    <code>Hoa\Core</code> was not an exception.</p>
+    <p>So, <code>Hoa\Core</code> is dead and has been split into the following
+    libraries:</p>
+    <ul>
+      <li><a href="http://central.hoa-project.net/Resource/Library/Consistency"><code>Hoa\Consistency</code></a>,</li>
+      <li><a href="http://central.hoa-project.net/Resource/Library/Event"><code>Hoa\Event</code></a>,</li>
+      <li><a href="http://central.hoa-project.net/Resource/Library/Exception"><code>Hoa\Exception</code></a>,</li>
+      <li><a href="http://central.hoa-project.net/Resource/Library/Protocol"><code>Hoa\Protocol</code></a>,</li>
+      <li><a href="http://central.hoa-project.net/Resource/Library/Zformat"><code>Hoa\Zformat</code></a>.</li>
+    </ul>
+    <p>You can visit these links and follow their <code>README.md</code> files to
+    learn more but names are self-describing. Shortly, here are small
+    descriptions.</p>
+    <p><code>Hoa\Consistency</code> provides a thin layer between PHP VMs and
+    libraries to <strong>ensure consistency</strong> accross VM versions and
+    library versions. For instance, it frontports functions like
+    <a href="http://php.net/trait_exists"><code>trait_exists</code></a> or
+    interfaces like <a href="http://php.net/throwable"><code>Throwable</code></a>.
+    It provides useful methods like <code>isIdentifier</code> or
+    <code>isKeyword</code> to respectivelly check if a datum is a valid PHP
+    identifier or a reserved keyword. It also provides a
+    <a href="http://www.php-fig.org/psr/psr-4/">PSR-4 autoloader</a> and some other
+    useful tools ensuring a better compatibility accross the time. Considering the
+    weak number of BC breaks we have introduced in the whole Hoa's history and our
+    experience in this domain, this library might interest you. It stands in
+    <strong>critical</strong> places where BC breaks might happen often.</p>
+    <p><code>Hoa\Event</code> provides events and listeners in PHP. This is an
+    observer design-pattern implementation but it defines fundamental differences
+    between events and listeners in term of <strong>synchronisity</strong>,
+    <strong>identity</strong> and <strong>scope</strong>. These definitions are most
+    of the time ignored and, while the consequences are not disasters, it can lead
+    to badly designed API.</p>
+    <p><code>Hoa\Exception</code> provides powerful exception implementations with
+    errors, generic exceptions, idle exceptions and group of exceptions. This
+    latter is useful when dealing with exceptions from several sources and putting
+    them together to expose a single, clean and easy to understand exception. You
+    can begin, rollback or commit a group of exceptions inside another group (like
+    classical transactions) etc.</p>
+    <p><code>Hoa\Protocol</code> is the implementation of the <code>hoa://</code>
+    protocol which <strong>abstracts resource accesses</strong>. This protocol is
+    extensible and is often embedded in other softwares. Files, memory resources,
+    network resources… it can represent anything. You will no longer have to deal
+    with runtime current working directory and be afraid of moving a resource from
+    one location to another one. The <code>hoa://</code> protocol is here to
+    abstract the access and ensure a retro-compatibility.</p>
+    
+    <h2>Benefits of the split</h2>
+    
+    <p>We talked about energy. Here it is.</p>
+    <p>The immediate benefits is that there is no longer a core! It sounds simple
+    but it was a blocker for several users world-wide. Mostly for projects that
+    would like to embed Hoa inside their code. Having something similar to “a
+    framework” (we should double or triple quotes here) is bad. Actually, it sounded
+    like a framework core but it was not at all; It was just an optimization,
+    nothing more. Well, now it has disappeared.</p>
+    <p>The core was not easy to test too. Now, since we have several libraries, it's
+    easy to test and we have:</p>
+    <ul>
+      <li>20 new test suites, which represents</li>
+      <li>223 test cases, be</li>
+      <li>3054 new assertions.</li>
+    </ul>
+    <p>That was for the <strong>quality</strong> part. The
+    <strong>performance</strong> part on the other hand is also very interesting.
+    The <code>Hoa\Core</code> library was always de-facto autoloaded because some
+    API was necessary. Since the split, we only need the
+    <code>Hoa/Consistency/Prelude.php</code> file. Having a prelude is something
+    very common, see in
+    <a href="https://doc.rust-lang.org/stable/std/prelude/">Rust</a> or C for
+    instance. It just checks if Hoa libraries can run, it defines some constants and
+    defines the autoloader. All libraries require <code>Hoa\Consistency</code>,
+    which is pretty logical. You don't have to manage the prelude, it is managed for
+    you, especially if you are using
+    <a href="https://getcomposer.org/">Composer</a>. So here are the performance
+    results between <code>Hoa\Core</code> and <code>Hoa\Consistency</code> for the
+    initialization:</p>
+    <table>
+      <thead>
+        <tr>
+          <td></td>
+          <td>Time (for 1000 runs)</td>
+          <td>Memory (for 1 run)</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>Hoa\Core</code></td>
+          <td>18.084s</td>
+          <td>335408b</td>
+        </tr>
+        <tr>
+          <td><code>Hoa\Consistency</code></td>
+          <td>15.959s</td>
+          <td>56744b</td>
+        </tr>
+        <tr>
+          <td>Gain</td>
+          <td><strong>11.751%</strong></td>
+          <td><strong>83.082%</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Such a memory savings was not expected. And this is a good surprise! It's
+    good to see that also time has been saved during the battle. These results were
+    obtained with no PHP optimization, like opcache. This is pure PHP.</p>
+    
+    <h2>Conclusion</h2>
+    
+    <p>So, not only the API is cleaner, not only more projects can re-use our new
+    libraries (but not new code), not only the quality is better, but the
+    performances are also better. These 3.5 months of work have been justified and
+    rewarded.</p>
+    <p>As usual, this is the result of a team work. We would like to thank all
+    Hoackers, especially (in alphabetic order):</p>
+    <ul>
+      <li>Julien Bianchi,</li>
+      <li>Julien Clauzel,</li>
+      <li>Raphaël Emourgeon,</li>
+      <li>Ivan Enderlin,</li>
+      <li>Alexis von Glasow,</li>
+      <li>Matthieu de Laubrie,</li>
+      <li>Pierre Tomasina,</li>
+    </ul>
+    <p>for all the reviews, feedbacks, ideas and motivations. This was 79 PR or
+    issues to review, with more than 96 test suites, 810 test cases and
+    180,954 assertions to keep green.</p>
+    <p>Finally, the new minimum required PHP version is 5.5, which is great. Hoa is
+    obviously compatible with PHP 7.</p>
+    <p>We would like to wish you a happy new year and <strong>happy hoacking</strong>!</p>
+  </article>
+</overlay>

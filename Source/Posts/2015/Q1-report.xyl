@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="2015 Q1 report"?>
+<?xyl-meta name="date" value="2015-04-07T00:00:00+02:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>The first quarter of 2015 is over. It's time for a short summary!</p>
+    
+    <h2>Numbers!</h2>
+    
+    <p>About the <code>Central</code>, i.e. <strong>all libraries</strong>:</p>
+    <ul>
+      <li>513 commits,</li>
+      <li>50 snapshots,</li>
+      <li>55 goals reached,</li>
+      <li>0 library finalized.</li>
+    </ul>
+    
+    <p>About the <strong>community</strong>:</p>
+    <ul>
+      <li>+230,000 installations from Packagist,</li>
+      <li>+119 stargazers on Github,</li>
+      <li>+28 forks on Github,</li>
+      <li>+6 <a href="http://hoa-project.net/Community.html#Contributors">contributors</a> :
+      hason, limenet, mikeSimonson, simkimsia, GuillaumeDievart and burex,</li>
+      <li>+3 important trusters: <a href="https://fruux.com/">fruux</a>,
+      <a href="https://owncloud.com/">ownCloud</a> and
+      <a href="http://jolicode.com/">joliCode</a>,</li>
+      <li>promotion of
+      <a href="http://hoa-project.net/Literature/Hack/String.html"><code>Hoa\String</code></a>,</li>
+      <li>+1 new baby!</li>
+    </ul>
+    
+    <p>About the <strong>website</strong>:</p>
+    <ul>
+      <li>2 blog posts,</li>
+      <li>New design landed,</li>
+      <li>Search bar landed,</li>
+      <li>Comments landed,</li>
+      <li>4,448 unique visits (top 5: 25% France, 8% USA, 6% Germany, 5% Switzerland,
+      4% Russia),</li>
+      <li>15,793 viewed pages (9,565 unique ones).</li>
+    </ul>
+    
+    <p>In addition, Hoa Apex 3<sup>rd</sup> edition is under preparation!</p>
+    
+    <h2>What does it mean?</h2>
+    
+    <p>We are happy with these numbers. Our most recent focus was to replace Rolling
+    Release by <a href="http://hoa-project.net/Source.html#Rush_Release">Rush
+    Release</a> —a mix between Rolling Release and Scheduled-based Release—. It has
+    increased Hoa's adoption and solved several issues with installation tools such
+    as Composer. Feedbacks are all positives.</p>
+    <p>The number of reached goals is impressive and I would like to thanks every
+    contributor: This is an <strong>incredible</strong> work!</p>
+    <p>The new website required a lot of time to be polished. Everyone agrees this
+    version is visually better. Information are more accessible. The search bar is
+    very helpful and we hope you like it!</p>
+    
+    <h2>What's next?</h2>
+    
+    <p>Go check <a href="http://wiki.hoa-project.net/projects:central:todo">our
+    roadmap</a> for the <code>Central</code>: It's not finished yet but it's exciting.
+    The most important tasks are still: The documentation, migrate existing tests,
+    <a href="https://github.com/hoaproject/Devtools/pull/11">move to PSR-1 and
+    PSR-2</a>, finalizing more libraries etc.</p>
+    <p>About non-code stuff, we have the next edition of Hoa Apex to prepare. This
+    is an important work but every edition is a success so it deserves all this
+    energy!</p>
+    
+    <h2>Conclusion</h2>
+    
+    <p>Thank you everyone for all your kindness, energies and contributions. Every
+    nice words (even on <a href="https://twitter.com/hoaproject">Twitter</a>)
+    encourage the whole community and they are very well appreciated! Thank you for
+    using Hoa and to trust us!</p>
+  </article>
+</overlay>

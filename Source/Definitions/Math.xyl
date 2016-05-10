@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<definition xmlns="http://hoa-project.net/xyl/xylophone">
+  <yield name="tex">
+    <span data-type="tex" yield-select="?x:@*">
+      \displaystyle <yield select="?x:text()" />
+    </span>
+  </yield>
+
+  <yield name="dot">
+    <span data-type="dot" yield-select="?x:@*">
+      <yield select="?x:text()" />
+    </span>
+  </yield>
+</definition>

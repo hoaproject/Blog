@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p style="margin-top: 4em">
+      Hoa is a <strong>modular</strong>, <strong>extensible</strong> and
+      <strong>structured</strong> set of PHP libraries.  Moreover, Hoa aims at
+      being a bridge between industrial and research worlds.
+    </p>
+    <p>
+      This blog post gathers different news and announcements around the
+      project.
+    </p>
+
+    <ul class="raw" style="margin-top: 4em">
+      <li bind="?posts">
+        <aside style="display: inline-block; width: 8em">
+          <time datetime="(?date)">
+            <value
+              formatter="date"
+              formatter-format="jS M. Y"
+              formatter-timestamp="(?timestamp)" />
+          </time>
+        </aside>
+        <a href="(?url)" bind="?title" />
+      </li>
+    </ul>
+  </article>
+</overlay>

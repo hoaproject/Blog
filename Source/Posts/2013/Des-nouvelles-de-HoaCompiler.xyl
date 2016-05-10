@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="Des nouvelles de Hoa\Compiler"?>
+<?xyl-meta name="date" value="2013-03-08T00:00:00+01:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>Nous sommes heureux de vous annoncer que le
+    <a href="@lh:chapter=Compiler">chapitre dédié à <code>Hoa\Compiler</code></a>
+    dans le <em lang="en">hack book</em> est maintenant validé ! La bibliothèque
+    <code>Hoa\Compiler</code> propose des compilateurs de compilateurs LL(1) et
+    LL(<em>k</em>). L'utilisation d'un nouveau langage de description de grammaire,
+    le langage PP, facilite son utilisation.  N'hésitez pas à vous lancer si vous
+    avez toujours eu envie d'écrire un compilateur, un interpréteur ou des
+    analyseurs ! La documentation est remplie d'exemples et propose même une courte
+    introduction sur la théorie des langages nécessaire à la bonne compréhension des
+    compilateurs.</p>
+    <p>Si vous trouvez des fautes, n'hésitez pas à nous le signaler à travers le
+    <a href="@github:repository=Compiler">miroir Github</a> ou à <a href="@c">nous
+    contacter</a> directement.</p>
+    <p><img src="hoa://Application/Public/Image/WhoUse/Verylastroom.png"
+            class="fright" />
+    Si vous voulez un retour d'utilisation dans l'<strong>industrie</strong>, vous
+    pouvez lire l'<a href="@u:who=Verylastroom">entrevue avec VeryLastRoom</a> : les
+    performances, l'utilisation, les contributions, la documentation, tout y
+    passe ! Merci à eux de nous avoir fait confiance et merci pour leurs
+    <strong>contributions</strong> précieuses.</p>
+    <p>La bibliothèque <code>Hoa\Compiler</code> a dépassé les <strong>1000
+    installations</strong> sur
+    <a href="https://packagist.org/packages/hoa/compiler">Packagist</a>. Ce chiffre
+    vaut ce qu'il vaut, mais il reste un <strong>indicateur</strong>. Notons
+    également que <code>Hoa\Compiler</code> est utilisé au niveau
+    <strong>recherche</strong> dans de nouveaux travaux. Et chez Hoa, nous aimons
+    quand ces deux univers profitent à chacun. D'autres projets, comme un
+    interpréteur et compilateur <a href="http://lua.org/">Lua</a>, ou encore un
+    compilateur <a href="http://lesscss.org/">LESSCSS</a>, sont en cours. Toutes les
+    contributions sont les bienvenues !</p>
+  </article>
+</overlay>

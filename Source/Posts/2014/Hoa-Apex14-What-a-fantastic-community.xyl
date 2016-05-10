@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="Hoa Apex'14: What a fantastic community!"?>
+<?xyl-meta name="date" value="2014-08-20T02:00:00+02:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>Hoa Apex is a dedicated event to the community of Hoa, where contributors,
+    main developers and big users meet each other. This is a unique moment to share
+    ideas and projects together.</p>
+    <p>This is also a wandering event, it means that we try to go towards
+    contributors as most as possible. One year and half ago,
+    <a href="http://hoa-project.net/Event/Hoaapex13.html">Hoa Apex'13</a> took place
+    near Neuchâtel in Switzerland. This year, Hoa Apex'14 took place in Marseille in
+    France, in the home of VeryLastRoom, our main sponsor.</p>
+    <figure>
+      <img src="https://farm6.staticflickr.com/5575/14979543335_6cd593a99b_c.jpg" />
+      <figcaption>Vieux-Port, Marseille.</figcaption>
+    </figure>
+    
+    <p>The schedule was the following:</p>
+    <ul>
+      <li>16<sup>th</sup> August, from 9h to 12h30, two keynotes about Hoa,</li>
+      <li>16<sup>th</sup> August, afternoon, “team building” and an awesome
+          restaurant,</li>
+      <li>17<sup>th</sup> August, from 9h to 12h30, discussing about Hoa, opened and
+          future projects,</li>
+      <li>17<sup>th</sup> August, afternoon, saying goodbye.</li>
+    </ul>
+    <p>The event has been partly
+    <a href="http://hoa-project.net/Video.html#Live">streamed live</a>. One keynote
+    has been recorded and is available. <a href="http://hoa-project.net/Event/Hoaapex14.html">More informations</a> on the main page of the event. This article presents a short summary of
+    this event.</p>
+    
+    <h2>What a year!</h2>
+    
+    <p>The first keynote was
+    <a href="http://keynote.hoa-project.net/HoaApex14-1/HoaApex14-1.html"><cite>Hoa
+    Apex'14, what a year!</cite></a>. This keynote presents the state and the
+    evolution of Hoa since Hoa Apex'13 (March 2013) in term of community, source
+    code, contributions, sites, documentations, events etc.</p>
+    
+    <h3>Bigger community</h3>
+    
+    <p>To sum up, we have twice more contributors (from 19 to 38 contributors) with
+    4 new hoackers. On Github, we have more than 460 watchers and more than
+    230 forks. On Twitter, we have more than 540 followers. On Composer/Packagist,
+    we have approximately 14 times more downloads (more than 140 000)! The community
+    at large represents more than 860 persons.
+    <figure>
+      <img src="https://farm6.staticflickr.com/5585/14956917936_fca7ae72db_c.jpg" />
+      <figcaption>Hoa's community at large.</figcaption>
+    </figure>
+    <p>We have also new big users:</p>
+    <ul>
+      <li><a href="http://gouvernement.wallonie.be/">Service Public de Wallonie</a>,
+          a governmental service of Belgium,</li>
+      <li><a href="http://atipik.fr/">Atipik</a>, a web agency,</li>
+      <li><a href="http://www.phpmetrics.org/">PhpMetrics</a>, static analysis tool
+          for PHP,</li>
+      <li><a href="https://github.com/FriendsOfPHP/pickle/">pickle</a>, the PHP
+          extension installer.</li>
+    </ul>
+    
+    <h3>Contribute to other projects</h3>
+    
+    <p>We have also made official contributions into two projects:</p>
+    <ul>
+      <li><a href="http://atoum.org/">atoum</a>:
+        <ul>
+          <li><a href="http://central.hoa-project.net/Resource/Contributions/Atoum/PraspelExtension"><code>Atoum\PraspelExtension</code></a>,
+              which includes Praspel inside atoum,</li>
+        </ul>
+      </li>
+      <li><a href="http://symfony.com/">Symfony</a>:
+        <ul>
+          <li><a href="http://central.hoa-project.net/Resource/Contributions/Symfony/ConsoleBridge"><code>Hoathis\SymfonyConsoleBridge</code></a>,
+              which is a <code>Hoa\Console</code> to Symfony bundle bridge,</li>
+          <li><a href="http://central.hoa-project.net/Resource/Contributions/Symfony/ConsoleBundle"><code>Hoathis\SymfonyConsoleBundle</code></a>,
+              which is a Symfony bundle including <code>Hoa\Console</code>.</li>
+        </ul>
+      </li>
+    </ul>
+    
+    <h3>Foundation and sponsors</h3>
+    
+    <p>Hoa Project is a non-profit foundation aiming at supporting the Hoa project
+    by developing, deploying and promoting the free softwares from Hoa Project, its
+    derivates and associated projects.</p>
+    <p>This foundation has been created few months ago and several sponsors have
+    joined us in our “mission”:</p>
+    <ul>
+      <li><a href="http://verylastroom.com/">VeryLastRoom</a>,</li>
+      <li><a href="https://pikacode.com/">Pikacode</a>,</li>
+      <li><a href="http://jetbrains.com/">Jetbrains</a>.</li>
+    </ul>
+    <p>Thank you for all your support!</p>
+    
+    <h3>Translation into English and visibility</h3>
+    
+    <p>Translating the website and all kinds of documentation into English has been
+    very beneficial. 60% of the traffic now comes from outside France! We have
+    10 times more visitors and 40 times more countries, which is pretty
+    logical but important.</p>
+    
+    <h2>How do we ensure code quality?</h2>
+    
+    <p>The second keynote was
+    <a href="http://keynote.hoa-project.net/HoaApex14-2/HoaApex14-2.html"><cite>Hoa
+    Apex'14, how do we ensure code quality?</cite></a>. This keynote presents our
+    “team” that helps us to automate quality in Hoa. This was also the opportunity
+    to present our last tool: Le Comte Intatto. We are going to write a longer
+    article about this tool as soon as possible. This is still in development but we
+    are going to deploy it in few weeks. Thus, the team is composed of:</p>
+    <ul>
+      <li>Git and Bhoat which maintain the source code,</li>
+      <li>Marvirc which helps us to be notified,</li>
+      <li>atoum and Praspel for the tests,</li>
+      <li>Le Comte Intatto for the CI.</li>
+    </ul>
+    <p>It was the opportunity to finalize our rolling-release vision. We are going
+    to also write an article about this but to summarize: Hoa is going to have a
+    part- and true-rolling release philosophy, mixed with a scheduled-based release.
+    We did not find a buzzing term for that yet however you have to understand that
+    Hoa is going to be rolling-released but with tags! It is for sure a great news
+    for all Hoa's users which rely on Composer to deploy their softwares.</p>
+    
+    <h2>Team building</h2>
+    
+    <p>Hoa Apex is a community event but not reserved to contributors only. Indeed,
+    contributors are gently invited to come with their companion and children. For
+    this second edition, we have the confirmation this is a good idea. It is a
+    friendly event and it helps to know each other better.</p>
+    <p>The main activity consisted of
+    <a href="http://connect.garmin.com/activity/569417172">a walk into the
+    <em lang="fr">Calanques</em></a>, which is rocky stretch of coast with deep
+    inlets, at the east of Marseilles, and a restaurant. The walk ended on a
+    beach.</p>
+    <figure>
+      <img src="https://farm6.staticflickr.com/5565/14976463971_8cf037f782_c.jpg" />
+      <figcaption>Les Calanques, Marseille.</figcaption>
+    </figure>
+    
+    The restaurant serves speciality from Marseille, whose the
+    <a href="http://en.wikipedia.org/wiki/Bouillabaisse">famous
+    <em lang="fr">Bouillabaisse</em></a>!</p>
+    <figure>
+      <img src="http://upload.wikimedia.org/wikipedia/commons/2/24/Bullabessa.jpg"
+           alt="Bouillabaisse" />
+      <figcaption>Bouillabaisse, from
+      <a href="http://en.wikipedia.org/wiki/Bouillabaisse#mediaviewer/File:Bullabessa.jpg">Wikipédia</a>.</figcaption>
+    </figure>
+    <figure>
+      <img src="http://lechateausormiou.fr/images/slide1.jpg"
+           alt="View from the restaurant" />
+      <figcaption>View from the restaurant:
+      <a href="http://lechateausormiou.fr/">Le château Sormiou</a>.</figcaption>
+    </figure>
+    <p>This year, the goodies were a <em lang="en">pétanque</em> ball with “Hoa
+    Apex'14” engraved on its surface.</p>
+    <figure>
+      <img src="https://farm4.staticflickr.com/3895/14956577616_9c97e6fb22_c.jpg" />
+      <figcaption>Goodies of this Apex: a real <em lang="en">pétanque</em>
+      ball.</figcaption>
+    </figure>
+    
+    <h2>Conclusion</h2>
+    
+    <p>This second edition of Hoa Apex has been a success. Hoa is growing like never
+    before and we see concrete results. New projects are going to be deployed, along
+    with a better communication (you will see it on this blog by yourself). In
+    short: thanks a lot for your presence, usages and feedbacks! Keep going!</p>
+  </article>
+</overlay>

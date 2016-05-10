@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="Awecode, une nouvelle forme d'apprentissage"?>
+<?xyl-meta name="date" value="2013-05-21T00:00:00+02:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>Même si l'idée a germé dans nos têtes il y a environ un an déjà, nous
+    commencions à faire un peu de <em lang="en">teasing</em> depuis quelques
+    semaines. Le moment est arrivé de dévoiler ce pourquoi nous avons travaillé si
+    dur.</p>
+    <p>La documentation de Hoa est indéniablement un de ses gros <strong>points
+    forts</strong>. Même si elle reste en cours d'écriture, plusieurs témoignages ou
+    retours utilisent les adjectifs suivants pour la caractériser :
+    <strong>claire</strong>, <strong>simple</strong>, <strong>complète</strong> et
+    <strong>agréable</strong>. Mais ce n'est pas suffisant pour nous.  Aujourd'hui,
+    nous voulons aller plus loin, faciliter encore plus l'apprentissage, apprendre
+    différement, plus rapidement, de manière plus visuelle. Aujourd'hui, nous
+    présentons <strong>awecode</strong> !</p>
+    
+    <h3>Qu'est-ce que awecode ?</h3>
+    
+    <p>Le principe est très simple : c'est la rencontre entre la
+    <strong>vidéo</strong> et le <strong>code</strong>, un moyen
+    <strong>ludique</strong>, « interactif » et <strong>rapide</strong> d'apprendre.
+    Une vidéo permet en quelques <strong>minutes</strong> d'illustrer ou de
+    comprendre un sujet précis, qui repose très souvent sur du code.
+    Malheureusement, le code dans une vidéo n'est pas toujours facile à saisir et il
+    est dans une « boîte noire » : impossible de le sélectionner ou de l'exécuter
+    sur sa propre machine sauf en le recopiant (ce qui est, admettons le,
+    <strong>laborieux</strong> et décourageant).</p>
+    <p>Un awecode est alors composé de deux parties : une vidéo et du code. La
+    <strong>vidéo</strong> montre l'exécution du code, apporte des explications, des
+    schémas, des situations concrètes… Et le <strong>code</strong>, quant à lui,
+    est placé dans plusieurs éditeurs, un par fichier, et évolue en fonction du
+    temps. Un des avantages importants est qu'à tout moment, nous pouvons nous
+    <strong>déplacer</strong> en avant ou en arrière dans la vidéo, et le code se
+    <strong>met à jour</strong>, sous vos yeux. Vous pouvez reprendre le code chez
+    vous, l'exécuter, essayer par vous même. Le code n'est plus dans une « boîte
+    noire » !</p>
+    <p>Un exemple vaut mieux qu'un long discours : le
+    <a href="@v+:id=Console-readline">premier awecode</a> porte sur les
+    fonctionnalités de
+    <a href="@lh:chapter=Console"><code>Hoa\Console\Readline</code></a>.
+    Nous vous laissons découvrir par vous même !</p>
+    <p>Nous espérons que vous apprécierez cette nouvelle forme de documentation et
+    plusieurs awecodes sont déjà en route grâce à une « chaîne de production » bien
+    spécifique ! Dans un prochain billet, nous raconterons la longue aventure
+    « awecode »…</p>
+  </article>
+</overlay>

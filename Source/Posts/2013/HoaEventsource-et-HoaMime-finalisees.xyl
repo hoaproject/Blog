@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="Hoa\Eventsource et Hoa\Mime finalisées"?>
+<?xyl-meta name="date" value="2013-04-16T00:00:00+02:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>Le beau temps est revenu et coder dehors le weekend nous réussit. Deux
+    nouvelles bibliothèques sont finalisées dans Hoa :
+    <a href="@github:repository=Eventsource"><code>Hoa\Eventsource</code></a>
+    et <a href="@github:repository=Mime"><code>Hoa\Mime</code></a>.</p>
+    <p>Commençons avec <code>Hoa\Eventsource</code> : EventSource, ou
+    <em lang="en">Server-Sent Events</em>, est une technologie permettant à un
+    <strong>serveur</strong> HTTP d'<strong>envoyer</strong> des
+    <strong>événements</strong> sur un client. La bibliothèque
+    <code>Hoa\Eventsource</code> permet de créer un serveur EventSource. Cette
+    technologie est un <a href="http://w3.org/TR/eventsource/">standard du W3C</a>.
+    Vous pouvez vous reporter au <code>README.md</code> pour un aperçu ou à la
+    <a href="@lh:chapter=Eventsource">documentation</a> pour les détails.</p>
+    <p>Continuons avec <code>Hoa\Mime</code>. Le <strong>type</strong> des
+    ressources est codifié à partir d'un format appelé <em lang="en">MIME Media
+    Types</em>. La bibliothèque <code>Hoa\Mime</code> permet de manipuler ce
+    <strong>format</strong> et de déduire des informations à partir de flux. Encore
+    une fois, vous pourrez vous reporter au <code>README.md</code> pour un aperçu
+    des fonctionnalités essentielles, ou lire la
+    <a href="@lh:chapter=Mime">documentation</a> pour avoir les détails.</p>
+    <p>D'autres bibliothèques sont en cours de finalisation. Si vous êtes en attente
+    d'une bibliothèque en particulier, n'hésitez pas à <a href="@c">nous le
+    dire</a> !</p>
+    <p>Terminons par un petit rappel sur ces « finalisations ». Une bibliothèque
+    passe par trois états différents : <strong>existante</strong>,
+    <strong>mature</strong> puis <strong>finalisée</strong>. Pour arriver au dernier
+    état, il faut laisser un certain temps, faire des tests, écrire de la
+    documentation, avoir des retours de l'industrie, couvrir tous les standards,
+    avoir une API stable etc. Avoir autant de bibliothèques qui se finalisent est
+    donc une très bonne nouvelle, cela montre une maturité et une stabilisation
+    importante de Hoa.</p>
+  </article>
+</overlay>

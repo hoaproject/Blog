@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="Conférence à Lyon"?>
+<?xyl-meta name="date" value="2013-10-28T00:00:00+01:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>Rappel de dernière minute : l'AFUP Lyon organise ce soir
+    <a href="http://lyon.afup.org/2013/10/01/conference-sur-hoa-le-28-octobre-a-19h00/">une
+    conférence sur Hoa</a>, à 19h. Les inscriptions sont encore ouvertes et il reste
+    de la place, alors <a
+    href="http://afup-lyon-hoa.eventbrite.fr/">profitez-en</a> ! Ci-après, quelques
+    détails.</p>
+    <img src="hoa://Application/Public/Image/Logo/AFUPLyon.png"
+         width="400" class="center" />
+    <p>Lors de cette conférence, Ivan Enderlin (créateur du projet) et Julien
+    Bianchi (contributeur et hoacker) nous présenteront Hoa : ce que c'est, comment
+    l'installer, que peut-on faire avec, qui l'utilise ? Puis, certaines
+    bibliothèques phares seront abordées pour illustrer des usages quotidiens, comme
+    <code>Hoa\Websocket</code>, <code>Hoa\Ruler</code> ou encore
+    <code>Hoa\Praspel</code> et <code>Hoathis\Atoum</code> pour un aspect recherche
+    et test.</p>
+    <p>La conférence aura lieu le lundi 28 octobre, à 19h00, dans les locaux
+    d'Epitech, au 86 boulevard Marius Vivier-Merle 69003 Lyon.</p>
+    <p>Mise à jour : voici <a href="@ev+:_able=Afuplyon13">les détails de
+    l'événement</a>.</p>
+  </article>
+</overlay>

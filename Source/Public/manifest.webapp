@@ -1,0 +1,20 @@
+{
+    "version"    : "0.1",
+    "name"       : "Your website",
+    "description": "Website of Gordon Freeman",
+    "launch_path": "/index.html",
+    "icons"      : {
+        "512": "/Image/Icon/App_x512.png",
+        "128": "/Image/Icon/App_x128.png"
+    },
+    "developer": {
+        "name": "Gordon Freeman",
+        "url" : "http://example.org/"
+    },
+    "installs_allowed_from": ["*"],
+    "permissions"          : {
+        "systemXHR": {
+            "description": "This is a website, so we need this permission ;-)."
+        }
+    }
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="Nouvel awecode : Hoa\Websocket"?>
+<?xyl-meta name="date" value="2013-10-04T00:00:00+02:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>Vous avez été nombreux (sur <a href="https://twitter.com/hoaproject">Twitter</a> ou
+    <a href="@c#IRC">IRC</a>) à demander un awecode sur
+    <a href="@lh:chapter=Websocket"><code>Hoa\Websocket</code></a>. Nous attendions
+    de terminer une autre fonctionnalité attendue par beaucoup d'entre-vous :
+    <code>Hoa\Websocket\Client</code>, avant de réaliser cet awecode. La
+    documentation a été mise à jour et la production de l'awecode a pu
+    démarrer !</p>
+    <p>Voici donc le <a href="@v+:id=Websocket">nouvel awecode sur
+    <code>Hoa\Websocket</code></a>. Au sommaire : pourquoi et comment utiliser
+    <code>Hoa\Websocket\Server</code> et <code>Hoa\Websocket\Client</code> ? Un
+    exemple simple nous illustrera le protocole WebSocket.</p>
+    <p>Pour rappel, voici quelques liens vers <a href="@lh:chapter=Websocket">la
+    documentation</a> et <a href="@github:repository=Websocket">le dépôt sur
+    Github</a>. Profitez bien !</p>
+  </article>
+</overlay>
