@@ -137,7 +137,7 @@
       <code>FROM_END</code>) and a <strong>fetching style</strong>
       (<code>AS_MAP</code>, <code>AS_SET</code>,
       <code>AS_OBJECT</code>, <code>AS_LAZY_OBJECT</code>, <code>AS_CLASS</code>
-      etc.) and an iterator is automatically build for you. A simple
+      etc.) and an iterator is automatically built for you. A simple
       <code>foreach</code> loop will let you go through all your database
       result. This is not stable yet for all the database drivers, but the API is
       stable and we are fixing bugs when they are found. Testing in progress.
