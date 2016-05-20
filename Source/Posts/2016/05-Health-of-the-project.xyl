@@ -31,7 +31,7 @@
       When making open source softwares, this is hardly difficult to know if
       people are using it or not. Even worse, to know who is using it. If nobody
       knocks on the IRC door to tell us its company, for instance, is using Hoa,
-      we have no way to deduce it. The number of downloads provide a partial
+      we have no way to deduce it. The number of downloads provides a partial
       answer: We know that more and more people are using it due to the
       exponential growth of the downloads. We still do not know who is behind
       these downloads though. Please, tell us 😄!
@@ -97,14 +97,14 @@
     <p>
       <a href="http://central.hoa-project.net/Resource/Library/Socket">The
       <code>Hoa\Socket</code> library</a> has been also <strong>finalized</strong>
-      and released under the 1.16.01.15 snapshot but two majors snapshots have
+      and released under the 1.16.01.15 snapshot but two major snapshots have
       been released since then, respectively 1.16.02.10 and 1.16.02.17. The API is
       now stable, the quality has been enhanced and the library is able to
       handle many more connections at the same time. The safety regarding socket
       disconnection errors is better in a <strong>high concurrency
       context</strong> (i.e. more than 500 concurrent connections). New TLS
       constants have been introduced too. Finally, a nice feature is the ability
-      to define <strong>socket wrapper</strong>, like <code>ws://</code> or
+      to define <strong>socket wrappers</strong>, like <code>ws://</code> or
       <code>irc://</code>, which let me transition to the next important
       release.
     </p>
@@ -138,7 +138,7 @@
       (<code>AS_MAP</code>, <code>AS_SET</code>,
       <code>AS_OBJECT</code>, <code>AS_LAZY_OBJECT</code>, <code>AS_CLASS</code>
       etc.) and an iterator is automatically built for you. A simple
-      <code>foreach</code> loop will let you go through all your database
+      <code>foreach</code> loop will let you go through your database
       result. This is not stable yet for all the database drivers, but the API is
       stable and we are fixing bugs when they are found. Testing in progress.
       As you might foresee, this work has required several deep thinking on
@@ -156,15 +156,15 @@
     <ul>
       <li>
         <code>Hoa\Graph</code>: 9 new test suites, which represent 66 test
-        case, be 157 assertions,
+        cases, be 157 assertions,
       </li>
       <li>
-        <code>Hoa\Acl</code>, 8 new test suites, which represent 82 test case,
+        <code>Hoa\Acl</code>, 8 new test suites, which represent 82 test cases,
         be 369 assertions,
       </li>
       <li>
         <code>Hoa\Socket</code>, 10 new test suites, which represent 157 test
-        case, be 975 assertions.
+        cases, be 975 assertions.
       </li>
     </ul>
     <p>
