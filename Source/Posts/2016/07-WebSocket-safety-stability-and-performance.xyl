@@ -47,7 +47,7 @@
       reading a frame, it is required to start reading the “headers” of the
       message before reading the real message. Only the required bytes were read
       when needed. This was an error in a specific edge-case: When the message
-      was empty, the algorithm were returning earlier, letting one part of the
+      was empty, the algorithm was returning earlier, letting one part of the
       frame into the network buffer. So the next call to the algorithm was
       reading invalid data. This is important to consume the whole frame each
       time.
@@ -87,14 +87,14 @@
       <li>151 test cases,</li>
       <li>3514 assertions.</li>
     </ul>
-    <p>It runs in 2.26 seconds in my computer with PHP7.</p>
+    <p>It runs in 2.26 seconds on my computer with PHP7.</p>
     <p>And some numbers about the integration test suites:</p>
     <ul>
       <li>1 test suite,</li>
       <li>31 test cases,</li>
       <li>163 assertions.</li>
     </ul>
-    <p>It runs in 0.65 second in my computer.</p>
+    <p>It runs in 0.65 second on my computer.</p>
     <p>
       Not all the Autobahn integration test suite has been migrated because
       our API does not allow some invalid operations. Some test cases are new
@@ -149,7 +149,7 @@
       connections per second, but now we are reaching 500 concurrent
       connections. We still have some unexpected behaviors in particular
       edge cases but there is no more errors. We can possibly go higher, just
-      for the fun, bu we gently reach the limit of the language and start
+      for the fun, but we gently reach the limit of the language and start
       tunning the TCP stack, file system, OS etc. and this is clearly out of the
       scope of the library.
     </p>
