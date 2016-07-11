@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="WebSocket, safety, stability and performance"?>
+<?xyl-meta name="date" value="2016-07-11T07:54:50+02:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>
+      Since several weeks, we were working hard on
+      <a href="http://central.hoa-project.net/Resource/Library/Websocket">the
+      <code>Hoa\Websocket</code> library</a> test suites, including both unit
+      and integration test suites. Stability and performance have been good
+      goals too. This article presents what we have accomplished, the bugs that
+      have been found and how complementary tests are.
+    </p>
+
+    <h2>Bugs found</h2>
+
+    <p>
+      Long story short, <strong>2 important bugs have been found and
+      fixed</strong> with these new test suites, despite the fact we were
+      using another integration test suite before.
+    </p>
+    <p>
+      Before our own test suites, we were using the famous
+      <a href="http://autobahn.ws/testsuite/">Autobahn test suite</a>. It works
+      great and this is a good tool used by major vendors like Mozilla, Google,
+      Apple, Microsoft, Facebook and more. It validates several aspects of the
+      standard (<a href="https://tools.ietf.org/html/rfc6455">RFC6455</a>) in
+      addition to “industrial aspects” (real usecases that are important in
+      practice). But tests are not demonstrating the absence of bugs at all.
+      Moreover, it was hard to set up Autobahn for new comers: This is in
+      Python (we are in PHP) and this is not in our devtools box; 2 factors that
+      form an obstacle for new contributor. So we decided some months ago to
+      “migrate” this test suite into our own test suite. The work has been split
+      into 2 chapters:
+    </p>
+    <ol>
+      <li>Write <strong>unit test suites</strong> from scratch, and</li>
+      <li>Migrate the Autobahn <strong>integration test suites</strong>.</li>
+    </ol>
+    <p>Let's describe quickly the bugs that have been found and fixed.</p>
+    <p>
+      The most important bug found concerns the RFC6455 protocol. As a reminder,
+      <code>Hoa\Websocket</code> supports two WebSocket protocols: The standard
+      one (RFC6455) and the old one (Hybi00) for compatibility reasons. When
+      reading a frame, it is required to start reading the “headers” of the
+      message before reading the real message. Only the required bytes were read
+      when needed. This was an error in a specific edge-case: When the message
+      was empty, the algorithm were returning earlier, letting one part of the
+      frame into the network buffer. So the next call to the algorithm was
+      reading invalid data. This is important to consume the whole frame each
+      time.
+    </p>
+    <p>
+      This bug has been revealed by the integration test suite when reading
+      consecutive empty messages. It has not been revealed by the Autobahn test
+      suite while it has this test case! See
+      <a href="https://github.com/hoaproject/Websocket/commit/d54553799867c2fe8ac2f21ff92e53430ccdd6ce">the
+      commit fixing the bug</a>.
+    </p>
+    <p>
+      The second bug was not as much critical as the first one. It concerns a
+      too strict constraint checking UTF-8 validity. You may know that all
+      WebSocket messages must be UTF-8 encoded, so <code>Hoa\Websocket</code>
+      checks this constraint when sending and when receiving a message.
+      Checking this at sending avoids having invalid data on network, then it
+      sounds like a good idea, isn't it? Actually no. A message can be split
+      into arbitrary fragments. Thus each fragment may contain invalid UTF-8
+      data; but at the end, when all fragments have been received and the
+      message reconstructed, this is still a valid UTF-8 message. So the
+      constraint was too strict. It was easy to fix.
+    </p>
+    <p>
+      This bug has been revealed by the unit and integration test suite. It has
+      not been revelead by the Autobahn test suite because they are using their
+      own client, so it was not possible to detect it. See
+      <a href="https://github.com/hoaproject/Websocket/commit/6744da6188c8ba1c553131582e9624db50424908">the
+      commit fixing the bug</a>.
+    </p>
+
+    <h2>Unit and integration test suites</h2>
+
+    <p>Some numbers to illustrate the work on the unit test suites:</p>
+    <ul>
+      <li>12 test suites,</li>
+      <li>151 test cases,</li>
+      <li>3514 assertions.</li>
+    </ul>
+    <p>It runs in 2.26 seconds in my computer with PHP7.</p>
+    <p>And some numbers about the integration test suites:</p>
+    <ul>
+      <li>1 test suite,</li>
+      <li>31 test cases,</li>
+      <li>163 assertions.</li>
+    </ul>
+    <p>It runs in 0.65 second in my computer.</p>
+    <p>
+      Not all the Autobahn integration test suite has been migrated because
+      our API does not allow some invalid operations. Some test cases are new
+      too.
+    </p>
+    <p>
+      This particular situation illustrates how complementary are these test
+      suites. Clearly, some bugs were not detectable with the integration test
+      suites only and others with the unit test suites only. If you read
+      <a href="http://hoa-project.net/En/Literature/Hack/Test.html#Nature_of_tests">the
+      Nature of tests Section</a> from <code>Hoa\Test</code>'s hack book, you
+      may remind this diagram:
+    </p>
+    <figure>
+      <object
+        data="http://central.hoa-project.net/Resource/Library/Test/Documentation/Image/Cartography.svg?format=raw&amp;remote=hoa"
+        type="image/svg+xml"
+        style="max-width: 870px"
+        width="100%"></object>
+      <figcaption>Dimensions of the test universe is represented by 3 axis.</figcaption>
+    </figure>
+    <p>
+      This is not because “unit” and “integration” are on the same axis that one
+      is inferior to the other. They are all different and interact at a
+      different level of the code. While the unit test suites focus on isolated
+      method (for instance, how the frame is parsed), the integration test
+      suites focus on how components interact (for instance, how the client
+      receives answer from the server).
+    </p>
+    <p>
+      Also, this story illustrates that <strong>we must not blindly believe a
+      test suite only because it is used by major vendors</strong>. It does
+      not detect all the potential bugs because it focus at only one level of
+      the code. So be careful when authors are using this argument. Ask yourself
+      if this is relevant. Safety is a science, not a marketing word.
+    </p>
+
+    <h2>Stability and performance</h2>
+
+    <p>
+      There is a lot of edge-cases when using networks. In the case of the
+      WebSocket protocol, this is even more true. It starts by an HTTP request,
+      then a handshake and then exchange messages. When the HTTP request is
+      received by the server, it is connected with the client, but the client
+      cannot receive message yet from other clients. This holds until the
+      handshake has been successful.
+    </p>
+    <p>
+      These cases are the favorite places for bugs in a concurrent environment.
+      Concurrent connections are funny but concurrent disconnections (expected
+      or… unexpected ones) are even funnier. We were able to reach 100 concurrent
+      connections per second, but now we are reaching 500 concurrent
+      connections. We still have some unexpected behaviors in particular
+      edge cases but there is no more errors. We can possibly go higher, just
+      for the fun, bu we gently reach the limit of the language and start
+      tunning the TCP stack, file system, OS etc. and this is clearly out of the
+      scope of the library.
+    </p>
+    <p>
+      Also, the socket library is injected. So far, most people use
+      <a href="http://central.hoa-project.net/Resource/Library/Socket">the
+      <code>Hoa\Socket</code> library</a> but one might use another socket
+      library, based on <a href="http://zeromq.org/">ZeroMQ</a> for instance.
+      We don't have an official library for ZeroMQ; This would be a nice
+      contribution.
+    </p>
+    <p>
+      If you use <code>Hoa\Websocket</code> in production, we would be glad to
+      learn about it. By knowing the usages, we could probably optimize some
+      parts of the library. We know there are companies using this library for
+      light or heavy operations (with for instance hundreds of nodes in the
+      network, transfering megabytes of data) but we would like to know more 😄.
+    </p>
+    <p>
+      Thank you for everything!
+    </p>
+  </article>
+</overlay>
