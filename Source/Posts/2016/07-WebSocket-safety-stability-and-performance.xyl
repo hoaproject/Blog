@@ -31,7 +31,7 @@
       practice). But tests are not demonstrating the absence of bugs at all.
       Moreover, it was hard to set up Autobahn for new comers: This is in
       Python (we are in PHP) and this is not in our devtools box; 2 factors that
-      form an obstacle for new contributor. So we decided some months ago to
+      form an obstacle for new contributors. So we decided some months ago to
       “migrate” this test suite into our own test suite. The work has been split
       into 2 chapters:
     </p>
@@ -49,30 +49,30 @@
       when needed. This was an error in a specific edge-case: When the message
       was empty, the algorithm was returning earlier, letting one part of the
       frame into the network buffer. So the next call to the algorithm was
-      reading invalid data. This is important to consume the whole frame each
-      time.
+      reading invalid data. This is important to always consume the whole frame
+      each time.
     </p>
     <p>
-      This bug has been revealed by the integration test suite when reading
+      This bug has been revealed by the integration test suites when reading
       consecutive empty messages. It has not been revealed by the Autobahn test
       suite while it has this test case! See
       <a href="https://github.com/hoaproject/Websocket/commit/d54553799867c2fe8ac2f21ff92e53430ccdd6ce">the
       commit fixing the bug</a>.
     </p>
     <p>
-      The second bug was not as much critical as the first one. It concerns a
+      The second bug was not as critical as the first one. It concerns a
       too strict constraint checking UTF-8 validity. You may know that all
       WebSocket messages must be UTF-8 encoded, so <code>Hoa\Websocket</code>
       checks this constraint when sending and when receiving a message.
       Checking this at sending avoids having invalid data on network, then it
       sounds like a good idea, isn't it? Actually no. A message can be split
       into arbitrary fragments. Thus each fragment may contain invalid UTF-8
-      data; but at the end, when all fragments have been received and the
+      data; but in the end, when all fragments have been received and the
       message reconstructed, this is still a valid UTF-8 message. So the
       constraint was too strict. It was easy to fix.
     </p>
     <p>
-      This bug has been revealed by the unit and integration test suite. It has
+      This bug has been revealed by the unit and integration test suites. It has
       not been revelead by the Autobahn test suite because they are using their
       own client, so it was not possible to detect it. See
       <a href="https://github.com/hoaproject/Websocket/commit/6744da6188c8ba1c553131582e9624db50424908">the
@@ -96,7 +96,7 @@
     </ul>
     <p>It runs in 0.65 second on my computer.</p>
     <p>
-      Not all the Autobahn integration test suite has been migrated because
+      Not the whole Autobahn integration test suite has been migrated because
       our API does not allow some invalid operations. Some test cases are new
       too.
     </p>
@@ -127,7 +127,7 @@
     <p>
       Also, this story illustrates that <strong>we must not blindly believe a
       test suite only because it is used by major vendors</strong>. It does
-      not detect all the potential bugs because it focus at only one level of
+      not detect all the potential bugs because it focuses at only one level of
       the code. So be careful when authors are using this argument. Ask yourself
       if this is relevant. Safety is a science, not a marketing word.
     </p>
