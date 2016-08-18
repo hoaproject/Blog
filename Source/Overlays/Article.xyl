@@ -17,6 +17,8 @@
       </small>
     </p>
 
+    <h2 id="Comments">Comments</h2>
+
     <div id="discourse-comments" position="last()"></div>
   </article>
 
