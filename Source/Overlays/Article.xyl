@@ -16,10 +16,28 @@
             formatter-timestamp="(?timestamp)" /></time>.
       </small>
     </p>
+
+    <div id="discourse-comments" position="last()"></div>
   </article>
 
   <yield id="scripts">
-    <!-- Additional `<script />` here. -->
     <script src="http://prismjs.com/prism.js"></script>
+
+    <script type="text/javascript">
+      DiscourseEmbed = {
+        discourseUrl     : 'http://discourse.hoa-project.net/',
+        discourseEmbedUrl: window.location
+      };
+
+      (
+        function() {
+          var d   = document.createElement('script');
+          d.type  = 'text/javascript';
+          d.async = true;
+          d.src   = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+          document.getElementsByTagName('head')[0].appendChild(d);
+        }
+      )();
+    </script>
   </yield>
 </overlay>
