@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
-<?xyl-meta name="title" value="Performance boost for Hoa\Compiler"?>
+<?xyl-meta name="title" value="Performance boost for <code>Hoa\Compiler</code>"?>
 <?xyl-meta name="date" value="2016-08-22T08:17:28+02:00"?>
 
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
@@ -8,9 +8,11 @@
     <p>
       A lot of work has been done <strong>to boost the performance</strong> of
       <a href="http://central.hoa-project.net/Resource/Library/Compiler"><code>Hoa\Compiler</code></a>,
-      mainly by reducing the amount of memory required to lexically or to
-      syntactically analyse it. With a large data, <strong>up to 80% of the
-       memory can be saved</strong>.
+      mainly by reducing the amount of memory required to lexically and to
+      syntactically analyse a data. <strong>Up to 80% of the
+      memory can be saved</strong> with a large data. Also a new feature allows
+      to compile the in-memory parser into a PHP class. <strong>Up to 45% of the
+      CPU can be saved</strong> for the parser initialisation.
     </p>
 
     <h2>Constant memory usage in the lexer</h2>
@@ -30,7 +32,7 @@
       an overhead of some bytes per tokens, in addition to the meta data attached
       to the token (like the name, the namespace, the length, the offset etc.).
       The resulting overhead size will depend of the PHP version in use but this
-      is not good.
+      is not optimal.
     </p>
     <p>
       Thus, a straightforward optimisation consists at transforming the lexer into
@@ -52,8 +54,8 @@
         (1091 bytes) and large (65432 bytes). These data are JSON strings. For
         each data, the memory peak usages have been analysed with the two
         approaches: Collection (before) and generator (after). The memory is
-        almost constant, and the more the lexer has to consume, the greater the
-        delta is.
+        almost constant with the generator approach, and the more the lexer has
+        to consume, the greater the delta is.
       </figcaption>
     </figure>
 
@@ -81,8 +83,8 @@
     </p>
     <p>
       And with a buffer iterator wrapping the lexer, this is still possible to
-      move foreward and backward in the lexer without reading lexing tokens
-      several times.
+      move foreward and backward in the lexer without lexing tokens several
+      times.
     </p>
 
     <h2>Exporting the parser into PHP code</h2>
@@ -101,7 +103,7 @@
       users.
     </p>
     <p>
-      Now, this is possible to <strong>save the in-memory parser to a string
+      Now, this is possible to <strong>save the in-memory parser as a string
       representing PHP code</strong>. This PHP code instanciates the same
       parser (at its initial state). The parser takes the form of a PHP class.
       Thus, one might write this PHP code into a file, commit this file and use
@@ -113,7 +115,7 @@
         style="max-width: 600px; width: 100%" />
       <figcaption>
         This graph compares the two following scenarii: Load the in-memory
-        parser from a grammar and then use it, against load the in-memor parser
+        parser from a grammar and then use it, against load the in-memory parser
         from a grammar, save it into a file, and then use it as a regular class
         with a <code>new</code> operator to instanciate the parser. It has been
         applied to three different grammars landing in Hoa:
@@ -121,7 +123,7 @@
         <a href="http://central.hoa-project.net/Resource/Library/Math"><code>Hoa\Math</code></a>
         and
         <a href="http://central.hoa-project.net/Resource/Library/Ruler"><code>Hoa\Ruler</code></a>.
-        The “save” scenario is faster.
+        The “save” scenario is almost twice faster.
       </figcaption>
     </figure>
 
@@ -146,7 +148,7 @@
       <code>parser.lookahead</code> pragma.
     </p>
 
-    <h2>Quality</h2>
+    <h2>Quality with Grammar-based Testing algorithms</h2>
 
     <p>
       Integration test suites were landing in the <code>Hoa\Compiler</code>
@@ -174,9 +176,10 @@
 
     <p>
       We still have ideas for new optimisations. <code>Hoa\Compiler</code> is
-      more and more used (recent example is
-      <a href="https://github.com/K-Phoen/rulerz">RulerZ</a>) and we are working
-      hard to provide the best quality as much as possible.
+      more and more used. Recent example is
+      <a href="https://github.com/K-Phoen/rulerz">RulerZ</a>. We have also heard
+      of compiler to produce Javascript code. We are working hard to provide the
+      best quality as much as possible.
     </p>
   </article>
 </overlay>
