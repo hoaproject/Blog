@@ -9,7 +9,7 @@
       A lot of work has been done <strong>to boost the performance</strong> of
       <a href="http://central.hoa-project.net/Resource/Library/Compiler"><code>Hoa\Compiler</code></a>,
       mainly by reducing the amount of memory required to lexically and to
-      syntactically analyse a data. <strong>Up to 80% of the
+      syntactically analyse a datum. <strong>Up to 80% of the
       memory can be saved</strong> with a large datum. Also a new feature allows
       to compile the in-memory parser into a PHP class. <strong>Up to 45% of the
       CPU can be saved</strong> for the parser initialisation.
