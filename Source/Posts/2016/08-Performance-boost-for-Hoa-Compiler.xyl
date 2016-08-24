@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
 <?xyl-meta name="title" value="Performance boost for <code>Hoa\Compiler</code>"?>
-<?xyl-meta name="date" value="2016-08-22T08:17:28+02:00"?>
+<?xyl-meta name="date" value="2016-08-24T07:26:43+02:00"?>
 
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
   <article id="main">
@@ -10,7 +10,7 @@
       <a href="http://central.hoa-project.net/Resource/Library/Compiler"><code>Hoa\Compiler</code></a>,
       mainly by reducing the amount of memory required to lexically and to
       syntactically analyse a data. <strong>Up to 80% of the
-      memory can be saved</strong> with a large data. Also a new feature allows
+      memory can be saved</strong> with a large datum. Also a new feature allows
       to compile the in-memory parser into a PHP class. <strong>Up to 45% of the
       CPU can be saved</strong> for the parser initialisation.
     </p>
@@ -31,19 +31,18 @@
       sequence). However, the sequence is represented as a PHP array, so it has
       an overhead of some bytes per tokens, in addition to the meta data attached
       to the token (like the name, the namespace, the length, the offset etc.).
-      The resulting overhead size will depend of the PHP version in use but this
+      The resulting overhead size will depend on the PHP version in use but this
       is not optimal.
     </p>
     <p>
-      Thus, a straightforward optimisation consists at transforming the lexer into
-      an iterator. Actually, it has been <strong>transformed into a
+      Thus, a straightforward optimisation is to transform the lexer into an
+      iterator. Actually, it has been <strong>transformed into a
       generator</strong>. So each call to the lexer will produce the next
       token, without stacking all the tokens in memory.
     </p>
     <p>
-      With this new approach, the API stays <strong>identically the
-      same</strong> and the memory peak usage is <strong>drastically
-      reduced</strong>.
+      With this new approach, the API stays <strong>identical</strong> and the
+      memory peak usage is <strong>drastically reduced</strong>.
     </p>
     <figure>
       <img
@@ -66,7 +65,7 @@
       Method calls have been reduced, so many CPU cycles have been saved. Also,
       <strong>indirections have been reduced</strong>. When a datum points to
       another datum that points to the final one, we count 2 indirections to get
-      the final datum. A redirection has a cost. This cost has been reduced.
+      the final datum. An indirection has a cost. This cost has been reduced.
     </p>
     <p>
       Also, the lexer is wrapped inside a <code>Hoa\Iterator\Buffer</code>
@@ -83,7 +82,7 @@
     </p>
     <p>
       And with a buffer iterator wrapping the lexer, this is still possible to
-      move foreward and backward in the lexer without lexing tokens several
+      move forward and backward in the lexer without lexing tokens several
       times.
     </p>
 
@@ -99,11 +98,10 @@
     <p>
       So far, the solution was to serialise the in-memory parser and save it
       into a file. Serialisation is dangerous from a security point of view. The
-      source must be trusted. This was not a comfortable situation for our
-      users.
+      source must be trusted. It was not a comfortable situation for our users.
     </p>
     <p>
-      Now, this is possible to <strong>save the in-memory parser as a string
+      Now, it is possible to <strong>save the in-memory parser as a string
       representing PHP code</strong>. This PHP code instanciates the same
       parser (at its initial state). The parser takes the form of a PHP class.
       Thus, one might write this PHP code into a file, commit this file and use
@@ -139,7 +137,7 @@
       defines its own Unicode support. This is the case of
       <a href="http://central.hoa-project.net/Resource/Library/Json"><code>Hoa\Json</code></a>.
       The RFC7159 is under fully implementation and JSON uses the same UTF-8
-      format than Javascript: With surrogate pairs. This was not possible to
+      format than JavaScript: With surrogate pairs. This was not possible to
       correctly lexically analyse a JSON string with PCRE Unicode support
       enabled. With this new pragma, this is possible.
     </p>
@@ -178,7 +176,7 @@
       We still have ideas for new optimisations. <code>Hoa\Compiler</code> is
       more and more used. Recent example is
       <a href="https://github.com/K-Phoen/rulerz">RulerZ</a>. We have also heard
-      of compiler to produce Javascript code. We are working hard to provide the
+      of compiler to produce JavaScript code. We are working hard to provide the
       best quality as much as possible.
     </p>
   </article>
