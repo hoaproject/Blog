@@ -22,39 +22,39 @@ $router
     )
     ->_get(
         'g',
-        'http://hoa-project.net/'
+        'https://hoa-project.net/'
     )
     ->_get(
         's',
-        'http://hoa-project.net/Source.html'
+        'https://hoa-project.net/Source.html'
     )
     ->_get(
         'l',
-        'http://hoa-project.net/Literature.html'
+        'https://hoa-project.net/Literature.html'
     )
     ->_get(
         'lh',
-        'http://hoa-project.net/Literature/Hack/(?<chapter>).html'
+        'https://hoa-project.net/Literature/Hack/(?<chapter>).html'
     )
     ->_get(
         'v',
-        'http://hoa-project.net/Video.html'
+        'https://hoa-project.net/Video.html'
     )
     ->_get(
         'v+',
-        'http://hoa-project.net/Awecode/(?<id>).html'
+        'https://hoa-project.net/Awecode/(?<id>).html'
     )
     ->_get(
         'ev',
-        'http://hoa-project.net/Event.html'
+        'https://hoa-project.net/Event.html'
     )
     ->_get(
         'ev+',
-        'http://hoa-project.net/Event/(?<_able>).html'
+        'https://hoa-project.net/Event/(?<_able>).html'
     )
     ->_get(
         'lists',
-        'http://lists.hoa-project.net/lists'
+        'https://lists.hoa-project.net/lists'
     )
     ->_get(
         'forum',
@@ -62,23 +62,23 @@ $router
     )
     ->_get(
         'a',
-        'http://hoa-project.net/About.html'
+        'https://hoa-project.net/About.html'
     )
     ->_get(
         'f',
-        'http://hoa-project.net/Foundation.html'
+        'https://hoa-project.net/Foundation.html'
     )
     ->_get(
         'f+',
-        '/http://hoa-project.netFoundation/(?<_able>).html'
+        'https://hoa-project.net/Foundation/(?<_able>).html'
     )
     ->_get(
         'c',
-        'http://hoa-project.net/Community.html'
+        'https://hoa-project.net/Community.html'
     )
     ->_get(
         'u',
-        'http://hoa-project.net/Whouse/(?<who>).html'
+        'https://hoa-project.net/Whouse/(?<who>).html'
     )
 
     ->_get('twitter', 'https://twitter.com/hoaproject')

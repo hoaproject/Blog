@@ -14,17 +14,17 @@
 
   <nav id="menu">
     <ul>
-      <li><a href="http://hoa-project.net/Source.html"     class="source"     data-shortcut="s">Sources</a></li>
-      <li><a href="http://hoa-project.net/Literature.html" class="literature" data-shortcut="l">Literature</a></li>
-      <li><a href="http://hoa-project.net/Video.html"      class="video"      data-shortcut="v">Videos</a></li>
-      <li><a href="http://hoa-project.net/Event.html"      class="event"      data-shortcut="e">Events</a></li>
-      <li><a href="http://hoa-project.net/Community.html"  class="community"  data-shortcut="c">Community</a></li>
-      <li><a href="http://hoa-project.com"                 class="shop"                        >Shop</a></li>
-      <li><a href="http://hoa-project.net/About.html"      class="about"      data-shortcut="a">About</a></li>
+      <li><a href="https://hoa-project.net/Source.html"     class="source"     data-shortcut="s">Sources</a></li>
+      <li><a href="https://hoa-project.net/Literature.html" class="literature" data-shortcut="l">Literature</a></li>
+      <li><a href="https://hoa-project.net/Video.html"      class="video"      data-shortcut="v">Videos</a></li>
+      <li><a href="https://hoa-project.net/Event.html"      class="event"      data-shortcut="e">Events</a></li>
+      <li><a href="https://hoa-project.net/Community.html"  class="community"  data-shortcut="c">Community</a></li>
+      <li><a href="https://hoa-project.com"                 class="shop"                        >Shop</a></li>
+      <li><a href="https://hoa-project.net/About.html"      class="about"      data-shortcut="a">About</a></li>
     </ul>
   </nav>
 
-  <form role="search" method="POST" action="http://search.hoa-project.net/(?language)">
+  <form role="search" method="POST" action="https://search.hoa-project.net/(?language)">
     <input type="search" name="q" placeholder="Search…" data-shortcut="shift+/" />
     <img
       id="search_close"
