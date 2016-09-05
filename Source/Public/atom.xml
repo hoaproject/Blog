@@ -7,8 +7,8 @@
       Hoa is a modular, extensible and structured set of PHP libraries. This
       feed gathers different news around the project.
     </description>
-    <link>http://blog.hoa-project.net/</link>
-    <atom:link href="http://blog.hoa-project.net/atom.xml" rel="self" type="application/rss+xml"/>
+    <link>https://blog.hoa-project.net/</link>
+    <atom:link href="https://blog.hoa-project.net/atom.xml" rel="self" type="application/rss+xml"/>
     <pubDate></pubDate>
     <lastBuildDate></lastBuildDate>
     <generator>Jekxyl</generator>
