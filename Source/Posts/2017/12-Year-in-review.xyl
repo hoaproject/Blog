@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="2017, Year in review"?>
+<?xyl-meta name="date" value="2017-12-29T13:31:41+01:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>
+      2017 has been a <strong>surprising</strong> year at many levels for Hoa and its
+      community. Let's dig in.
+    </p>
+    <p>
+      First of all: Numbers! Hoa libraries have been downloaded more than
+      4'318'000 times in 2017, which sets the total to <strong>8'585'000 downloads</strong>! A
+      peak of 700 downloads per hour has been recorded on February. Thank you
+      for these incredible number️s. The community on Github has welcomed 493 new
+      users, to reach 2381 stargazers. The global community now reaches
+      <strong>2584 members</strong>, yepee!
+    </p>
+    <p>
+      The community has defined
+      <a href="https://github.com/hoaproject/Central/milestone/1">an ambitious roadmap for 2017</a>,
+      which is not complete, and will continue to run on 2018. The main goal is:
+      <strong>High quality</strong>. Some highlights of this roadmap:
+    </p>
+    <ul>
+      <li><a href="https://github.com/hoaproject/Central/issues/75">PHP 7.1 as the lowest required version</a>,</li>
+      <li>A <a href="https://github.com/hoaproject/Central/issues/58">new API format</a>, with <a href="https://github.com/hoaproject/Central/issues/52">executable DocTests</a> and <a href="https://github.com/hoaproject/Central/issues/53">a new documentation browser</a>,</li>
+      <li><a href="https://github.com/hoaproject/Central/issues/69">Drop HHVM support</a>,</li>
+      <li><a href="https://github.com/hoaproject/Central/issues/56">New library for optional values: <code>Hoa\Option</code></a>.</li>
+    </ul>
+    <p>
+      The main contribution to the PHP community is <a href="https://github.com/hoaproject/Kitab">Kitab</a>,
+      to render the API documentation as HTML files —with a powerful static search
+      engine— and to test the documentation. The 0.10 version has been tagged,
+      and we are slowly deploying it on all Hoa libraries. A more detailed blog
+      post will be published.
+    </p>
+    <p>
+      This roadmap is <strong>ambitious</strong>. It contains a lot of work, maybe too much, but
+      we have time. It's important to limit the BC break in the Hoa and PHP
+      ecosystem. The most ambitious part is about futures and native
+      asynchronous code, the RFC are still in draft.
+    </p>
+    <p>
+      Defining the roadmap as a set of RFC is a <strong>community effort</strong>. It is new for
+      Hoa, and so far, it is a success. Everyone can focus on specific tasks,
+      discuss, and work together. What we miss in mentorship, and it introduces
+      the next point.
+    </p>
+    <p>
+      A large majority of the core members faced life hard in 2017: Move to
+      another country, jobless, new jobs, break-ups, diseases, burnouts, babies…
+      Well, life happens, that's expected. At this scale though, it's
+      unexpected. Hoa has about 10-15 core members, and more or less 5 remain
+      today. To be clear, this is not dangerous for the project. Hoa still
+      receives new contributions, the roadmap runs at a constant rythme, the
+      download frequency is constant, new projects include Hoa, everything is
+      great. The only impact so far on the project is that Hoa Apex
+      4<sup>th</sup> edition has been canceled twice, and the mentorship program
+      for the 2017 roadmap has been canceled too. This is unfortunate, but, eh,
+      life happens. It can sound guileless but Hoa community members are
+      friends: We meet often, we share life events, we help each others.
+      Consequently, we prefer to slow things down a little bit to take care of
+      each others. We think this is natural.
+    </p>
+    <p>
+      To end on a positive note: More companies or projects
+      <strong>trust</strong> us and <strong>use</strong> us!
+      <a href="https://automattic.com/">Automattic</a> —the company behinds
+      <a href="https://wordpress.com/">WordPress.com</a>,
+      <a href="https://woocommerce.com/">WooCommerce</a> and many more
+      softwares— uses Hoa, and especially
+      <a href="https://github.com/hoaproject/Kitab">Kitab</a>;
+      <a href="https://github.com/doctrine/annotations/pull/75">Doctrine</a> is
+      about to use Hoa too, <a href="https://github.com/railt/railt">railt</a>
+      is using Hoa for a promising GraphQL framework;
+      <a href="https://github.com/nelmio/alice/pull/712">Alice</a> is about to
+      use Hoa, and many more! Thank you to trust us!
+    </p>
+    <p>
+      <strong>The future of Hoa is bright</strong>. The project is living, the community is
+      breathing, more and more companies and projects trust us. Thank you for
+      this year full of surprises. We can't wait for the 2018 review!
+    </p>
+  </article>
+</overlay>
