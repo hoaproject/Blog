@@ -28,7 +28,7 @@
     <script type="text/javascript">
       DiscourseEmbed = {
         discourseUrl     : 'https://proxy-discourse.hoa-project.net/',
-        discourseEmbedUrl: window.location
+        discourseEmbedUrl: window.location.toString()
       };
 
       (
