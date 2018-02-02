@@ -23,7 +23,7 @@
   </article>
 
   <yield id="scripts">
-    <script src="http://prismjs.com/prism.js"></script>
+    <script src="https://static.hoa-project.net/Javascript/Prism.js"></script>
 
     <script type="text/javascript">
       DiscourseEmbed = {
