@@ -18,16 +18,15 @@
     </figure>
     <p>We often hear that a new project is based on Hoa. It really warms our
     heart and it provides new motivation to continue harder!</p>
-    
+
     <p>Today, we are also very excited to announce the opening of our
     <strong>meta-shop</strong>:
     <a href="http://hoa-project.com/">hoa-project.<strong>COM</strong></a>. If you like the project
     and you would like to <strong>support us</strong>, you can do that by buying a product in either
-    our <a href="https://shop.spreadshirt.fr/hoaproject">Spreadshirt shop</a> or in
-    our <a href="http://www.unixstickers.com/tag/hoa">UnixStickers shop</a>.</p>
+    our <a href="https://shop.spreadshirt.fr/hoaproject">Spreadshirt shop</a>.</p>
     <p>Our favorite products are the following:</p>
-    
-    
+
+
     <div class="products" style="text-align: center">
       <div class="product" style="display: inline-block; text-align: left; margin: 0 1.5em 2em">
         <img
@@ -43,14 +42,8 @@
         <div class="product__price" style="font-size: small">24.10€</div>
         <a href="https://shop.spreadshirt.fr/hoaproject/hoa+casual+t-shirt-A104219423" class="product__buy" style="display: block; text-align: center; margin-top: .5em; padding-top: .4em; padding-bottom: .4em">Buy</a>
       </div>
-      <div class="product" style="display: inline-block; text-align: left; margin: 0 1.5em 2em">
-        <img src="http://www.unixstickers.com/image/cache/data/stickers/hoa/hoa.sh-600x600.png" class="product__poster" style="max-width: 280px" />
-        <div class="product__title" style="font-weight: bold; color: #e0995e">Hoa Project Logo Shaped Sticker</div>
-        <div class="product__price" style="font-size: small">2.69$</div>
-        <a href="http://www.unixstickers.com/stickers/coding_stickers/hoa-project-php-libraries-logo-shaped-sticker" class="product__buy" style="display: block; text-align: center; margin-top: .5em; padding-top: .4em; padding-bottom: .4em">Buy</a>
-      </div>
     </div>
-    
+
     <p>Thank you very much!</p>
   </article>
 </overlay>
