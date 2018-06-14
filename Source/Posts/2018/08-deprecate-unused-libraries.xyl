@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="Now, it's time to deprecate unused libraries."?>
+<?xyl-meta name="date" value="2018-08-15T19:00:18+01:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>Hoa is a set of 61 PHP libraries, during our <a href="http://discourse.hoa-project.net/t/hoa-virtual-meeting/22/34">latest
+    Virtual Meeting</a> we choose to deprecate some libraries. This is important
+    for us to ensure that Hoa stays relevant and up to date regarding real
+    world needs.
+    We have decided to remove the ones that are:</p>
+    <ol>
+      <li>Basically un-used (with less than 100 downloads in 5 years),</li>
+      <li>Not relevant anymore because they refer to dead technologies.</li>
+    </ol>
+    <p>The main goal is to reduce the effort to maintain the Hoa ecosystem.</p>
+    <p>To be sure about the list items, we checked Packagist and GitHub stats.
+    We also choose to keep the one we use for private projects at the
+    moment.</p>
+    <p>Some of the libraries weren't registered on Packagist which means that
+    they are not used in today PHP's world.</p>
+    <p>The deprecation process is simple:</p>
+    <ol>
+      <li>Abandon the project on Packagist,</li>
+      <li>Update the <code>README.md</code> file to inform users,</li>
+      <li>Update the mirrors to reflect this change,</li>
+      <li>Archive the repository on Github.</li>
+    </ol>
+    <p>Here is the whole list of deprecated libraries:</p>
+    <ul>
+      <li><a href="https://github.com/hoaproject/cache"><code>hoa/cache</code></a></li>
+      <li><a href="https://github.com/hoaproject/log"><code>hoa/log</code></a></li>
+      <li><a href="https://github.com/hoaproject/memory"><code>hoa/memory</code></a></li>
+      <li><a href="https://github.com/hoaproject/model"><code>hoa/model</code></a></li>
+      <li><a href="https://github.com/hoaproject/notification"><code>hoa/notification</code></a></li>
+      <li><a href="https://github.com/hoaproject/prototype"><code>hoa/prototype</code></a></li>
+      <li><a href="https://github.com/hoaproject/serialize"><code>hoa/serialize</code></a></li>
+      <li><a href="https://github.com/hoaproject/translate"><code>hoa/translate</code></a></li>
+      <li><a href="https://github.com/hoaproject/tree"><code>hoa/tree</code></a></li>
+      <li><a href="https://github.com/hoaproject/xmlrpc"><code>hoa/xmlrpc</code></a></li>
+    </ul>
+  </article>
+</overlay>
