@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-overlay href="hoa://Application/Overlays/Article.xyl"?>
+<?xyl-meta name="title" value="Our way to PHP7 support only…"?>
+<?xyl-meta name="date" value="2018-08-15T19:00:18+01:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <p>We are working for some time now to upgrade all the Hoa libraries to use
+    PHP 7.1 features. This is a hard path to follow but, for sure, it'll move
+    the code forward.</p>
+    <p>Despite the performance upgrade, <a href="https://www.php.net/supported-versions.php">PHP
+    5.X is officially dead since 2019/01/01</a>, there is nothing to block
+    adoption of newer version anymore.</p>
+    <p>Let's take a look at the biggest advantages of that future update :</p>
+    <ul>
+      <li>Scalar type declaration,</li>
+      <li>Use <code>hoa/option</code>,</li>
+      <li>Refactor and update some method naming.</li>
+    </ul>
+    <p>Based on those updates, we'll have the ability to simplify PHPDoc
+    comments and use Kitab to generate a clean documentation. The code will be
+    even more solid based on the new scalar types declaration.</p>
+    <p>Also this will introduce a natural BC Break so we'll take care of the
+    release process correctly.</p>
+  </article>
+</overlay>
